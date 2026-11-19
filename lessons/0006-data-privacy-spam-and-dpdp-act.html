@@ -86,7 +86,7 @@
     <!-- Top Navigation Bar -->
     <nav class="lesson-nav">
       <a href="../index.html" class="dashboard-link">⌂ Course Dashboard</a>
-      <span class="lesson-index-badge">Track 1 • Lesson 0006 of 0006</span>
+      <span class="lesson-index-badge">Track 1 • Lesson 0006 of 0006 (Track 1 Capstone)</span>
     </nav>
 
     <!-- Lesson Header -->
@@ -145,21 +145,22 @@
       </section>
     </header>
 
-    <!-- Top Integrated Audio Player -->
-    <section class="lesson-audio-player" aria-label="Lesson Audio Player">
-      <div class="player-controls">
-        <button id="player-play-btn" class="player-btn primary" aria-label="Play or Pause">
-          <span id="play-icon">▶</span>
-          <span id="play-text">Play Audio (7:28)</span>
-        </button>
+    <!-- Audio Player Companion Widget -->
+    <section class="player-widget" aria-label="Audio Lesson Player">
+      <audio id="lesson-audio" src="../assets/audio/lesson-0006.mp3" preload="metadata"></audio>
 
-        <div class="time-display">
-          <span id="current-time">0:00</span> / <span id="total-time">7:28</span>
+      <div class="player-top-row">
+        <div class="player-main-controls">
+          <button id="player-play-btn" class="play-btn" aria-label="Play or Pause Narration">
+            <span id="player-play-icon">▶</span>
+          </button>
+          <div id="player-time" class="player-time-display">0:00 / 7:28</div>
         </div>
 
-        <div class="speed-selector" aria-label="Playback Speed">
+        <div class="speed-selector" role="group" aria-label="Playback Speed">
+          <button class="speed-btn" data-speed="0.8">0.8×</button>
           <button class="speed-btn active" data-speed="1.0">1.0×</button>
-          <button class="speed-btn" data-speed="1.2">1.2×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
           <button class="speed-btn" data-speed="1.5">1.5×</button>
         </div>
       </div>
@@ -259,13 +260,6 @@
         <p class="caption">Audio Segment 3: The structural framework of the DPDP Act 2023 and the Data Protection Board of India.</p>
       </div>
 
-      <!-- Checkpoint 1 Card -->
-      <div id="card-chk-1" class="visual-card checkpoint-card">
-        <h3>⏸ Checkpoint Quiz 1: DPDP Act Mandates</h3>
-        <p class="checkpoint-prompt">Verify your mastery of statutory data protection roles and consent revocation rules:</p>
-        <div id="quiz-container-1"></div>
-      </div>
-
       <!-- Card 4: Intermediary Liability & Free Speech -->
       <div id="card-seg-4" class="visual-card">
         <h3>4. Intermediary Safe Harbor: Section 79 IT Act & Shreya Singhal</h3>
@@ -350,18 +344,112 @@
         <p class="caption">Audio Segment 6: Practical operational steps to assert digital sovereignty in everyday life.</p>
       </div>
 
+    </section>
+
+    <!-- Interactive Checkpoints Section -->
+    <section class="checkpoints-section">
+
+      <!-- Checkpoint 1 Card -->
+      <div id="card-chk-1" class="checkpoint-card">
+        <h4>Checkpoint 1: DPDP Act Mandates & Informational Privacy</h4>
+        <p style="font-size: 15.5px; color: var(--text-muted); margin-bottom: 14px;">
+          Under the Digital Personal Data Protection (DPDP) Act 2023 and the Supreme Court's landmark judgment in <em>Justice K.S. Puttaswamy v. Union of India</em>, what is the legal designation of a citizen whose personal data is collected, and what happens when that citizen revokes their consent from a mobile application?
+        </p>
+
+        <div class="options-list">
+          <button class="option-btn" data-index="0">
+            A) The citizen is an 'End-User' with no legal right to delete historical records once terms of service are accepted.
+          </button>
+          <button class="option-btn" data-index="1">
+            B) The citizen is legally designated as the 'Data Principal'; upon withdrawing consent, the 'Data Fiduciary' (company) must cease processing and permanently erase the personal data unless retention is specifically mandated by another statute.
+          </button>
+          <button class="option-btn" data-index="2">
+            C) The citizen becomes a 'Co-Owner' of the company's database and can only demand financial dividends.
+          </button>
+          <button class="option-btn" data-index="3">
+            D) Data cannot be erased unless the citizen files a High Court writ petition within 30 days of registration.
+          </button>
+        </div>
+
+        <div class="checkpoint-feedback"></div>
+      </div>
+
       <!-- Checkpoint 2 Card -->
-      <div id="card-chk-2" class="visual-card checkpoint-card">
-        <h3>⏸ Checkpoint Quiz 2: Takedowns & Consent</h3>
-        <p class="checkpoint-prompt">Verify your understanding of intermediary obligations and privacy remedies:</p>
-        <div id="quiz-container-2"></div>
+      <div id="card-chk-2" class="checkpoint-card">
+        <h4>Checkpoint 2: Intermediary Safe Harbor & Content Takedown Mandates</h4>
+        <p style="font-size: 15.5px; color: var(--text-muted); margin-bottom: 14px;">
+          An online defamatory post, impersonation account, or non-consensual private photograph of a citizen is published on a major social media platform. Under Section 79 of the Information Technology Act (as interpreted in <em>Shreya Singhal</em>) and the IT Rules 2021, what is the platform's statutory obligation upon receiving notice to maintain its 'Safe Harbor' immunity?
+        </p>
+
+        <div class="options-list">
+          <button class="option-btn" data-index="0">
+            A) Intermediaries enjoy unconditional immunity and can never be forced to remove content without a unanimous Supreme Court order.
+          </button>
+          <button class="option-btn" data-index="1">
+            B) Intermediaries must act expeditiously within statutory timelines (24 hours for non-consensual intimate imagery/deepfakes; up to 36 hours for court/government unlawful orders) to disable access or face forfeiture of safe harbor immunity and direct criminal liability.
+          </button>
+          <button class="option-btn" data-index="2">
+            C) The platform can keep the content online indefinitely provided they place an advertising banner above it.
+          </button>
+          <button class="option-btn" data-index="3">
+            D) The citizen must personally travel to the platform's overseas headquarters to serve physical court papers.
+          </button>
+        </div>
+
+        <div class="checkpoint-feedback"></div>
       </div>
 
     </section>
 
-    <!-- References & Statutory Footnotes -->
-    <footer class="lesson-footer">
-      <h3>Statutory Authorities & Landmark Precedents Cited</h3>
+    <!-- Demonstrated Learning Evidence & Export -->
+    <section class="evidence-section">
+      <h3>Demonstrated Learning Record</h3>
+      <p style="font-size: 14px; color: var(--text-muted);">
+        Complete both checkpoints above to generate verified evidence of your data privacy rights, DPDP Act compliance, and intermediary takedown competency.
+      </p>
+      <div id="evidence-text" class="evidence-box"></div>
+      <button id="copy-evidence-btn" class="copy-evidence-btn">Copy Evidence Record</button>
+    </section>
+
+    <!-- Complete Dual-Mode Spoken Transcript -->
+    <details class="transcript-details">
+      <summary>Read Full Spoken Narration Transcript (Ears-Free Mode)</summary>
+      <div class="transcript-body">
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 1: The Data Harvest & The Cost of Free</div>
+          <p>In modern India, your digital footprint is continuously commodified. Every time you enter your phone number to enter a shopping mall, download a food delivery app, or apply for an online credit card, your personal details enter an unregulated underground data brokerage economy. Within hours, your WhatsApp and SMS inbox are flooded with fake stock tips, predatory loan offers, and phishing lures. Worse, when corporate databases are breached, your Aadhaar, PAN, and home address are dumped on the dark web. For years, Indian citizens were told that personal privacy was a luxury of the elite. Today, we dismantle that myth and arm you with the constitutional and statutory weapons needed to reclaim absolute ownership over your personal data.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 2: The Constitutional Keystone: Justice K.S. Puttaswamy (2017)</div>
+          <p>Our legal defense begins with the most consequential constitutional verdict of the twenty-first century: Justice K.S. Puttaswamy versus Union of India, decided in 2017 by a historic, unanimous nine-judge Constitution Bench of the Supreme Court of India. Overruling ancient precedents from the 1950s and 1960s like M.P. Sharma and Kharak Singh, the Supreme Court declared that the Right to Privacy is a fundamental, inalienable human right protected under Article 21, the right to life and personal liberty, and the freedoms guaranteed by Part III of the Constitution. The Court established that privacy encompasses bodily integrity, spatial privacy, and crucially, informational privacy. The Supreme Court held that every individual possesses informational self-determination: the sovereign right to decide what information about them is collected, who has access to it, and how long it can be retained. Any state or corporate intrusion on personal privacy must satisfy a rigorous four-prong proportionality test: it must be sanctioned by a valid law, pursue a legitimate state aim, be strictly necessary, and be proportionate without causing excessive harm to citizen dignity.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 3: The Statutory Shield: Digital Personal Data Protection Act 2023</div>
+          <p>To translate the Puttaswamy mandate into an enforceable statute, Parliament enacted the Digital Personal Data Protection Act of 2023, known as the DPDP Act. The Act fundamentally redefines the relationship between citizens and corporations. Under the DPDP Act, you, the citizen, are legally designated as the Data Principal. The corporation, bank, hospital, or government entity processing your data is legally designated as the Data Fiduciary. Section 6 of the Act mandates that no Data Fiduciary can process your personal data without clear, unbundled, and affirmative consent. Pre-ticked checkboxes and deceptive user interface dark patterns are strictly illegal. Furthermore, the Act guarantees you four non-negotiable citizen rights: First, the Right to Access information regarding who your data has been shared with. Second, the Right to Correction and Updating of inaccurate records. Third, the Right to Erasure, popularly known as the Right to be Forgotten, compelling companies to permanently delete your personal information once the purpose of service has ended or when you withdraw your consent. And fourth, the Right to Grievance Redressal before the Data Protection Board of India, which has statutory power to levy staggering financial penalties of up to two hundred and fifty crore rupees on defaulting corporations.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 4: Intermediary Safe Harbor & Free Speech: Section 79 IT Act & Shreya Singhal</div>
+          <p>Beyond corporate databases, personal privacy and dignity are frequently attacked on social media through doxxing, deepfakes, and online defamation. Here, the governing law is Section 79 of the Information Technology Act, known as the Intermediary Safe Harbor doctrine, as interpreted by the Supreme Court in the landmark 2015 judgment, Shreya Singhal versus Union of India. While Shreya Singhal struck down the unconstitutional Section 66A of the IT Act to protect free speech, it laid down strict parameters for platform liability. Social media intermediaries like Meta, Google, and X lose their statutory safe harbor protection if they fail to exercise due diligence. Under the Information Technology Intermediary Guidelines and Digital Media Ethics Rules, if a citizen reports non-consensual intimate imagery, deepfakes, or impersonation, platforms are legally mandated to remove or disable access to the offending content within twenty-four to thirty-six hours of receiving actual notice. When platforms refuse to act, an aggrieved citizen can file a police complaint under Sections 66E and 67A of the IT Act, or petition the High Court under Article 226 for a writ of mandamus compelling immediate digital takedown.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 5: The Anti-Spam Machine: TRAI Regulations & DND 3.0</div>
+          <p>Let us now confront the everyday menace of spam calls, robocalls, and unsolicited commercial communications. The regulatory authority governing telecommunications in India is the Telecom Regulatory Authority of India, or TRAI. Under the Telecom Commercial Communications Customer Preference Regulations, every commercial telemarketer must register with telecom service providers and make promotional calls exclusively through authorized numbering series, such as the 140 and 160 series. Unregistered telemarketers using standard ten-digit mobile numbers to peddle loans or insurance are committing a direct regulatory violation. Through the National Do-Not-Disturb registry, or DND 3.0, citizens can set granular communication preferences. If you receive an unsolicited promotional call or message, you have the statutory right to file a complaint within three days via SMS to 1909 or through the TRAI DND application. Telecom operators are required by law to investigate the complaint, issue warnings, and in the case of repeat violations, permanently disconnect the spammer's telecom resources and blacklist their identification for two years.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 6: The Citizen's 4-Step Digital Defense Playbook</div>
+          <p>To conclude Track 1, let us synthesize your statutory rights into an immediate, actionable 4-step Digital Defense Playbook: Step One: Execute a Data Audit and Consent Revocation. Review the permissions granted to installed mobile applications. Under Section 6 of the DPDP Act, issue formal email notices to apps you no longer use, withdrawing your consent and demanding written confirmation of data deletion. Step Two: Fortify the TRAI DND Registry. Send an SMS with the text 'START 0' to 1909 to enforce total block on promotional communications. Whenever an unregistered number calls, report the exact timestamp and telephone number on the 1909 portal within seventy-two hours. Step Three: Takedown and Intermediary Escalation. If your private data, images, or reputation are compromised online, immediately send a formal takedown notice to the platform's Resident Grievance Officer under Section 79 of the IT Act, citing a mandatory twenty-four-hour removal window. And Step Four: Regulatory Escalation. If a corporation refuses to erase your data or suffers a massive breach compromising your credentials, file a complaint with the Data Protection Board of India and report the breach to CERT-In, the Indian Computer Emergency Response Team. Remember: your personal data belongs to you alone. The Constitution guarantees your informational privacy, and the law stands ready to enforce it.</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Citations & Verified Bibliography -->
+    <footer class="citations-box">
+      <strong>Verified Statutory Provisions & Landmark Precedents:</strong>
       <ul>
         <li><a href="https://indiankanoon.org/doc/127517806/" target="_blank" rel="noopener">Supreme Court of India: Justice K.S. Puttaswamy (Retd.) v. Union of India (2017 10 SCC 1)</a> — 9-judge bench declaring privacy a fundamental right under Article 21.</li>
         <li><a href="https://www.meity.gov.in/writereaddata/files/Digital%20Personal%20Data%20Protection%20Act%202023.pdf" target="_blank" rel="noopener">Digital Personal Data Protection Act 2023 (Act No. 22 of 2023)</a> — Data Principal rights, Data Fiduciary obligations, DPBI penalties.</li>
