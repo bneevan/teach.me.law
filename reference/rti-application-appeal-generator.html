@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>RTI Application & First Appeal Generator — Right to Information Act 2005</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .global-course-nav, .page-hero, .btn-row, .form-group, #builder-controls {
+        display: none !important;
+      }
+      .notice-builder-container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+      }
+      .preview-paper {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        border-top: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-container">
+
+    <!-- Global Course Navigation -->
+    <nav class="global-course-nav" aria-label="Course Global Navigation">
+      <a href="../index.html" class="brand">⚖ Teach Me Law: India</a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">⌂ Dashboard</a>
+        <a href="../mission.html" class="nav-link">Course Mission</a>
+        <a href="../glossary.html" class="nav-link">Glossary & Audio</a>
+        <a href="../resources.html" class="nav-link">Official Portals</a>
+        <a href="../notes.html" class="nav-link">Pedagogy Notes</a>
+      </div>
+    </nav>
+
+    <!-- Page Hero Banner -->
+    <header class="page-hero" style="background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); border-color: #1e40af;">
+      <span class="hero-tag" style="background: rgba(59, 130, 246, 0.2); color: #93c5fd; border-color: #3b82f6;">Interactive Citizen Legal Tool</span>
+      <h1>Right to Information (RTI) Application & Appeal Generator</h1>
+      <p>
+        Draft legally robust, formatted Section 6 RTI Applications, trigger mandatory 48-hour life/liberty notices under Section 7(1), or draft Section 19(1) First Appeals against defaulting Public Information Officers with statutory Section 20 penalty warnings.
+      </p>
+    </header>
+
+    <div class="notice-builder-container">
+
+      <!-- Form Inputs Panel -->
+      <div id="builder-controls" class="builder-inputs-panel">
+        <h3 style="font-family: var(--font-serif); font-size: 19px; color: var(--accent-blue); margin-bottom: 14px;">1. Application & Statutory Parameters</h3>
+
+        <div class="form-group">
+          <label class="form-label" for="doc-type">Document Type</label>
+          <select id="doc-type" class="form-control" onchange="updatePreview()">
+            <option value="standard">Section 6(1) Standard RTI Application (30-Day Mandatory Response)</option>
+            <option value="emergency">Section 7(1) Life or Liberty RTI Application (48-Hour Emergency Response)</option>
+            <option value="appeal">Section 19(1) First Appeal (Non-Response or Bad-Faith Rejection)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="dept-name">Public Authority / Department Name</label>
+          <input type="text" id="dept-name" class="form-control" value="Municipal Corporation of Greater Mumbai (MCGM) / Ward Office" oninput="updatePreview()">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="dept-address">Public Information Officer (PIO) / Authority Address</label>
+          <textarea id="dept-address" class="form-control" rows="2" oninput="updatePreview()">The Public Information Officer (PIO),
+Office of the Assistant Commissioner, Ward H/West,
+Mumbai, Maharashtra - 400050</textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="applicant-name">Applicant Full Name</label>
+          <input type="text" id="applicant-name" class="form-control" value="Rohan S. Deshmukh" oninput="updatePreview()">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="applicant-address">Applicant Residential Address & Mobile</label>
+          <textarea id="applicant-address" class="form-control" rows="2" oninput="updatePreview()">Flat 402, Nilgiri Heights, Bandra West, Mumbai - 400050
+Mobile: +91 98765 43210 | Email: rohan.deshmukh@email.com</textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="bpl-status">BPL (Below Poverty Line) Fee Exemption Status</label>
+          <select id="bpl-status" class="form-control" onchange="updatePreview()">
+            <option value="no">General Citizen (Enclosing ₹10 Statutory Fee / IPO / Online Receipt)</option>
+            <option value="yes">BPL Cardholder (100% Fee & Photocopy Cost Exemption under Section 7(5))</option>
+          </select>
+        </div>
+
+        <div id="bpl-details-group" class="form-group" style="display: none;">
+          <label class="form-label" for="bpl-card-no">BPL Card Number & Issuing Authority</label>
+          <input type="text" id="bpl-card-no" class="form-control" value="MH/BPL/2021/89472 issued by Tahsildar, Andheri" oninput="updatePreview()">
+        </div>
+
+        <div id="emergency-justification-group" class="form-group" style="display: none;">
+          <label class="form-label" for="emergency-reason">Section 7(1) Proviso: Life or Liberty Emergency Justification</label>
+          <textarea id="emergency-reason" class="form-control" rows="3" oninput="updatePreview()">The requested medical inquiry records and ICU admission logs concern an emergency medical negligence review directly affecting the life and bodily survival of my hospitalized family member, invoking the mandatory 48-hour response proviso under Section 7(1) of the RTI Act 2005.</textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="info-sought">Particulars of Information Sought (Numbered Questions)</label>
+          <textarea id="info-sought" class="form-control" rows="5" oninput="updatePreview()">1. Provide certified copies of all road repair tender work-orders, contractor completion certificates, and engineer inspection logs for Bandra 14th Road executed between January 2025 and October 2026.
+2. Provide details of the total sanctioned budget, funds disbursed to the contractor, and retention amount withheld for defect liability.
+3. Provide the certified copy of the daily site inspection register and quality audit test reports signed by the Executive Engineer.</textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="info-format">Preferred Format of Delivery</label>
+          <select id="info-format" class="form-control" onchange="updatePreview()">
+            <option value="post">Certified Hard Copies via Registered / Speed Post with Acknowledgment Due</option>
+            <option value="email">Digitally Scanned Copies via Official Email</option>
+            <option value="inspection">Physical Inspection of Original Files under Section 2(j)(i) of the Act</option>
+          </select>
+        </div>
+
+        <div class="btn-row" style="margin-top: 18px;">
+          <button class="btn btn-primary" onclick="window.print()">🖨 Print or Save as PDF</button>
+          <button class="btn btn-secondary" onclick="copyDocumentText()">📋 Copy Formatted Notice</button>
+        </div>
+      </div>
+
+      <!-- Real-Time Printable Preview Paper -->
+      <div class="preview-paper">
+        <div id="notice-output" style="white-space: pre-wrap; font-family: var(--font-serif); font-size: 15px; line-height: 1.65; color: #1e293b;"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    function updatePreview() {
+      const docType = document.getElementById("doc-type").value;
+      const deptName = document.getElementById("dept-name").value;
+      const deptAddress = document.getElementById("dept-address").value;
+      const applicantName = document.getElementById("applicant-name").value;
+      const applicantAddress = document.getElementById("applicant-address").value;
+      const bplStatus = document.getElementById("bpl-status").value;
+      const bplCardNo = document.getElementById("bpl-card-no").value;
+      const emergencyReason = document.getElementById("emergency-reason").value;
+      const infoSought = document.getElementById("info-sought").value;
+      const infoFormat = document.getElementById("info-format").value;
+
+      document.getElementById("bpl-details-group").style.display = (bplStatus === "yes") ? "block" : "none";
+      document.getElementById("emergency-justification-group").style.display = (docType === "emergency") ? "block" : "none";
+
+      const currentDate = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+      let output = "";
+
+      if (docType === "standard") {
+        output += `APPLICATION FOR INFORMATION UNDER SECTION 6(1) OF THE RIGHT TO INFORMATION ACT, 2005\n\n`;
+        output += `Date: ${currentDate}\n\n`;
+        output += `To,\n${deptAddress}\n\n`;
+        output += `1. Full Name of the Applicant: ${applicantName}\n`;
+        output += `2. Address for Correspondence:\n${applicantAddress}\n\n`;
+        output += `3. Particulars of the Public Authority:\n${deptName}\n\n`;
+        output += `4. Particulars of Information Sought:\n${infoSought}\n\n`;
+        output += `5. Period to which the Information Relates: Contemporary / Official Records on Record\n\n`;
+        output += `6. Format of Information Preferred: ${infoFormat}\n\n`;
+        if (bplStatus === "yes") {
+          output += `7. Statutory Fee Exemption: The applicant belongs to Below Poverty Line (BPL) category (BPL Card No: ${bplCardNo}). Under Section 7(5) of the RTI Act 2005, BPL citizens are exempt from application fees and photocopy charges. Certified copy of BPL card enclosed.\n\n`;
+        } else {
+          output += `7. Statutory Application Fee: Prescribed application fee of ₹10/- is tendered herewith vide Indian Postal Order / Demand Draft / Online Payment Receipt enclosed.\n\n`;
+        }
+        output += `8. Constitutional & Precedential Anchors:\n`;
+        output += `   • Supreme Court of India in State of U.P. v. Raj Narain (1975) & S.P. Gupta v. Union of India (1981): Right to know is an inalienable fundamental right under Article 19(1)(a) of the Constitution.\n`;
+        output += `   • Supreme Court of India in CBSE v. Aditya Bandopadhyay (2011 8 SCC 497): Exemptions under Section 8 must be strictly and narrowly construed. Public authorities are bound to disclose records unless strictly barred by statute.\n\n`;
+        output += `9. Statutory Timeline & Penalty Notice under Section 20:\n`;
+        output += `   Under Section 7(1) of the RTI Act 2005, the Public Information Officer is legally obligated to provide the requested information within 30 days of receipt. Please take note that under Section 20(1) of the Act, unreasonable delay, refusal to receive this application, or bad-faith denial attracts personal, non-reimbursable statutory penalties of ₹250 per day up to a maximum of ₹25,000, in addition to disciplinary proceedings under Section 20(2).\n\n`;
+        output += `Yours faithfully,\n\n`;
+        output += `(Signature of Applicant)\n`;
+        output += `${applicantName}\n`;
+      } else if (docType === "emergency") {
+        output += `URGENT APPLICATION UNDER SECTION 6(1) READ WITH SECTION 7(1) PROVISO OF THE RIGHT TO INFORMATION ACT, 2005\n`;
+        output += `[MATTER CONCERNING LIFE OR LIBERTY — MANDATORY 48-HOUR RESPONSE REQUIRED]\n\n`;
+        output += `Date: ${currentDate}\n\n`;
+        output += `To,\n${deptAddress}\n\n`;
+        output += `1. Full Name of the Applicant: ${applicantName}\n`;
+        output += `2. Address for Correspondence:\n${applicantAddress}\n\n`;
+        output += `3. Subject: Emergency Application concerning Life and Liberty under Section 7(1) Proviso.\n\n`;
+        output += `4. Justification for Invoking 48-Hour Emergency Clause:\n${emergencyReason}\n\n`;
+        output += `5. Specific Particulars of Information Sought:\n${infoSought}\n\n`;
+        output += `6. Format of Information Preferred: ${infoFormat}\n\n`;
+        output += `7. Statutory Mandate & Strict Timeline:\n`;
+        output += `   Under the express proviso to Section 7(1) of the RTI Act 2005: "where the information sought for concerns the life or liberty of a person, the same shall be provided within forty-eight hours of the receipt of the request." Failure to provide information within 48 hours constitutes statutory breach under Section 20.\n\n`;
+        output += `Yours faithfully,\n\n`;
+        output += `(Signature of Applicant)\n`;
+        output += `${applicantName}\n`;
+      } else {
+        output += `MEMORANDUM OF FIRST APPEAL UNDER SECTION 19(1) OF THE RIGHT TO INFORMATION ACT, 2005\n\n`;
+        output += `Date: ${currentDate}\n\n`;
+        output += `To,\nThe First Appellate Authority (FAA),\n${deptName}\n${deptAddress}\n\n`;
+        output += `1. Appellant Details:\nName: ${applicantName}\nAddress: ${applicantAddress}\n\n`;
+        output += `2. Details of the Public Information Officer (Respondent):\n${deptAddress}\n\n`;
+        output += `3. Date of Filing Original Section 6(1) Application: [Enter Date of Application]\n\n`;
+        output += `4. Date of Impugned Order / Expiry of 30-Day Statutory Period: [Enter Date]\n\n`;
+        output += `5. Grounds for First Appeal:\n`;
+        output += `   (a) The PIO failed to provide information within the statutory 30-day period under Section 7(1), deeming the request refused without justification.\n`;
+        output += `   (b) The PIO invoked vague Section 8 exemptions without establishing how disclosure would cause identifiable harm or overriding public interest under Section 8(2).\n`;
+        output += `   (c) The PIO violated cardinal principles of natural justice (Audi Alteram Partem).\n\n`;
+        output += `6. Reliefs Prayed For:\n`;
+        output += `   (a) Direct the PIO to immediately furnish certified copies of requested records free of cost under Section 7(6);\n`;
+        output += `   (b) Recommend disciplinary inquiry and personal penalty under Section 20 against the PIO for mala fide obstruction.\n\n`;
+        output += `Yours faithfully,\n\n`;
+        output += `(Signature of Appellant)\n`;
+        output += `${applicantName}\n`;
+      }
+
+      document.getElementById("notice-output").textContent = output;
+    }
+
+    function copyDocumentText() {
+      const text = document.getElementById("notice-output").textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Document text copied to clipboard successfully!");
+      }).catch(err => {
+        alert("Failed to copy text: " + err);
+      });
+    }
+
+    // Initialize preview on page load
+    window.addEventListener("DOMContentLoaded", updatePreview);
+  </script>
+
+</body>
+</html>

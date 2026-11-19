@@ -1,0 +1,65 @@
+[
+  {
+    "id": "seg-1",
+    "type": "motivation",
+    "title": "1. The Economic Barrier to Justice & Article 39A",
+    "visualCardId": "card-seg-1",
+    "durationSeconds": 77.29,
+    "startTime": 0.0,
+    "endTime": 77.29
+  },
+  {
+    "id": "seg-2",
+    "type": "concept",
+    "title": "2. NALSA & Section 12 Free Legal Aid Eligibility",
+    "visualCardId": "card-seg-2",
+    "durationSeconds": 79.53,
+    "startTime": 77.29,
+    "endTime": 156.82
+  },
+  {
+    "id": "seg-3",
+    "type": "concept",
+    "title": "3. Lok Adalats: Informal Dispute Resolution & Finality",
+    "visualCardId": "card-seg-3",
+    "durationSeconds": 68.79,
+    "startTime": 156.82,
+    "endTime": 225.61
+  },
+  {
+    "id": "chk-seg-1",
+    "type": "checkpoint",
+    "title": "\u23f8 Quiz 1: Section 12 Free Legal Aid",
+    "visualCardId": "card-chk-1",
+    "durationSeconds": 1.0,
+    "startTime": 225.61,
+    "endTime": 226.61
+  },
+  {
+    "id": "seg-4",
+    "type": "example",
+    "title": "4. Pre-Litigation Settlement & 100% Fee Refund",
+    "visualCardId": "card-seg-4",
+    "durationSeconds": 66.89,
+    "startTime": 226.61,
+    "endTime": 293.5
+  },
+  {
+    "id": "chk-seg-2",
+    "type": "checkpoint",
+    "title": "\u23f8 Quiz 2: Lok Adalat Award Finality",
+    "visualCardId": "card-chk-2",
+    "durationSeconds": 1.0,
+    "startTime": 293.5,
+    "endTime": 294.5
+  },
+  {
+    "id": "seg-5",
+    "type": "action",
+    "title": "5. The 4-Step Free Legal Aid & Lok Adalat Roadmap",
+    "visualCardId": "card-seg-5",
+    "durationSeconds": 60.68,
+    "startTime": 294.5,
+    "endTime": 355.18
+  }
+]
