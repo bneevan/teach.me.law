@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lesson 0004: Encounters with Authority — The D.K. Basu Shield, Traffic Stops & Due Process</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    .case-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      margin: 16px 0;
+      border-left: 4px solid var(--accent-blue);
+    }
+    .case-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 6px;
+    }
+    .case-meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .rule-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+    }
+    .rule-card strong {
+      display: block;
+      color: var(--accent-blue);
+      margin-bottom: 4px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+    }
+    .rule-card p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lesson-container">
+
+    <!-- Top Navigation Bar -->
+    <nav class="lesson-nav">
+      <a href="../index.html" class="dashboard-link">⌂ Course Dashboard</a>
+      <span class="lesson-index-badge">Lesson 0004 of 0004 (Capstone)</span>
+    </nav>
+
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <span class="lesson-badge">Constitutional Shield & Criminal Procedure</span>
+      <h1 class="lesson-title">Encounters with Authority: The D.K. Basu Shield, Traffic Stops & Due Process</h1>
+
+      <div class="mission-outcome-box">
+        <strong>Mission Outcome</strong>
+        Handle police encounters, traffic stops, searches, and detentions with calm confidence; enforce the Supreme Court's 11 <em>D.K. Basu</em> guidelines; invoke Section 41A notices under <em>Arnesh Kumar</em>; and protect women's sunset arrest rights under Section 46(4) of the Code of Criminal Procedure.
+      </div>
+
+      <!-- Spoken Pronunciation Guide for Legal Terms -->
+      <section class="pronounce-box">
+        <span class="pronounce-box-title">Spoken Pronunciation Guide (Constitutional Doctrine)</span>
+        <div class="pronounce-list">
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">Nemo Tenetur Seipsum Accusare</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/ˈneɪ.moʊ tɛˈneɪ.tʊər seɪ.ɪpˈsʊm əˌkjuːˈzɑː.reɪ/</span>
+                <span class="pronounce-lang">Constitutional Maxim</span>
+              </div>
+              <p class="pronounce-meaning">"No man is bound to accuse himself" — the foundational maxim underlying Article 20(3) of the Indian Constitution giving citizens the absolute right to silence during interrogation (*Nandini Satpathy*).</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-nemotenetur.wav" title="Listen to pronunciation of Nemo Tenetur" aria-label="Listen to pronunciation of Nemo Tenetur">🔊</button>
+          </div>
+
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">Habeas Corpus</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/ˌheɪ.bi.əs ˈkɔːr.pəs/</span>
+                <span class="pronounce-lang">Constitutional Writ</span>
+              </div>
+              <p class="pronounce-meaning">"You have the body" — the prerogative writ under Article 32 or Article 226 commanding police to produce an illegally detained citizen before the bench.</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-habeascorpus.wav" title="Listen to pronunciation of Habeas Corpus" aria-label="Listen to pronunciation of Habeas Corpus">🔊</button>
+          </div>
+
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">Subpoena / Summons</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/səˈpiː.nə/</span>
+                <span class="pronounce-lang">Court Process</span>
+              </div>
+              <p class="pronounce-meaning">A formal, legally binding judicial order requiring a person to appear before a magistrate or police investigator under Section 41A CrPC.</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-subpoena.wav" title="Listen to pronunciation of Subpoena" aria-label="Listen to pronunciation of Subpoena">🔊</button>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <!-- Audio Player Companion Widget -->
+    <section class="player-widget" aria-label="Audio Lesson Player">
+      <audio id="lesson-audio" src="../assets/audio/lesson-0004.mp3" preload="metadata"></audio>
+
+      <div class="player-top-row">
+        <div class="player-main-controls">
+          <button id="player-play-btn" class="play-btn" aria-label="Play or Pause Narration">
+            <span id="player-play-icon">▶</span>
+          </button>
+          <div id="player-time" class="player-time-display">0:00 / 6:02</div>
+        </div>
+
+        <div class="speed-selector" role="group" aria-label="Playback Speed">
+          <button class="speed-btn" data-speed="0.8">0.8×</button>
+          <button class="speed-btn active" data-speed="1.0">1.0×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+        </div>
+      </div>
+
+      <div class="scrub-container">
+        <input type="range" id="player-scrubber" class="scrub-slider" min="0" max="100" value="0" step="0.1" aria-label="Audio scrubber">
+      </div>
+
+      <!-- Segment Timeline Ribbon -->
+      <div class="timeline-pills" role="tablist" aria-label="Lesson Segments">
+        <button class="segment-pill active" data-segment-id="seg-1">1. Psychology of Authority</button>
+        <button class="segment-pill" data-segment-id="seg-2">2. Constitutional Shield</button>
+        <button class="segment-pill" data-segment-id="seg-3">3. D.K. Basu Guidelines</button>
+        <button class="segment-pill checkpoint" data-segment-id="chk-seg-1">⏸ Quiz 1</button>
+        <button class="segment-pill" data-segment-id="seg-4">4. Arnesh Kumar (No Auto-Arrest)</button>
+        <button class="segment-pill" data-segment-id="seg-5">5. Women & Traffic Stops</button>
+        <button class="segment-pill" data-segment-id="seg-6">6. 3-Step Field Protocol</button>
+        <button class="segment-pill checkpoint" data-segment-id="chk-seg-2">⏸ Quiz 2</button>
+      </div>
+    </section>
+
+    <!-- Checkpoint Alert Banner -->
+    <div id="checkpoint-banner" class="checkpoint-pause-banner">
+      <strong>Checkpoint Reached:</strong> Audio narration paused. Answer the retrieval question below to test your understanding of constitutional rights during police interactions and resume playback.
+    </div>
+
+    <!-- Visual Supporting Cards (Synchronized with Audio) -->
+    <section class="visual-cards-section">
+
+      <!-- Card 1: Motivation -->
+      <div id="card-seg-1" class="visual-card active">
+        <h3>1. The Psychology of Authority in India</h3>
+        <p>In India, interactions with police officers often provoke intense fear and anxiety. At late-night traffic checks or unexpected station summons, citizens frequently react out of panic—either capitulating to unlawful demands or becoming belligerent, which gives police pretext to file charges under Section 186 or 353 of the penal code for "obstructing a public servant."</p>
+        <div style="background: var(--bg-subtle); padding: 14px 16px; border-radius: 6px; margin: 14px 0; border-left: 4px solid var(--accent-blue);">
+          <strong>The Legal Reality:</strong> A police uniform confers statutory duties, not sovereign immunity. Every power an officer exercises—from stopping a vehicle to detaining a suspect—is bounded by strict statutory procedures and Supreme Court mandates. Knowing the procedure protects your dignity and personal liberty.
+        </div>
+        <p class="caption">Audio Segment 1: Overcoming the fear of uniform through constitutional literacy.</p>
+      </div>
+
+      <!-- Card 2: Constitutional Shield Matrix -->
+      <div id="card-seg-2" class="visual-card">
+        <h3>2. The Constitutional Shield: Articles 20, 21 & 22</h3>
+        <p>The Supreme Court has interpreted Part III of the Constitution of India as an unbreakable shield against arbitrary police power:</p>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <strong>Article 21: Life & Personal Liberty</strong>
+            <p>No person shall be deprived of life or liberty except according to just, fair, and reasonable procedure (*Maneka Gandhi*).</p>
+          </div>
+          <div class="rule-card">
+            <strong>Article 20(3): Right to Silence</strong>
+            <p>No person accused of an offence shall be compelled to be a witness against themselves (<span class="pronounce-wrapper"><span class="pronounce-word"><em>Nemo Tenetur</em></span><button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-nemotenetur.wav">🔊</button></span>). Extends to police interrogation (*Nandini Satpathy*).</p>
+          </div>
+          <div class="rule-card">
+            <strong>Article 22(1): Grounds & Counsel</strong>
+            <p>Absolute right to be informed of the exact grounds of arrest immediately and the right to consult an advocate of your choice.</p>
+          </div>
+          <div class="rule-card">
+            <strong>Article 22(2): 24-Hour Rule</strong>
+            <p>Every arrested person MUST be produced before the nearest Judicial Magistrate within 24 hours of arrest (excluding travel time).</p>
+          </div>
+        </div>
+        <p class="caption">Audio Segment 2: The fundamental constitutional protections that govern every law enforcement interaction.</p>
+      </div>
+
+      <!-- Card 3: Landmark Case 1 - D.K. Basu -->
+      <div id="card-seg-3" class="visual-card">
+        <h3>3. Landmark Precedent: D.K. Basu v. State of West Bengal (1997)</h3>
+        <p>The landmark charter that ended unchecked police custody and arbitrary detention across India:</p>
+
+        <div class="case-card">
+          <div class="case-title">D.K. Basu v. State of West Bengal (1997 1 SCC 416)</div>
+          <span class="case-meta">Supreme Court of India • 2-Judge Bench • Justice Kuldip Singh & Justice A.S. Anand</span>
+          <p><strong>The Context:</strong> Addressing rampant custodial torture, unexplained deaths in police custody, and secret detentions, the Supreme Court issued 11 mandatory procedural guidelines binding on every police officer in India.</p>
+          <p><strong>The Core Mandates:</strong></p>
+          <ul style="margin: 8px 0 8px 20px; font-size: 14.5px; line-height: 1.5;">
+            <li><strong>Name Badges:</strong> Arresting and interrogating officers must wear visible identification with full name and designation.</li>
+            <li><strong>Memo of Arrest:</strong> Must be prepared at the scene, stating the date, time, and location, signed by at least one witness (family member or respectable local resident) and countersigned by the arrestee.</li>
+            <li><strong>Family Notification:</strong> Right to have one relative or friend informed of the arrest and place of custody within <strong>8 to 12 hours</strong>.</li>
+            <li><strong>Medical Examination:</strong> Mandatory medical examination by a government doctor at arrest and <strong>every 48 hours</strong> in custody, recording all existing injuries in an Inspection Memo.</li>
+          </ul>
+        </div>
+        <p class="caption">Audio Segment 3: Violations of the D.K. Basu guidelines make the officer liable for contempt of court and departmental suspension.</p>
+      </div>
+
+      <!-- Card 4: Landmark Case 2 - Arnesh Kumar -->
+      <div id="card-seg-4" class="visual-card">
+        <h3>4. Landmark Precedent: Arnesh Kumar v. State of Bihar (2014)</h3>
+        <p>Can police automatically arrest you simply because someone filed an FIR against you?</p>
+
+        <div class="case-card">
+          <div class="case-title">Arnesh Kumar v. State of Bihar (2014 8 SCC 273)</div>
+          <span class="case-meta">Supreme Court of India • Justice C.K. Prasad & Justice P.C. Ghose</span>
+          <p><strong>The Abuse:</strong> Routine automatic arrests in matrimonial disputes (Section 498A), minor property clashes, and offenses punishable with less than 7 years, used by police to extort bail payments.</p>
+          <p><strong>The Supreme Court Mandate:</strong></p>
+          <ul style="margin: 8px 0 8px 20px; font-size: 14.5px; line-height: 1.5;">
+            <li><strong>No Automatic Arrest:</strong> For all offences carrying a maximum sentence of <strong>7 years or less</strong>, police CANNOT arrest automatically upon FIR registration.</li>
+            <li><strong>Mandatory Section 41A Notice:</strong> Police must serve a formal written Notice of Appearance under Section 41A CrPC (Sec 35 BNSS) directing the citizen to join investigation. As long as the citizen complies, arrest is prohibited.</li>
+            <li><strong>Magistrate Accountability:</strong> If an officer insists on arrest, they must record explicit reasons (flight risk, witness tampering). Any Magistrate who approves custody without verifying these reasons faces disciplinary action.</li>
+          </ul>
+        </div>
+        <p class="caption">Audio Segment 4: How Section 41A notices protect citizens from arbitrary arrests in minor and matrimonial complaints.</p>
+      </div>
+
+      <!-- Card 5: Women's Protections & Traffic Stops -->
+      <div id="card-seg-5" class="visual-card">
+        <h3>5. Women's Protections & Traffic Stops</h3>
+        <p>Specific statutory rules governing vulnerable scenarios and road encounters:</p>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 6px; padding: 16px; margin: 14px 0;">
+          <h4 style="font-family: var(--font-sans); color: var(--accent-red); margin-bottom: 6px;">
+            1. Women's Sunset Arrest Rule (Section 46(4) CrPC / Sec 43(5) BNSS)
+          </h4>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--text-muted);">
+            No woman can be arrested after sunset and before sunrise. In extraordinary circumstances, nighttime arrest can only occur if a woman police officer obtains prior written permission from a Judicial Magistrate First Class. Furthermore, female suspects can only be searched by female officers with strict decency.
+          </p>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 6px; padding: 16px; margin: 14px 0;">
+          <h4 style="font-family: var(--font-sans); color: var(--accent-blue); margin-bottom: 6px;">
+            2. Traffic Stops & Vehicle Searches (Motor Vehicles Act)
+          </h4>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--text-muted);">
+            Only officers of the rank of <strong>Sub-Inspector or above</strong> can confiscate documents or seize a vehicle. Digital documents shown via DigiLocker or mParivahan are legally valid under the IT Act. Snatching keys from the ignition is illegal, and breathalyzer alcohol tests must use a fresh disposable nozzle.
+          </p>
+        </div>
+        <p class="caption">Audio Segment 5: Knowing your statutory limits during vehicle checkpoints and nighttime stops.</p>
+      </div>
+
+      <!-- Card 6: 3-Step Field Protocol -->
+      <div id="card-seg-6" class="visual-card">
+        <h3>6. The Citizen's 3-Step Police Encounter Protocol</h3>
+        <p>When interacting with police officers, execute this disciplined 3-step protocol:</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 16px 0;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 6px; padding: 14px;">
+            <strong style="color: var(--accent-blue); display: block; margin-bottom: 4px;">Step 1: Calm Composure</strong>
+            <p style="font-size: 13.5px; color: var(--text-muted);">Speak respectfully; never raise your voice or touch an officer to avoid Section 353 obstruction charges.</p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 6px; padding: 14px;">
+            <strong style="color: var(--accent-gold); display: block; margin-bottom: 4px;">Step 2: Inquire Status</strong>
+            <p style="font-size: 13.5px; color: var(--text-muted);">Ask: "Officer, am I free to go, or am I being detained?" If detained, demand grounds under Article 22.</p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 6px; padding: 14px;">
+            <strong style="color: var(--accent-green); display: block; margin-bottom: 4px;">Step 3: Invoke Rights</strong>
+            <p style="font-size: 13.5px; color: var(--text-muted);">Request family notification, demand the <em>D.K. Basu</em> memo of arrest, and exercise your right to silence (*Article 20(3)*).</p>
+          </div>
+        </div>
+        <p class="caption">Audio Segment 6: Your tactical, peaceful field protocol for police encounters in India.</p>
+      </div>
+
+    </section>
+
+    <!-- Interactive Checkpoints Section -->
+    <section class="checkpoints-section">
+
+      <!-- Checkpoint 1 Card -->
+      <div id="card-chk-1" class="checkpoint-card">
+        <h4>Checkpoint 1: Procedural Safeguards During Arrest (D.K. Basu Mandates)</h4>
+        <p style="font-size: 15.5px; color: var(--text-muted); margin-bottom: 14px;">
+          Police officers in plain clothes arrive at a citizen's house at 2:00 PM, bundle him into an unmarked vehicle without showing identification, and refuse to inform his family where he is being taken. Under the Supreme Court's ruling in <em>D.K. Basu v. State of West Bengal</em>, which mandatory procedures were violated?
+        </p>
+
+        <div class="options-list">
+          <button class="option-btn" data-index="0">
+            A) None, because police have unlimited discretion to arrest suspects covertly to prevent local riots.
+          </button>
+          <button class="option-btn" data-index="1">
+            B) Arresting officers must wear visible name badges, prepare a signed Memo of Arrest with a witness at the scene, inform family/friends within 8-12 hours, and conduct bi-daily medical checkups.
+          </button>
+          <button class="option-btn" data-index="2">
+            C) Police only need to show identification if the arrestee pays a statutory administrative fee.
+          </button>
+          <button class="option-btn" data-index="3">
+            D) The arrest is valid as long as the suspect is detained in a police station for at least 7 days before seeing a judge.
+          </button>
+        </div>
+
+        <div class="checkpoint-feedback"></div>
+      </div>
+
+      <!-- Checkpoint 2 Card -->
+      <div id="card-chk-2" class="checkpoint-card">
+        <h4>Checkpoint 2: Automatic Arrest Limitations (Arnesh Kumar Doctrine)</h4>
+        <p style="font-size: 15.5px; color: var(--text-muted); margin-bottom: 14px;">
+          An FIR is registered against a citizen for an alleged minor financial cheating dispute carrying a maximum punishment of 3 years imprisonment. The investigating police officer threatens to arrest him immediately unless he pays a ₹50,000 bribe. Under the Supreme Court's landmark judgment in <em>Arnesh Kumar v. State of Bihar</em>, what is the lawful procedure?
+        </p>
+
+        <div class="options-list">
+          <button class="option-btn" data-index="0">
+            A) Police must immediately arrest any accused person named in an FIR regardless of the sentence length.
+          </button>
+          <button class="option-btn" data-index="1">
+            B) For offences carrying 7 years or less, arrest cannot be automatic; police must serve a Section 41A Notice of Appearance, and as long as the citizen complies, arrest is strictly prohibited.
+          </button>
+          <button class="option-btn" data-index="2">
+            C) The citizen must surrender directly to the nearest prison without attending court hearings.
+          </button>
+          <button class="option-btn" data-index="3">
+            D) Police officers are granted statutory immunity to arrest citizens on any non-cognizable allegation.
+          </button>
+        </div>
+
+        <div class="checkpoint-feedback"></div>
+      </div>
+
+    </section>
+
+    <!-- Demonstrated Learning Evidence & Export -->
+    <section class="evidence-section">
+      <h3>Demonstrated Learning Record</h3>
+      <p style="font-size: 14px; color: var(--text-muted);">
+        Complete both checkpoints above to generate verified evidence of your police interaction and constitutional rights competency.
+      </p>
+      <div id="evidence-text" class="evidence-box"></div>
+      <button id="copy-evidence-btn" class="copy-evidence-btn">Copy Evidence Record</button>
+    </section>
+
+    <!-- Complete Dual-Mode Spoken Transcript -->
+    <details class="transcript-details">
+      <summary>Read Full Spoken Narration Transcript (Ears-Free Mode)</summary>
+      <div class="transcript-body">
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 1: The Psychology of Authority in India</div>
+          <p>For most everyday citizens in India, few experiences are more terrifying than a late-night encounter with police. You are stopped at an isolated barricade. An officer demands to search your phone and car trunk, threatening to take you to the station if you ask questions. Or police arrive at your home early in the morning demanding you accompany them immediately. Because most citizens have never been taught their constitutional rights, they react out of raw panic—either becoming hostile and getting booked for obstructing a public servant, or succumbing to unlawful extortion. But in a constitutional democracy governed by the rule of law, a police uniform is not a license for unlimited power. The Constitution of India and the Supreme Court have built an impenetrable legal shield around every citizen. In this capstone lesson, you will master the exact legal boundaries of police authority, the landmark D.K. Basu arrest safeguards, and how to protect yourself calmly and lawfully in any encounter.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 2: The Constitutional Shield: Articles 20, 21 & 22</div>
+          <p>Your legal protection begins with three foundational articles of the Indian Constitution. First, Article 21 guarantees that no citizen shall be deprived of personal liberty except according to fair, just, and reasonable procedure established by law. Second, Article 20 clause 3 provides the absolute Right Against Self-Incrimination: no person accused of any offence shall be compelled to be a witness against himself. In the landmark 1978 judgment, Nandini Satpathy versus P.L. Dani, the Supreme Court held that this right to silence applies not just in courtrooms, but during police interrogation. You cannot be coerced, threatened, or beaten into confessing. Third, Article 22 establishes mandatory arrest rights: you have the fundamental right to be informed immediately of the exact grounds of your arrest, the right to consult and be defended by a legal practitioner of your choice, and the non-negotiable requirement that an arrested person must be produced before the nearest Judicial Magistrate within twenty-four hours of arrest.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 3: Landmark Case: D.K. Basu v. State of West Bengal (1997)</div>
+          <p>The greatest charter of citizen protection in Indian criminal history was forged in the 1997 Supreme Court judgment, D.K. Basu versus State of West Bengal. Addressing the epidemic of custodial violence and illegal detentions, the Supreme Court laid down eleven mandatory guidelines that apply to every police officer across India. First, arresting officers must wear clear identification tags with their name and designation. Second, the officer must prepare a written Memo of Arrest at the exact time of arrest, signed by at least one witness who is a family member or respected resident of the locality, and countersigned by the arrestee. Third, the arrestee has the absolute legal right to have one relative or friend notified of their arrest and exact location of custody within eight to twelve hours. Fourth, the arrested person must be medically examined by a trained doctor at the time of arrest and every forty-eight hours in custody, recording all existing injuries in an inspection memo. Any police officer who violates these guidelines is guilty of contempt of court and faces criminal prosecution.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 4: Landmark Case: Arnesh Kumar & Section 41A Notice</div>
+          <p>For decades, police officers routinely arrested citizens on petty allegations or false complaints to force financial settlements. This abuse was systematically dismantled by the Supreme Court in the 2014 landmark judgment, Arnesh Kumar versus State of Bihar. The Supreme Court held that for all offences punishable with imprisonment of seven years or less, such as ordinary theft, minor assault, cheating, or matrimonial disputes, arrest cannot be automatic or routine. Under Section 41A of the Code of Criminal Procedure, the police must first issue a formal written Notice of Appearance, summoning you to join investigation on a specified date. As long as you comply with the notice, you cannot be arrested. If an officer insists on arresting you for a crime under seven years, they must record explicit, extraordinary reasons in writing proving flight risk or evidence tampering. Any Magistrate who remands a citizen without verifying these reasons faces high court disciplinary action.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 5: Special Protections: Women's Sunset Rule & Traffic Stops</div>
+          <p>Indian law provides strict statutory safeguards for specific everyday scenarios. For women, Section 46 subsection 4 of the Code of Criminal Procedure establishes the historic Sunset Rule: no woman can be arrested after sunset and before sunrise. Even in the most extraordinary emergencies, an arrest during nighttime can only be made by a woman police officer after obtaining prior written permission from a Judicial Magistrate First Class. What about traffic stops? Under the Motor Vehicles Act, only a police officer of the rank of Sub-Inspector or above can demand vehicle seizure or confiscate your driving license. You have the full legal right to show your digital driving license and vehicle registration through government apps like DigiLocker or mParivahan. An officer cannot arbitrarily snatch your car keys from the ignition, and breathalyzer alcohol testing under Section 203 must be conducted using a calibrated breath device with a disposable mouthpiece.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 6: The Citizen's 3-Step Police Encounter Protocol</div>
+          <p>Whenever you interact with law enforcement officers in India, remember this three-step field protocol. Step one: maintain calm composure. Never raise your voice, touch an officer, or physically resist, as that gives them grounds to charge you under Section 186 or 353 of the penal code for obstructing public servants. Step two: ask the clarifying question: Officer, am I being detained, or am I free to go? If you are being detained, ask for the exact statutory grounds under Article 22. Step three: invoke your statutory rights. State respectfully: I wish to inform my family and consult my advocate before answering questions. If placed under arrest, demand your copy of the D.K. Basu arrest memo and request an immediate medical examination. When you stand on the foundation of the Constitution, you carry the entire authority of the Supreme Court of India with you.</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Citations & Verified Bibliography -->
+    <footer class="citations-box">
+      <strong>Verified Statutory Provisions & Landmark Precedents:</strong>
+      <ul>
+        <li><a href="https://indiankanoon.org/doc/501198/" target="_blank" rel="noopener">Supreme Court of India: D.K. Basu v. State of West Bengal (1997 1 SCC 416)</a> — The 11 Golden Guidelines on Arrest and Custody.</li>
+        <li><a href="https://indiankanoon.org/doc/29826249/" target="_blank" rel="noopener">Supreme Court of India: Arnesh Kumar v. State of Bihar (2014 8 SCC 273)</a> — Mandatory Section 41A CrPC notice and bar on automatic arrests.</li>
+        <li><a href="https://indiankanoon.org/doc/1712542/" target="_blank" rel="noopener">Supreme Court of India: Nandini Satpathy v. P.L. Dani (1978 2 SCC 424)</a> — Scope of Article 20(3) right to silence during police interrogation.</li>
+        <li><a href="https://www.indiacode.nic.in/handle/123456789/16225" target="_blank" rel="noopener">Code of Criminal Procedure 1973: Sections 41A, 41B, 46(4) (Sunset arrest rule for women), 57 (24-hour limit)</a>.</li>
+        <li><a href="https://www.indiacode.nic.in/handle/123456789/1798" target="_blank" rel="noopener">Motor Vehicles Act 1988: Sections 130, 203, 206 (Driver licensing and breathalyzer checks)</a>.</li>
+      </ul>
+    </footer>
+
+  </div>
+
+  <!-- Mobile Sticky Mini-Player Companion Bar -->
+  <aside id="mobile-mini-player" class="mobile-mini-player" aria-label="Mobile sticky audio player">
+    <div class="mini-progress-bar">
+      <div id="mini-progress-fill" class="mini-progress-fill"></div>
+    </div>
+    <div class="mini-player-content">
+      <button id="mini-play-btn" class="mini-play-btn" aria-label="Play or Pause">
+        <span id="mini-play-icon">▶</span>
+      </button>
+      <div id="mini-info" class="mini-info">
+        <span id="mini-segment-title" class="mini-segment-title">1. Psychology of Authority</span>
+        <span id="mini-time" class="mini-time">0:00 / 6:02</span>
+      </div>
+      <button id="mini-scroll-btn" class="mini-action-btn" title="Jump to top player" aria-label="Jump to top player">↑</button>
+    </div>
+  </aside>
+
+  <!-- Lesson Data Payload for runtime player -->
+  <script type="application/json" id="lesson-data">
+  {
+    "id": "0004",
+    "title": "Encounters with Authority: The D.K. Basu Shield, Traffic Stops & Due Process",
+    "missionOutcome": "Handle police encounters, enforce D.K. Basu arrest safeguards, invoke Section 41A notices under Arnesh Kumar, and protect women's sunset arrest rights.",
+    "audioFile": "../assets/audio/lesson-0004.mp3",
+    "segments": [
+      {
+        "id": "seg-1",
+        "type": "motivation",
+        "title": "1. Psychology of Authority",
+        "visualCardId": "card-seg-1",
+        "durationSeconds": 58.06
+      },
+      {
+        "id": "seg-2",
+        "type": "concept",
+        "title": "2. Constitutional Shield",
+        "visualCardId": "card-seg-2",
+        "durationSeconds": 62.77
+      },
+      {
+        "id": "seg-3",
+        "type": "example",
+        "title": "3. D.K. Basu Guidelines",
+        "visualCardId": "card-seg-3",
+        "durationSeconds": 66.31
+      },
+      {
+        "id": "chk-seg-1",
+        "type": "checkpoint",
+        "title": "⏸ Quiz 1: D.K. Basu Mandates",
+        "visualCardId": "card-chk-1",
+        "durationSeconds": 1.0
+      },
+      {
+        "id": "seg-4",
+        "type": "concept",
+        "title": "4. Arnesh Kumar (No Auto-Arrest)",
+        "visualCardId": "card-seg-4",
+        "durationSeconds": 60.28
+      },
+      {
+        "id": "seg-5",
+        "type": "example",
+        "title": "5. Women & Traffic Stops",
+        "visualCardId": "card-seg-5",
+        "durationSeconds": 60.11
+      },
+      {
+        "id": "seg-6",
+        "type": "summary",
+        "title": "6. 3-Step Field Protocol",
+        "visualCardId": "card-seg-6",
+        "durationSeconds": 54.96
+      },
+      {
+        "id": "chk-seg-2",
+        "type": "checkpoint",
+        "title": "⏸ Quiz 2: Section 41A Notice",
+        "visualCardId": "card-chk-2",
+        "durationSeconds": 1.0
+      }
+    ],
+    "checkpoints": [
+      {
+        "id": "chk-1",
+        "segmentId": "chk-seg-1",
+        "question": "Police officers in plain clothes arrive at a citizen's house at 2:00 PM, bundle him into an unmarked vehicle without showing identification, and refuse to inform his family where he is being taken. Under the Supreme Court's ruling in D.K. Basu v. State of West Bengal, which mandatory procedures were violated?",
+        "options": [
+          "None, because police have unlimited discretion to arrest suspects covertly to prevent local riots.",
+          "Arresting officers must wear visible name badges, prepare a signed Memo of Arrest with a witness at the scene, inform family/friends within 8-12 hours, and conduct bi-daily medical checkups.",
+          "Police only need to show identification if the arrestee pays a statutory administrative fee.",
+          "The arrest is valid as long as the suspect is detained in a police station for at least 7 days before seeing a judge."
+        ],
+        "correctIndex": 1,
+        "explanation": "In D.K. Basu v. State of West Bengal (1997), the Supreme Court established 11 mandatory guidelines: arresting officers must wear clear name tags, prepare an arrest memo with a local witness, inform a relative or friend within 8-12 hours, and conduct medical examinations every 48 hours. Secret or untracked detention violates Article 21 and constitutes contempt of court."
+      },
+      {
+        "id": "chk-2",
+        "segmentId": "chk-seg-2",
+        "question": "An FIR is registered against a citizen for an alleged minor financial cheating dispute carrying a maximum punishment of 3 years imprisonment. The investigating police officer threatens to arrest him immediately unless he pays a ₹50,000 bribe. Under the Supreme Court's landmark judgment in Arnesh Kumar v. State of Bihar, what is the lawful procedure?",
+        "options": [
+          "Police must immediately arrest any accused person named in an FIR regardless of the sentence length.",
+          "For offences carrying 7 years or less, arrest cannot be automatic; police must serve a Section 41A Notice of Appearance, and as long as the citizen complies, arrest is strictly prohibited.",
+          "The citizen must surrender directly to the nearest prison without attending court hearings.",
+          "Police officers are granted statutory immunity to arrest citizens on any non-cognizable allegation."
+        ],
+        "correctIndex": 1,
+        "explanation": "In Arnesh Kumar v. State of Bihar (2014), the Supreme Court ruled that for offenses punishable by up to 7 years imprisonment, arrest is never automatic. Police must issue a Section 41A Notice of Appearance summoning the citizen to join the probe. As long as the citizen complies, arrest is legally prohibited unless extraordinary flight risk is proven in writing."
+      }
+    ],
+    "pronunciations": [
+      {
+        "id": "pron-nemotenetur",
+        "term": "Nemo Tenetur Seipsum Accusare",
+        "transliteration": "Latin",
+        "language": "Constitutional Maxim",
+        "ipa": "/ˈneɪ.moʊ tɛˈneɪ.tʊər seɪ.ɪpˈsʊm əˌkjuːˈzɑː.reɪ/",
+        "meaning": "No man is bound to accuse himself — basis of Article 20(3) right to silence.",
+        "audioFile": "../assets/audio/pronounce-nemotenetur.wav"
+      },
+      {
+        "id": "pron-habeascorpus",
+        "term": "Habeas Corpus",
+        "transliteration": "Latin",
+        "language": "Constitutional Writ",
+        "ipa": "/ˌheɪ.bi.əs ˈkɔːr.pəs/",
+        "meaning": "You have the body — writ challenging unlawful detention.",
+        "audioFile": "../assets/audio/pronounce-habeascorpus.wav"
+      },
+      {
+        "id": "pron-subpoena",
+        "term": "Subpoena",
+        "transliteration": "Latin",
+        "language": "Court Process",
+        "ipa": "/səˈpiː.nə/",
+        "meaning": "Formal judicial summons under penalty.",
+        "audioFile": "../assets/audio/pronounce-subpoena.wav"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Player Runtime Script -->
+  <script src="../assets/player.js"></script>
+</body>
+</html>
