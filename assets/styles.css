@@ -1075,3 +1075,332 @@ h1.lesson-title {
   border-radius: 4px;
   margin: 2px 3px;
 }
+
+/* ==========================================================================
+   14. Unified Dashboard, Canonical Pages & Reference Tools Styling
+   Consistent typography, page containers, global navigation, and parchment cards.
+   ========================================================================== */
+
+/* Page & Dashboard Container */
+.page-container,
+.dashboard-container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* Unified Global Course Navigation Bar */
+.global-course-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-subtle);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.global-course-nav .brand {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--accent-blue);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.global-course-nav .brand:hover {
+  color: var(--accent-gold);
+}
+
+.global-course-nav .nav-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.global-course-nav .nav-link {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-blue);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.global-course-nav .nav-link:hover {
+  background: var(--bg-subtle);
+  color: var(--accent-gold);
+}
+
+.global-course-nav .nav-link.active {
+  background: var(--accent-blue);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Unified Hero Banner Component */
+.page-hero,
+.hero-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  color: #f8fafc;
+  padding: 36px 28px;
+  border-radius: var(--radius-md);
+  margin-bottom: 28px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.2);
+  border: 1px solid #334155;
+}
+
+.page-hero.theme-cyber {
+  background: linear-gradient(135deg, #0f172a 0%, #7f1d1d 100%);
+  border-color: #451a1a;
+}
+
+.page-hero .hero-tag,
+.hero-banner .hero-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(251, 191, 36, 0.4);
+}
+
+.page-hero h1,
+.hero-banner .hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 5.5vw, 38px);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.page-hero p,
+.hero-banner .hero-subtitle {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  max-width: 800px;
+}
+
+/* Reusable Content Cards & Sections */
+.content-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.content-box h2,
+.content-box h3 {
+  font-family: var(--font-serif);
+  color: var(--accent-blue);
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.content-box h2 {
+  font-size: 21px;
+}
+
+.content-box h3 {
+  font-size: 18px;
+}
+
+/* Checklists & Action Steps */
+.checklist-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.checklist-item {
+  background: var(--bg-subtle);
+  border-left: 4px solid var(--accent-gold);
+  padding: 12px 16px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.checklist-item strong {
+  display: block;
+  color: var(--text-main);
+  margin-bottom: 3px;
+}
+
+/* Form Controls & Generator Styles */
+.notice-builder-container {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-control:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}
+
+.btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.action-btn-primary {
+  background: var(--accent-blue);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.12s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-btn-primary:hover {
+  opacity: 0.92;
+}
+
+.action-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.action-btn-secondary {
+  background: var(--bg-subtle);
+  color: var(--text-main);
+  border: 1px solid var(--border-light);
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-btn-secondary:hover {
+  background: #e2ded5;
+}
+
+/* Legal Notice / Chargeback Parchment Paper Preview */
+.preview-paper {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 36px 32px;
+  font-family: "Times New Roman", Times, Georgia, serif;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #0f172a;
+  white-space: pre-wrap;
+  margin-top: 24px;
+  border-top: 6px solid var(--accent-blue);
+  border-radius: var(--radius-sm);
+}
+
+.preview-paper.theme-cyber {
+  border-top-color: var(--accent-red);
+}
+
+/* Unified Tables Component */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14.5px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.spec-table th {
+  background: var(--bg-subtle);
+  padding: 12px 14px;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-blue);
+  border-bottom: 2px solid var(--border-light);
+  font-weight: 700;
+}
+
+.spec-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-fine);
+  vertical-align: top;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+.spec-table tr:hover td {
+  background: rgba(0, 0, 0, 0.015);
+}

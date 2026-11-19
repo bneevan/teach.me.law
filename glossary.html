@@ -6,50 +6,23 @@
   <title>Canonical Indian Legal Glossary & Pronunciation Guide</title>
   <link rel="stylesheet" href="assets/styles.css">
   <style>
-    .glossary-hero {
-      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-      color: #fff;
-      padding: 36px 28px;
-      border-radius: var(--radius-md);
-      margin-bottom: 28px;
-    }
-    .glossary-hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(24px, 5vw, 36px);
-      margin-bottom: 10px;
-    }
-    .glossary-hero p {
-      font-size: 16px;
-      color: #cbd5e1;
-      max-width: 760px;
-      line-height: 1.55;
-    }
-    .term-section {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-sm);
-      padding: 24px;
-      margin-bottom: 28px;
-      box-shadow: var(--shadow-subtle);
-    }
-    .term-section h2 {
-      font-family: var(--font-serif);
-      font-size: 21px;
-      color: var(--accent-blue);
-      border-bottom: 2px solid var(--border-light);
-      padding-bottom: 8px;
-      margin-bottom: 18px;
+    .search-filter-box {
+      margin-bottom: 24px;
+      display: flex;
+      gap: 12px;
     }
     .term-item {
-      padding: 14px 16px;
       background: var(--bg-card);
       border: 1px solid var(--border-light);
       border-radius: var(--radius-sm);
+      padding: 16px 18px;
       margin-bottom: 12px;
-      transition: border-color 0.15s;
+      transition: all 0.15s ease-in-out;
     }
     .term-item:hover {
+      background: #ffffff;
       border-color: #cbd5e1;
+      box-shadow: var(--shadow-subtle);
     }
     .term-title-row {
       display: flex;
@@ -73,28 +46,42 @@
       font-size: 12.5px;
       color: var(--accent-red);
       font-style: italic;
+      display: block;
     }
   </style>
 </head>
 <body>
 
-  <div class="lesson-container">
+  <div class="page-container">
 
-    <nav class="lesson-nav">
-      <a href="index.html" class="dashboard-link">⌂ Course Dashboard</a>
-      <span class="lesson-index-badge">Canonical Document: GLOSSARY.md</span>
+    <!-- Global Course Navigation -->
+    <nav class="global-course-nav" aria-label="Course Global Navigation">
+      <a href="index.html" class="brand">⚖ Teach Me Law: India</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">⌂ Dashboard</a>
+        <a href="mission.html" class="nav-link">Course Mission</a>
+        <a href="glossary.html" class="nav-link active">Glossary & Audio</a>
+        <a href="resources.html" class="nav-link">Official Portals</a>
+        <a href="notes.html" class="nav-link">Pedagogy Notes</a>
+      </div>
     </nav>
 
-    <header class="glossary-hero">
-      <span class="lesson-badge" style="color: #fbbf24;">Canonical Vocabulary</span>
+    <!-- Page Hero Banner -->
+    <header class="page-hero">
+      <span class="hero-tag">Canonical Vocabulary & Phonetics</span>
       <h1>Indian Legal Fundamentals Glossary</h1>
       <p>
         Tight, plain-language definitions of statutory concepts, police powers, contract doctrines, and Latin maxims with authentic spoken pronunciations.
       </p>
     </header>
 
+    <!-- Search & Filter Controls -->
+    <div class="search-filter-box">
+      <input type="text" id="glossary-search" class="form-control" placeholder="🔍 Search any legal term, statute, or doctrine (e.g. Mens Rea, Zero Liability, Leave & License)..." aria-label="Search legal terms">
+    </div>
+
     <!-- Criminal Procedure -->
-    <section class="term-section">
+    <section class="content-box term-section">
       <h2>Criminal Procedure & Police Powers</h2>
 
       <div class="term-item">
@@ -139,7 +126,7 @@
     </section>
 
     <!-- Track 1: Cyber Law & Digital Privacy -->
-    <section class="term-section">
+    <section class="content-box term-section">
       <h2>Track 1: Cyber Law, Banking & Digital Privacy</h2>
 
       <div class="term-item">
@@ -184,8 +171,8 @@
     </section>
 
     <!-- Civil Law & Contracts -->
-    <section class="term-section">
-      <h2>Civil Law & Everyday Agreements</h2>
+    <section class="content-box term-section">
+      <h2>Civil Law, Contracts & Consumer Protection</h2>
 
       <div class="term-item">
         <div class="term-title-row">
@@ -213,13 +200,13 @@
     </section>
 
     <!-- Constitutional & Latin Maxims -->
-    <section class="term-section">
+    <section class="content-box term-section">
       <h2>Constitutional Maxims & Latin Doctrines (with Spoken Audio)</h2>
 
       <div class="term-item">
         <div class="term-title-row">
           <span class="term-name">Mens Rea</span>
-          <button class="pronounce-btn" onclick="playAudio('assets/audio/pronounce-mensrea.wav')">🔊</button>
+          <button class="pronounce-btn" data-audio-src="assets/audio/pronounce-mensrea.wav" title="Listen to Mens Rea">🔊</button>
         </div>
         <p class="term-desc">"Guilty mind" — the culpable criminal mental intent required by law to establish criminal liability (*Jacob Mathew v. State of Punjab*).</p>
         <span class="term-avoid">Avoid: Evil intent, bad thought</span>
@@ -228,7 +215,7 @@
       <div class="term-item">
         <div class="term-title-row">
           <span class="term-name">Prima Facie</span>
-          <button class="pronounce-btn" onclick="playAudio('assets/audio/pronounce-primafacie.wav')">🔊</button>
+          <button class="pronounce-btn" data-audio-src="assets/audio/pronounce-primafacie.wav" title="Listen to Prima Facie">🔊</button>
         </div>
         <p class="term-desc">"At first face" — evidence sufficient to disclose an offence or civil claim on its face, triggering mandatory FIR registration under *Lalita Kumari*.</p>
         <span class="term-avoid">Avoid: Surface proof, obvious look</span>
@@ -237,7 +224,7 @@
       <div class="term-item">
         <div class="term-title-row">
           <span class="term-name">Consensus Ad Idem</span>
-          <button class="pronounce-btn" onclick="playAudio('assets/audio/pronounce-consensusadidem.wav')">🔊</button>
+          <button class="pronounce-btn" data-audio-src="assets/audio/pronounce-consensusadidem.wav" title="Listen to Consensus Ad Idem">🔊</button>
         </div>
         <p class="term-desc">"Meeting of the minds" — common consent where both contracting parties agree upon the exact same thing in the exact same sense (Section 10, Contract Act).</p>
         <span class="term-avoid">Avoid: Shared promise, two-way deal</span>
@@ -246,7 +233,7 @@
       <div class="term-item">
         <div class="term-title-row">
           <span class="term-name">Habeas Corpus</span>
-          <button class="pronounce-btn" onclick="playAudio('assets/audio/pronounce-habeascorpus.wav')">🔊</button>
+          <button class="pronounce-btn" data-audio-src="assets/audio/pronounce-habeascorpus.wav" title="Listen to Habeas Corpus">🔊</button>
         </div>
         <p class="term-desc">"You have the body" — the constitutional prerogative writ under Article 32 or Article 226 commanding police to produce an unlawfully detained person before the bench.</p>
         <span class="term-avoid">Avoid: Jail release writ, prisoner order</span>
@@ -255,7 +242,7 @@
       <div class="term-item">
         <div class="term-title-row">
           <span class="term-name">Res Ipsa Loquitur</span>
-          <button class="pronounce-btn" onclick="playAudio('assets/audio/pronounce-resipsaloquitur.wav')">🔊</button>
+          <button class="pronounce-btn" data-audio-src="assets/audio/pronounce-resipsaloquitur.wav" title="Listen to Res Ipsa Loquitur">🔊</button>
         </div>
         <p class="term-desc">"The thing speaks for itself" — negligence is presumed from the very occurrence of an accident or medical surgical blunder without direct witness testimony.</p>
         <span class="term-avoid">Avoid: Obvious blunder, self-fault</span>
@@ -264,7 +251,7 @@
       <div class="term-item">
         <div class="term-title-row">
           <span class="term-name">Nemo Tenetur Seipsum Accusare</span>
-          <button class="pronounce-btn" onclick="playAudio('assets/audio/pronounce-nemotenetur.wav')">🔊</button>
+          <button class="pronounce-btn" data-audio-src="assets/audio/pronounce-nemotenetur.wav" title="Listen to Nemo Tenetur">🔊</button>
         </div>
         <p class="term-desc">"No man is bound to accuse himself" — the foundational maxim underlying Article 20(3) right against self-incrimination during interrogation (*Nandini Satpathy*).</p>
         <span class="term-avoid">Avoid: Self-blame rule, confession shield</span>
@@ -272,17 +259,8 @@
 
       <div class="term-item">
         <div class="term-title-row">
-          <span class="term-name">Caveat Emptor</span>
-          <button class="pronounce-btn" onclick="playAudio('assets/audio/pronounce-caveatemptor.wav')">🔊</button>
-        </div>
-        <p class="term-desc">"Let the buyer beware" — substantially superseded in India by Chapter VI statutory strict product liability under the Consumer Protection Act 2019.</p>
-        <span class="term-avoid">Avoid: Buyer risk, purchase warning</span>
-      </div>
-
-      <div class="term-item">
-        <div class="term-title-row">
           <span class="term-name">Modus Operandi</span>
-          <button class="pronounce-btn" onclick="playAudio('assets/audio/pronounce-modusoperandi.wav')">🔊</button>
+          <button class="pronounce-btn" data-audio-src="assets/audio/pronounce-modusoperandi.wav" title="Listen to Modus Operandi">🔊</button>
         </div>
         <p class="term-desc">"Mode of operation" — the characteristic pattern, method, or signature behavior used by perpetrators to commit cyber frauds, impersonation, or criminal extortion.</p>
         <span class="term-avoid">Avoid: Crime method, scam habit</span>
@@ -291,7 +269,7 @@
       <div class="term-item">
         <div class="term-title-row">
           <span class="term-name">Ultra Vires</span>
-          <button class="pronounce-btn" onclick="playAudio('assets/audio/pronounce-ultravires.wav')">🔊</button>
+          <button class="pronounce-btn" data-audio-src="assets/audio/pronounce-ultravires.wav" title="Listen to Ultra Vires">🔊</button>
         </div>
         <p class="term-desc">"Beyond the powers" — acts, regulations, or executive surveillance carried out beyond statutory or constitutional authority under Article 21 (*Puttaswamy*).</p>
         <span class="term-avoid">Avoid: Illegal rule, out of bound</span>
@@ -299,8 +277,17 @@
 
       <div class="term-item">
         <div class="term-title-row">
+          <span class="term-name">Caveat Emptor</span>
+          <button class="pronounce-btn" data-audio-src="assets/audio/pronounce-caveatemptor.wav" title="Listen to Caveat Emptor">🔊</button>
+        </div>
+        <p class="term-desc">"Let the buyer beware" — substantially superseded in India by Chapter VI statutory strict product liability under the Consumer Protection Act 2019.</p>
+        <span class="term-avoid">Avoid: Buyer risk, purchase warning</span>
+      </div>
+
+      <div class="term-item">
+        <div class="term-title-row">
           <span class="term-name">Pro Se / Party-in-Person</span>
-          <button class="pronounce-btn" onclick="playAudio('assets/audio/pronounce-prose.wav')">🔊</button>
+          <button class="pronounce-btn" data-audio-src="assets/audio/pronounce-prose.wav" title="Listen to Pro Se">🔊</button>
         </div>
         <p class="term-desc">Appearing and arguing your own matter directly before an Indian Magistrate, District Court, or Consumer Commission without hiring an advocate.</p>
         <span class="term-avoid">Avoid: Self-lawyering, solo defense</span>
@@ -311,10 +298,32 @@
 
   <script>
     let activeAudio = null;
-    function playAudio(src) {
-      if (activeAudio) activeAudio.pause();
-      activeAudio = new Audio(src);
-      activeAudio.play().catch(() => {});
+    document.querySelectorAll(".pronounce-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const src = btn.getAttribute("data-audio-src");
+        if (!src) return;
+        if (activeAudio) {
+          activeAudio.pause();
+          document.querySelectorAll(".pronounce-btn.playing").forEach(b => b.classList.remove("playing"));
+        }
+        activeAudio = new Audio(src);
+        btn.classList.add("playing");
+        activeAudio.addEventListener("ended", () => btn.classList.remove("playing"));
+        activeAudio.addEventListener("pause", () => btn.classList.remove("playing"));
+        activeAudio.play().catch(() => btn.classList.remove("playing"));
+      });
+    });
+
+    // Real-time live filtering
+    const searchInput = document.getElementById("glossary-search");
+    if (searchInput) {
+      searchInput.addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        document.querySelectorAll(".term-item").forEach(item => {
+          const text = item.textContent.toLowerCase();
+          item.style.display = text.includes(query) ? "block" : "none";
+        });
+      });
     }
   </script>
 

@@ -5,93 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Verified Indian Legal Resources & Portals</title>
   <link rel="stylesheet" href="assets/styles.css">
-  <style>
-    .res-hero {
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-      color: #fff;
-      padding: 36px 28px;
-      border-radius: var(--radius-md);
-      margin-bottom: 28px;
-    }
-    .res-hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(24px, 5vw, 36px);
-      margin-bottom: 10px;
-    }
-    .res-hero p {
-      font-size: 16px;
-      color: #cbd5e1;
-      max-width: 760px;
-      line-height: 1.55;
-    }
-    .res-section {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-sm);
-      padding: 24px;
-      margin-bottom: 28px;
-      box-shadow: var(--shadow-subtle);
-    }
-    .res-section h2 {
-      font-family: var(--font-serif);
-      font-size: 21px;
-      color: var(--accent-blue);
-      border-bottom: 2px solid var(--border-light);
-      padding-bottom: 8px;
-      margin-bottom: 18px;
-    }
-    .res-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 14px;
-    }
-    .res-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-sm);
-      padding: 18px 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.15s, border-color 0.15s;
-    }
-    .res-card:hover {
-      transform: translateY(-2px);
-      border-color: var(--accent-blue);
-    }
-    .res-card h4 {
-      font-family: var(--font-serif);
-      font-size: 17.5px;
-      color: var(--accent-blue);
-      margin-bottom: 8px;
-    }
-    .res-card p {
-      font-size: 14px;
-      line-height: 1.5;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-    .res-link-tag {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--accent-gold);
-      font-weight: 700;
-    }
-  </style>
 </head>
 <body>
 
-  <div class="lesson-container">
+  <div class="page-container">
 
-    <nav class="lesson-nav">
-      <a href="index.html" class="dashboard-link">⌂ Course Dashboard</a>
-      <span class="lesson-index-badge">Canonical Document: RESOURCES.md</span>
+    <!-- Global Course Navigation -->
+    <nav class="global-course-nav" aria-label="Course Global Navigation">
+      <a href="index.html" class="brand">⚖ Teach Me Law: India</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">⌂ Dashboard</a>
+        <a href="mission.html" class="nav-link">Course Mission</a>
+        <a href="glossary.html" class="nav-link">Glossary & Audio</a>
+        <a href="resources.html" class="nav-link active">Official Portals</a>
+        <a href="notes.html" class="nav-link">Pedagogy Notes</a>
+      </div>
     </nav>
 
-    <header class="res-hero">
-      <span class="lesson-badge" style="color: #fbbf24;">Primary Authority</span>
+    <!-- Page Hero Banner -->
+    <header class="page-hero">
+      <span class="hero-tag">Verified Primary Authority</span>
       <h1>Verified Indian Legal Portals & Databases</h1>
       <p>
         Curated high-trust official government portals, Supreme Court databases, cyber helpline channels, and verified community legal desks across India.
@@ -99,85 +32,107 @@
     </header>
 
     <!-- General & Statutory Authority -->
-    <section class="res-section">
+    <section class="content-box">
       <h2>Official Statutory Law & Judicial Databases</h2>
-      <div class="res-grid">
-        <a href="https://www.indiacode.nic.in/" target="_blank" rel="noopener" class="res-card">
+      <div class="info-grid">
+        <a href="https://www.indiacode.nic.in/" target="_blank" rel="noopener" class="info-card">
           <div>
             <h4>India Code (Ministry of Law & Justice)</h4>
             <p>Official digital repository of all Central & State Bare Acts (BNS, BNSS, Indian Contract Act 1872, CPA 2019, IT Act 2000, DPDP Act 2023).</p>
           </div>
-          <span class="res-link-tag">indiacode.nic.in ↗</span>
+          <span style="font-size: 12.5px; color: var(--accent-gold); font-weight: 700;">indiacode.nic.in ↗</span>
         </a>
 
-        <a href="https://indiankanoon.org/" target="_blank" rel="noopener" class="res-card">
+        <a href="https://indiankanoon.org/" target="_blank" rel="noopener" class="info-card">
           <div>
             <h4>Indian Kanoon</h4>
             <p>Search engine for all Indian Supreme Court, High Court, and Tribunal judgments (*D.K. Basu*, *Lalita Kumari*, *Jacob Mathew*, *Puttaswamy*).</p>
           </div>
-          <span class="res-link-tag">indiankanoon.org ↗</span>
+          <span style="font-size: 12.5px; color: var(--accent-gold); font-weight: 700;">indiankanoon.org ↗</span>
         </a>
 
-        <a href="https://ecourts.gov.in/" target="_blank" rel="noopener" class="res-card">
+        <a href="https://ecourts.gov.in/" target="_blank" rel="noopener" class="info-card">
           <div>
             <h4>eCourts Services Portal & App</h4>
             <p>Case status, cause lists, daily orders, and certified copy applications across 3,000+ District and Subordinate Court complexes in India.</p>
           </div>
-          <span class="res-link-tag">ecourts.gov.in ↗</span>
+          <span style="font-size: 12.5px; color: var(--accent-gold); font-weight: 700;">ecourts.gov.in ↗</span>
         </a>
 
-        <a href="https://edaakhil.nic.in/" target="_blank" rel="noopener" class="res-card">
+        <a href="https://edaakhil.nic.in/" target="_blank" rel="noopener" class="info-card">
           <div>
             <h4>e-Daakhil Consumer Portal</h4>
             <p>Ministry of Consumer Affairs portal to file online claims before District, State, and National Consumer Commissions without an advocate.</p>
           </div>
-          <span class="res-link-tag">edaakhil.nic.in ↗</span>
+          <span style="font-size: 12.5px; color: var(--accent-gold); font-weight: 700;">edaakhil.nic.in ↗</span>
         </a>
 
-        <a href="https://nalsa.gov.in/" target="_blank" rel="noopener" class="res-card">
+        <a href="https://nalsa.gov.in/" target="_blank" rel="noopener" class="info-card">
           <div>
             <h4>NALSA & Free Legal Aid</h4>
             <p>Statutory authority providing free legal aid advocates to women, children, undertrials, and low-income citizens under Article 39A.</p>
           </div>
-          <span class="res-link-tag">nalsa.gov.in ↗</span>
+          <span style="font-size: 12.5px; color: var(--accent-gold); font-weight: 700;">nalsa.gov.in ↗</span>
         </a>
       </div>
     </section>
 
-    <!-- Track 1: Cyber Law & Banking -->
-    <section class="res-section">
-      <h2>Track 1: Cyber Fraud, Banking & Privacy Channels</h2>
-      <div class="res-grid">
-        <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener" class="res-card">
+    <!-- Track 1: Cybercrime & Financial Emergency Channels -->
+    <section class="content-box">
+      <h2>Cybercrime, Banking & Digital Rights Helplines</h2>
+      <div class="info-grid">
+        <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener" class="info-card">
           <div>
-            <h4>National Cyber Crime Portal & 1930</h4>
-            <p>Official MHA portal integrated with the National 1930 Helpline to report cyber financial frauds and trigger instant inter-bank account freezes.</p>
+            <h4>National Cyber Crime Reporting Portal & 1930</h4>
+            <p>Ministry of Home Affairs portal for financial fraud reporting, Golden Hour inter-bank freezes, and cyber extortion FIR registration.</p>
           </div>
-          <span class="res-link-tag">cybercrime.gov.in (Helpline: 1930) ↗</span>
+          <span style="font-size: 12.5px; color: var(--accent-gold); font-weight: 700;">cybercrime.gov.in ↗</span>
         </a>
 
-        <a href="https://cms.rbi.org.in/" target="_blank" rel="noopener" class="res-card">
+        <a href="https://cms.rbi.org.in/" target="_blank" rel="noopener" class="info-card">
           <div>
-            <h4>RBI Integrated Ombudsman Portal (CMS)</h4>
-            <p>Escalate bank negligence and unauthorized electronic debits under the July 2017 Master Circular on Customer Zero Liability.</p>
+            <h4>RBI Integrated Ombudsman Scheme (CMS)</h4>
+            <p>Statutory escalation portal for unreversed unauthorized bank transactions, failed ATM withdrawals, and customer protection circular defaults.</p>
           </div>
-          <span class="res-link-tag">cms.rbi.org.in ↗</span>
+          <span style="font-size: 12.5px; color: var(--accent-gold); font-weight: 700;">cms.rbi.org.in ↗</span>
         </a>
 
-        <a href="https://www.cert-in.org.in/" target="_blank" rel="noopener" class="res-card">
+        <a href="https://sancharsaathi.gov.in/" target="_blank" rel="noopener" class="info-card">
           <div>
-            <h4>CERT-In Incident Response</h4>
-            <p>National nodal agency issuing urgent cyber vulnerability warnings, phishing notices, and digital incident reporting.</p>
+            <h4>DoT Sanchar Saathi & Chakshu Portal</h4>
+            <p>Department of Telecommunications portal to verify SIM connections in your name, block stolen phones (CEIR), and report fraudulent calls.</p>
           </div>
-          <span class="res-link-tag">cert-in.org.in ↗</span>
+          <span style="font-size: 12.5px; color: var(--accent-gold); font-weight: 700;">sancharsaathi.gov.in ↗</span>
         </a>
 
-        <a href="https://trai.gov.in/consumer-info/telecom/dnd" target="_blank" rel="noopener" class="res-card">
+        <a href="https://www.cert-in.org.in/" target="_blank" rel="noopener" class="info-card">
           <div>
-            <h4>TRAI DND & Spam Reporting Portal</h4>
-            <p>Telecom Regulatory Authority of India registry to report commercial telemarketing harassment and unregistered telemarketers.</p>
+            <h4>CERT-In (Indian Computer Emergency Response Team)</h4>
+            <p>National nodal agency for reporting corporate data leaks, vulnerabilities, and unauthorized access to computer systems.</p>
           </div>
-          <span class="res-link-tag">trai.gov.in/dnd ↗</span>
+          <span style="font-size: 12.5px; color: var(--accent-gold); font-weight: 700;">cert-in.org.in ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Public Accountability & Legal Desks -->
+    <section class="content-box">
+      <h2>Public Accountability & Practical Field Desks</h2>
+      <div class="info-grid">
+        <a href="https://rtionline.gov.in/" target="_blank" rel="noopener" class="info-card">
+          <div>
+            <h4>RTI Online Portal</h4>
+            <p>Official portal to file Right to Information applications and first appeals to Central government ministries and public authorities.</p>
+          </div>
+          <span style="font-size: 12.5px; color: var(--accent-gold); font-weight: 700;">rtionline.gov.in ↗</span>
+        </a>
+
+        <a href="https://nhrc.nic.in/" target="_blank" rel="noopener" class="info-card">
+          <div>
+            <h4>National Human Rights Commission (NHRC)</h4>
+            <p>Statutory body investigating custodial torture, police excesses, and arbitrary detention in violation of *D.K. Basu* guidelines.</p>
+          </div>
+          <span style="font-size: 12.5px; color: var(--accent-gold); font-weight: 700;">nhrc.nic.in ↗</span>
         </a>
       </div>
     </section>

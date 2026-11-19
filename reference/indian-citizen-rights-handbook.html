@@ -2,91 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Indian Citizen Legal Rights Field Handbook</title>
   <link rel="stylesheet" href="../assets/styles.css">
   <style>
-    .handbook-header {
-      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-      color: #fff;
-      padding: 36px 28px;
-      border-radius: var(--radius-md);
-      margin-bottom: 32px;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.15);
-    }
-    .handbook-header h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(26px, 5vw, 36px);
-      margin-bottom: 8px;
-      color: #f8fafc;
-    }
-    .handbook-header p {
-      font-size: 16px;
-      color: #cbd5e1;
-      max-width: 680px;
-      line-height: 1.5;
-    }
-    .guide-section {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      margin-bottom: 28px;
-      box-shadow: var(--shadow-subtle);
-    }
-    .guide-section h2 {
-      font-family: var(--font-serif);
-      font-size: 22px;
-      color: var(--accent-blue);
-      border-bottom: 2px solid var(--border-light);
-      padding-bottom: 8px;
-      margin-bottom: 16px;
-    }
-    .checklist {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin: 16px 0;
-    }
-    .checklist li {
-      background: var(--bg-subtle);
-      border-left: 4px solid var(--accent-gold);
-      padding: 12px 16px;
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-    .checklist li strong {
-      color: var(--text-main);
-      display: block;
-      margin-bottom: 3px;
-    }
     .statute-tag {
       display: inline-block;
       font-family: var(--font-mono);
-      font-size: 12px;
-      background: #e2e8f0;
-      color: #334155;
+      font-size: 11.5px;
+      background: var(--bg-card);
+      color: var(--accent-blue);
       padding: 2px 8px;
       border-radius: 4px;
       margin-top: 4px;
+      border: 1px solid var(--border-light);
     }
     .print-btn {
       background: var(--accent-blue);
       color: #fff;
       border: none;
-      padding: 10px 20px;
+      padding: 10px 18px;
       border-radius: var(--radius-sm);
       font-family: var(--font-sans);
       font-weight: 600;
-      font-size: 14px;
+      font-size: 13.5px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 12px;
+      gap: 6px;
+      margin-top: 14px;
     }
     .print-btn:hover {
       background: #1d4ed8;
@@ -96,10 +40,10 @@
         background: #fff;
         padding: 0;
       }
-      .lesson-nav, .print-btn {
+      .global-course-nav, .print-btn {
         display: none !important;
       }
-      .guide-section {
+      .content-box {
         box-shadow: none;
         border: 1px solid #ccc;
         page-break-inside: avoid;
@@ -109,90 +53,101 @@
 </head>
 <body>
 
-  <div class="lesson-container">
+  <div class="page-container">
 
-    <!-- Top Navigation -->
-    <nav class="lesson-nav">
-      <a href="../index.html" class="dashboard-link">⌂ Course Dashboard</a>
-      <span class="lesson-index-badge">Printable Citizen Reference</span>
+    <!-- Global Course Navigation -->
+    <nav class="global-course-nav" aria-label="Course Global Navigation">
+      <a href="../index.html" class="brand">⚖ Teach Me Law: India</a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">⌂ Dashboard</a>
+        <a href="../mission.html" class="nav-link">Course Mission</a>
+        <a href="../glossary.html" class="nav-link">Glossary & Audio</a>
+        <a href="../resources.html" class="nav-link">Official Portals</a>
+        <a href="../notes.html" class="nav-link">Pedagogy Notes</a>
+      </div>
     </nav>
 
-    <!-- Handbook Header -->
-    <header class="handbook-header">
+    <!-- Page Hero Banner -->
+    <header class="page-hero">
+      <span class="hero-tag">Citizen Quick-Reference</span>
       <h1>Indian Citizen Legal Rights Field Handbook</h1>
       <p>A concise, practical quick-reference guide covering arrest rights, FIR procedures, cheque bounce timelines, and consumer remedies under landmark Supreme Court precedents.</p>
       <button class="print-btn" onclick="window.print()">🖨 Print or Save as PDF</button>
     </header>
 
     <!-- Section 1: Police Arrest & Detention Shield (D.K. Basu) -->
-    <section class="guide-section">
+    <section class="content-box">
       <h2>1. The Police Arrest & Detention Shield (D.K. Basu Guidelines)</h2>
-      <p>Established by the Supreme Court in <em>D.K. Basu v. State of West Bengal (1997 1 SCC 416)</em>, these 11 guidelines are mandatory for every police officer in India. Failure to comply makes the officer liable for contempt of court and departmental action.</p>
+      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 16px;">
+        Established by the Supreme Court in <em>D.K. Basu v. State of West Bengal (1997 1 SCC 416)</em>, these 11 guidelines are mandatory for every police officer in India. Failure to comply makes the officer liable for contempt of court and departmental action.
+      </p>
 
-      <ul class="checklist">
-        <li>
+      <div class="checklist-grid">
+        <div class="checklist-item">
           <strong>1. Visible Identification Badges</strong>
           Police personnel carrying out arrest and interrogation must wear clear identification and name tags with accurate designations.
-          <span class="statute-tag">Mandatory D.K. Basu Rule 1</span>
-        </li>
-        <li>
+          <div><span class="statute-tag">Mandatory D.K. Basu Rule 1</span></div>
+        </div>
+        <div class="checklist-item">
           <strong>2. Mandatory Memo of Arrest at the Scene</strong>
           The arresting officer must prepare a written "Memo of Arrest" at the time of arrest. It must state the exact time and date of arrest and must be countersigned by at least one witness (a family member or respected member of the locality) and the arrestee.
-          <span class="statute-tag">Section 41B CrPC / Sec 36 BNSS</span>
-        </li>
-        <li>
+          <div><span class="statute-tag">Section 41B CrPC / Sec 36 BNSS</span></div>
+        </div>
+        <div class="checklist-item">
           <strong>3. Right to Inform Family / Friends Within 8–12 Hours</strong>
           The arrestee has an absolute right to have one friend, relative, or person interested in their welfare notified of the arrest and the exact place of custody within 8 to 12 hours.
-          <span class="statute-tag">Section 41A/41B CrPC</span>
-        </li>
-        <li>
+          <div><span class="statute-tag">Section 41A/41B CrPC</span></div>
+        </div>
+        <div class="checklist-item">
           <strong>4. Independent Medical Examination Every 48 Hours</strong>
           The arrested person must be medically examined by a trained government doctor at the time of arrest and every 48 hours during police custody. Any major or minor injuries existing on the body must be recorded in an "Inspection Memo" signed by both the doctor and arrestee.
-          <span class="statute-tag">Section 54 CrPC / Sec 53 BNSS</span>
-        </li>
-        <li>
+          <div><span class="statute-tag">Section 54 CrPC / Sec 53 BNSS</span></div>
+        </div>
+        <div class="checklist-item">
           <strong>5. Protection for Women & Sunset Rules</strong>
           Under Section 46(4) of CrPC (Sec 43(5) BNSS), no woman can be arrested after sunset and before sunrise, except in exceptional circumstances where prior written permission has been obtained from a Judicial Magistrate First Class by a female police officer.
-          <span class="statute-tag">Section 46(4) CrPC</span>
-        </li>
-        <li>
+          <div><span class="statute-tag">Section 46(4) CrPC</span></div>
+        </div>
+        <div class="checklist-item">
           <strong>6. Production Before Magistrate Within 24 Hours</strong>
           Under Article 22(2) of the Constitution and Section 57 CrPC, an arrested individual cannot be detained in police custody beyond 24 hours without being presented before the nearest Judicial Magistrate.
-          <span class="statute-tag">Constitution of India Art 22(2)</span>
-        </li>
-      </ul>
+          <div><span class="statute-tag">Constitution of India Art 22(2)</span></div>
+        </div>
+      </div>
     </section>
 
     <!-- Section 2: FIR & Zero FIR Action Protocol (Lalita Kumari) -->
-    <section class="guide-section">
-      <h2>2. FIR & Zero FIR Action Protocol</h2>
-      <p>Under <em>Lalita Kumari v. Govt of UP (2014)</em>, registering an FIR is non-negotiable whenever information reveals a cognizable crime.</p>
+    <section class="content-box">
+      <h2>2. FIR & Zero FIR Action Protocol (Lalita Kumari)</h2>
+      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 16px;">
+        Under <em>Lalita Kumari v. Govt of UP (2014)</em>, registering an FIR is non-negotiable whenever information reveals a cognizable crime.
+      </p>
 
-      <ul class="checklist">
-        <li>
-          <strong>Zero FIR Right:</strong>
+      <div class="checklist-grid">
+        <div class="checklist-item">
+          <strong>Zero FIR Right</strong>
           If a crime occurs outside the station's territory, police CANNOT turn you away. They must register a Zero FIR (serial number "0"), start preliminary medical or investigative aid, and transfer the case to the jurisdictional police station.
-        </li>
-        <li>
-          <strong>Free Copy of the FIR:</strong>
+        </div>
+        <div class="checklist-item">
+          <strong>Free Copy of the FIR</strong>
           Under Section 154(2) CrPC, a copy of the registered FIR must be handed over to the informant or complainant immediately, free of charge. Never leave the police station without your signed and stamped FIR copy.
-        </li>
-        <li>
+        </div>
+        <div class="checklist-item">
           <strong>What if the Police Refuse to Register an FIR?</strong>
-          <ol style="margin-left: 20px; margin-top: 6px; display: flex; flex-direction: column; gap: 6px;">
-            <li>Send a written complaint via Registered Post with Acknowledgment Due to the Superintendent of Police (SP) or Deputy Commissioner of Police (DCP) under Section 154(3) CrPC.</li>
-            <li>If the SP fails to act within a reasonable time, file an application before the Judicial Magistrate First Class under Section 156(3) CrPC. The Magistrate possesses statutory power to order the police station to register an FIR and submit an investigation report.</li>
-          </ol>
-        </li>
-      </ul>
+          1. Send a written complaint via Registered Post with Acknowledgment Due to the Superintendent of Police (SP) or Deputy Commissioner of Police (DCP) under Section 154(3) CrPC.<br>
+          2. If the SP fails to act within a reasonable time, file an application before the Judicial Magistrate First Class under Section 156(3) CrPC. The Magistrate possesses statutory power to order the police station to register an FIR and submit an investigation report.
+        </div>
+      </div>
     </section>
 
     <!-- Section 3: Cheque Bounce Recovery Protocol (Section 138 NI Act) -->
-    <section class="guide-section">
+    <section class="content-box">
       <h2>3. Cheque Bounce Recovery Protocol (Section 138 NI Act)</h2>
-      <p>To convert an unpaid civil debt into a quasi-criminal remedy carrying up to 2 years imprisonment and double the cheque penalty, you must strictly follow this statutory timeline:</p>
+      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 16px;">
+        To convert an unpaid civil debt into a quasi-criminal remedy carrying up to 2 years imprisonment and double the cheque penalty, you must strictly follow this statutory timeline:
+      </p>
 
-      <table class="compare-table">
+      <table class="spec-table">
         <thead>
           <tr>
             <th>Step</th>
@@ -231,22 +186,22 @@
     </section>
 
     <!-- Section 4: Consumer Redressal & Free Legal Aid -->
-    <section class="guide-section">
+    <section class="content-box">
       <h2>4. Consumer Redressal & Free Legal Aid (NALSA)</h2>
-      <ul class="checklist">
-        <li>
-          <strong>e-Daakhil Online Filing (CPA 2019):</strong>
+      <div class="checklist-grid">
+        <div class="checklist-item">
+          <strong>e-Daakhil Online Filing (CPA 2019)</strong>
           File consumer complaints online against defective products, airline cancellations, builder delays, and deceptive ads without hiring an advocate at <a href="https://edaakhil.nic.in" target="_blank" rel="noopener">edaakhil.nic.in</a>.
-        </li>
-        <li>
-          <strong>Pecuniary Jurisdictions (CPA 2019):</strong>
+        </div>
+        <div class="checklist-item">
+          <strong>Pecuniary Jurisdictions (CPA 2019)</strong>
           District Commission: claims up to ₹50 Lakhs; State Commission: claims from ₹50 Lakhs to ₹2 Crores; National Commission (NCDRC): claims exceeding ₹2 Crores.
-        </li>
-        <li>
-          <strong>Free Legal Aid (Article 39A / NALSA):</strong>
+        </div>
+        <div class="checklist-item">
+          <strong>Free Legal Aid (Article 39A / NALSA)</strong>
           Under the Legal Services Authorities Act 1987, women, children, undertrials, SC/ST citizens, and individuals earning below prescribed state income limits (typically ₹3 Lakhs annually) are entitled to free legal counsel paid by the State. Visit your local District Court's DLSA front office to apply.
-        </li>
-      </ul>
+        </div>
+      </div>
     </section>
 
   </div>

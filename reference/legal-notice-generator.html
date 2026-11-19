@@ -2,145 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Indian Citizen Legal Notice Generator & Formats</title>
   <link rel="stylesheet" href="../assets/styles.css">
   <style>
-    .notice-builder-container {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-md);
-      padding: 28px;
-      margin-bottom: 32px;
-      box-shadow: var(--shadow-subtle);
-    }
-    .form-group {
-      margin-bottom: 16px;
-    }
-    .form-group label {
-      display: block;
-      font-family: var(--font-sans);
-      font-size: 13.5px;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 6px;
-    }
-    .form-control {
-      width: 100%;
-      padding: 10px 14px;
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-sm);
-      font-family: var(--font-sans);
-      font-size: 15px;
-      background: var(--bg-card);
-    }
-    .preview-paper {
-      background: #fff;
-      border: 1px solid #cbd5e1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      padding: 40px;
-      font-family: "Times New Roman", Times, serif;
-      font-size: 15px;
-      line-height: 1.6;
-      color: #000;
-      white-space: pre-wrap;
-      margin-top: 24px;
-      border-top: 6px solid #1e3a8a;
-    }
-    .btn-row {
-      display: flex;
-      gap: 12px;
-      margin-top: 18px;
-      flex-wrap: wrap;
-    }
-    .action-btn-primary {
-      background: var(--accent-blue);
-      color: #fff;
-      border: none;
-      padding: 12px 20px;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .action-btn-secondary {
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-light);
-      color: var(--text-main);
-      padding: 12px 20px;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      cursor: pointer;
-    }
     @media print {
-      body { background: #fff; padding: 0; }
-      .lesson-nav, .notice-builder-container, .handbook-header, .btn-row { display: none !important; }
-      .preview-paper { border: none; box-shadow: none; padding: 0; margin: 0; }
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .global-course-nav, .page-hero, .btn-row, .form-group, #builder-controls {
+        display: none !important;
+      }
+      .notice-builder-container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+      }
+      .preview-paper {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        border-top: none;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="lesson-container">
+  <div class="page-container">
 
-    <nav class="lesson-nav">
-      <a href="../index.html" class="dashboard-link">⌂ Course Dashboard</a>
-      <span class="lesson-index-badge">Interactive Legal Drafting Tool</span>
+    <!-- Global Course Navigation -->
+    <nav class="global-course-nav" aria-label="Course Global Navigation">
+      <a href="../index.html" class="brand">⚖ Teach Me Law: India</a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">⌂ Dashboard</a>
+        <a href="../mission.html" class="nav-link">Course Mission</a>
+        <a href="../glossary.html" class="nav-link">Glossary & Audio</a>
+        <a href="../resources.html" class="nav-link">Official Portals</a>
+        <a href="../notes.html" class="nav-link">Pedagogy Notes</a>
+      </div>
     </nav>
 
-    <header class="lesson-header">
-      <span class="lesson-badge">Self-Advocacy Tools</span>
-      <h1 class="lesson-title">Indian Statutory Legal Notice Generator</h1>
-      <p style="color: var(--text-muted); font-size: 16px;">
+    <!-- Page Hero Banner -->
+    <header class="page-hero">
+      <span class="hero-tag">Self-Advocacy Tools</span>
+      <h1>Indian Statutory Legal Notice Generator</h1>
+      <p>
         Generate formal, legally binding demand notices for security deposit refund, consumer deficiency, or Section 138 cheque bounce under Indian statutory law.
       </p>
     </header>
 
     <div class="notice-builder-container">
-      <div class="form-group">
-        <label for="noticeType">Select Dispute Category</label>
-        <select id="noticeType" class="form-control" onchange="updateNoticeTemplate()">
-          <option value="securityDeposit">Landlord Security Deposit Recovery</option>
-          <option value="consumerDeficiency">Consumer Deficiency in Service / Defective Product (CPA 2019)</option>
-          <option value="chequeBounce">Section 138 Negotiable Instruments Act (Cheque Bounce)</option>
-        </select>
-      </div>
+      <div id="builder-controls">
+        <div class="form-group">
+          <label for="noticeType">Select Dispute Category</label>
+          <select id="noticeType" class="form-control" onchange="updateNoticeTemplate()">
+            <option value="securityDeposit">Landlord Security Deposit Recovery</option>
+            <option value="consumerDeficiency">Consumer Deficiency in Service / Defective Product (CPA 2019)</option>
+            <option value="chequeBounce">Section 138 Negotiable Instruments Act (Cheque Bounce)</option>
+          </select>
+        </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-        <div class="form-group">
-          <label for="senderName">Your Full Name (Sender)</label>
-          <input type="text" id="senderName" class="form-control" value="Rohit Sharma" oninput="renderNotice()">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+          <div class="form-group">
+            <label for="senderName">Your Full Name (Sender)</label>
+            <input type="text" id="senderName" class="form-control" value="Rohit Sharma" oninput="renderNotice()">
+          </div>
+          <div class="form-group">
+            <label for="senderAddress">Your Address & Contact</label>
+            <input type="text" id="senderAddress" class="form-control" value="Flat 402, Green Glen Layout, Bellandur, Bengaluru 560103" oninput="renderNotice()">
+          </div>
         </div>
-        <div class="form-group">
-          <label for="senderAddress">Your Address & Contact</label>
-          <input type="text" id="senderAddress" class="form-control" value="Flat 402, Green Glen Layout, Bellandur, Bengaluru 560103" oninput="renderNotice()">
-        </div>
-      </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-        <div class="form-group">
-          <label for="recipientName">Opposite Party Name (Recipient)</label>
-          <input type="text" id="recipientName" class="form-control" value="Suresh Kumar (Landlord)" oninput="renderNotice()">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+          <div class="form-group">
+            <label for="recipientName">Opposite Party Name (Recipient)</label>
+            <input type="text" id="recipientName" class="form-control" value="Suresh Kumar (Landlord)" oninput="renderNotice()">
+          </div>
+          <div class="form-group">
+            <label for="recipientAddress">Opposite Party Address</label>
+            <input type="text" id="recipientAddress" class="form-control" value="No. 18, 5th Cross, Indiranagar, Bengaluru 560038" oninput="renderNotice()">
+          </div>
         </div>
-        <div class="form-group">
-          <label for="recipientAddress">Opposite Party Address</label>
-          <input type="text" id="recipientAddress" class="form-control" value="No. 18, 5th Cross, Indiranagar, Bengaluru 560038" oninput="renderNotice()">
-        </div>
-      </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-        <div class="form-group">
-          <label for="claimAmount">Disputed Amount (₹)</label>
-          <input type="text" id="claimAmount" class="form-control" value="65,000" oninput="renderNotice()">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+          <div class="form-group">
+            <label for="claimAmount">Disputed Amount (₹)</label>
+            <input type="text" id="claimAmount" class="form-control" value="65,000" oninput="renderNotice()">
+          </div>
+          <div class="form-group">
+            <label for="noticeDays">Demand Notice Period (Days)</label>
+            <input type="text" id="noticeDays" class="form-control" value="15" oninput="renderNotice()">
+          </div>
         </div>
-        <div class="form-group">
-          <label for="noticeDays">Demand Notice Period (Days)</label>
-          <input type="text" id="noticeDays" class="form-control" value="15" oninput="renderNotice()">
-        </div>
-      </div>
 
-      <div class="btn-row">
-        <button class="action-btn-primary" onclick="copyNoticeText()">📋 Copy Full Notice Text</button>
-        <button class="action-btn-secondary" onclick="window.print()">🖨 Print / Export PDF</button>
+        <div class="btn-row">
+          <button class="action-btn-primary" onclick="copyNoticeText()">📋 Copy Full Notice Text</button>
+          <button class="action-btn-secondary" onclick="window.print()">🖨 Print / Export PDF</button>
+        </div>
       </div>
 
       <div class="preview-paper" id="noticePreview"></div>
