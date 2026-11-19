@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Citizen Legal Notice Generator & Formats</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    .notice-builder-container {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-subtle);
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      background: var(--bg-card);
+    }
+    .preview-paper {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 40px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #000;
+      white-space: pre-wrap;
+      margin-top: 24px;
+      border-top: 6px solid #1e3a8a;
+    }
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+    .action-btn-primary {
+      background: var(--accent-blue);
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .action-btn-secondary {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .lesson-nav, .notice-builder-container, .handbook-header, .btn-row { display: none !important; }
+      .preview-paper { border: none; box-shadow: none; padding: 0; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lesson-container">
+
+    <nav class="lesson-nav">
+      <a href="../index.html" class="dashboard-link">⌂ Course Dashboard</a>
+      <span class="lesson-index-badge">Interactive Legal Drafting Tool</span>
+    </nav>
+
+    <header class="lesson-header">
+      <span class="lesson-badge">Self-Advocacy Tools</span>
+      <h1 class="lesson-title">Indian Statutory Legal Notice Generator</h1>
+      <p style="color: var(--text-muted); font-size: 16px;">
+        Generate formal, legally binding demand notices for security deposit refund, consumer deficiency, or Section 138 cheque bounce under Indian statutory law.
+      </p>
+    </header>
+
+    <div class="notice-builder-container">
+      <div class="form-group">
+        <label for="noticeType">Select Dispute Category</label>
+        <select id="noticeType" class="form-control" onchange="updateNoticeTemplate()">
+          <option value="securityDeposit">Landlord Security Deposit Recovery</option>
+          <option value="consumerDeficiency">Consumer Deficiency in Service / Defective Product (CPA 2019)</option>
+          <option value="chequeBounce">Section 138 Negotiable Instruments Act (Cheque Bounce)</option>
+        </select>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div class="form-group">
+          <label for="senderName">Your Full Name (Sender)</label>
+          <input type="text" id="senderName" class="form-control" value="Rohit Sharma" oninput="renderNotice()">
+        </div>
+        <div class="form-group">
+          <label for="senderAddress">Your Address & Contact</label>
+          <input type="text" id="senderAddress" class="form-control" value="Flat 402, Green Glen Layout, Bellandur, Bengaluru 560103" oninput="renderNotice()">
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div class="form-group">
+          <label for="recipientName">Opposite Party Name (Recipient)</label>
+          <input type="text" id="recipientName" class="form-control" value="Suresh Kumar (Landlord)" oninput="renderNotice()">
+        </div>
+        <div class="form-group">
+          <label for="recipientAddress">Opposite Party Address</label>
+          <input type="text" id="recipientAddress" class="form-control" value="No. 18, 5th Cross, Indiranagar, Bengaluru 560038" oninput="renderNotice()">
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div class="form-group">
+          <label for="claimAmount">Disputed Amount (₹)</label>
+          <input type="text" id="claimAmount" class="form-control" value="65,000" oninput="renderNotice()">
+        </div>
+        <div class="form-group">
+          <label for="noticeDays">Demand Notice Period (Days)</label>
+          <input type="text" id="noticeDays" class="form-control" value="15" oninput="renderNotice()">
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="action-btn-primary" onclick="copyNoticeText()">📋 Copy Full Notice Text</button>
+        <button class="action-btn-secondary" onclick="window.print()">🖨 Print / Export PDF</button>
+      </div>
+
+      <div class="preview-paper" id="noticePreview"></div>
+    </div>
+
+  </div>
+
+  <script>
+    function getNoticeContent() {
+      const type = document.getElementById("noticeType").value;
+      const sender = document.getElementById("senderName").value;
+      const sAddr = document.getElementById("senderAddress").value;
+      const recipient = document.getElementById("recipientName").value;
+      const rAddr = document.getElementById("recipientAddress").value;
+      const amount = document.getElementById("claimAmount").value;
+      const days = document.getElementById("noticeDays").value;
+      const date = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+
+      if (type === "securityDeposit") {
+        return `REGISTERED POST WITH ACKNOWLEDGEMENT DUE / SPEED POST
+
+Date: ${date}
+
+To,
+${recipient}
+${rAddr}
+
+FROM:
+${sender}
+${sAddr}
+
+SUBJECT: STATUTORY LEGAL NOTICE FOR IMMEDIATE REFUND OF SECURITY DEPOSIT OF ₹${amount}/- WITH APPLICABLE INTEREST
+
+Sir/Madam,
+
+Under instructions and on behalf of my client/myself, I hereby serve upon you this formal Legal Notice as follows:
+
+1. That I was the bonafide licensee/tenant occupying the residential premises situated at your property under the Leave and License agreement duly executed between us.
+
+2. That at the inception of the tenancy, I paid you an interest-free refundable security deposit of ₹${amount}/- (Rupees ${amount} only) via verified banking transaction, acknowledged by you.
+
+3. That upon the expiration of the agreed license period, I handed over vacant, peaceful, and unencumbered possession of the scheduled premises to you on agreed terms. An inspection confirmed the premises were in satisfactory condition with normal wear and tear.
+
+4. That despite multiple requests and legitimate reminders, you have wrongfully, unlawfully, and malafidely withheld the refund of my deposit of ₹${amount}/- without any legal justification, which amounts to illegal enrichment, criminal breach of trust, and civil default.
+
+I HEREBY CALL UPON YOU to pay and refund the full security deposit sum of ₹${amount}/- together with interest @ 18% per annum from the date of handover within ${days} (fifteen) days from the receipt of this notice, failing which I shall be constrained to initiate appropriate legal proceedings before the competent Civil Court and Consumer Dispute Redressal Commission at your sole risk, cost, and consequence.
+
+Yours sincerely,
+
+_________________________
+${sender}`;
+      } else if (type === "chequeBounce") {
+        return `REGISTERED POST WITH ACKNOWLEDGEMENT DUE / SPEED POST
+
+Date: ${date}
+
+STATUTORY NOTICE UNDER SECTION 138 OF THE NEGOTIABLE INSTRUMENTS ACT, 1881
+
+To,
+${recipient}
+${rAddr}
+
+FROM:
+${sender}
+${sAddr}
+
+SUBJECT: NOTICE UNDER SECTION 138 OF THE NEGOTIABLE INSTRUMENTS ACT FOR DISHONOUR OF CHEQUE OF ₹${amount}/-
+
+Sir/Madam,
+
+Please take notice that:
+
+1. In discharge of your legally enforceable debt and liability owed to me, you issued a Cheque bearing number ________ dated ________ drawn on ________ Bank for a sum of ₹${amount}/- (Rupees ${amount} only) in my favour.
+
+2. That I presented the aforesaid cheque for encashment through my banker, but the same was returned dishonoured and unpaid by the bank with the official Return Memo dated ________ endorsing the reason "FUNDS INSUFFICIENT" / "EXCEEDS ARRANGEMENT".
+
+3. That I received the Bank Return Memo on ________, and this statutory notice is being issued well within the mandatory 30-day statutory limitation period prescribed under Section 138(b) of the Negotiable Instruments Act, 1881.
+
+I HEREBY CALL UPON YOU to pay the entire cheque amount of ₹${amount}/- within 15 (fifteen) days of the receipt of this notice. Please note that if you fail to make payment within the stipulated 15 days, I shall immediately initiate criminal proceedings against you under Section 138 of the Negotiable Instruments Act before the competent Judicial Magistrate, wherein you will be liable for imprisonment for up to two years and a fine which may extend to double the amount of the cheque, besides costs.
+
+Yours faithfully,
+
+_________________________
+${sender}`;
+      } else {
+        return `REGISTERED POST WITH ACKNOWLEDGEMENT DUE / SPEED POST
+
+Date: ${date}
+
+To,
+${recipient}
+${rAddr}
+
+FROM:
+${sender}
+${sAddr}
+
+SUBJECT: LEGAL NOTICE FOR DEFICIENCY IN SERVICE & UNFAIR TRADE PRACTICE UNDER CONSUMER PROTECTION ACT, 2019
+
+Sir/Madam,
+
+Take notice that:
+
+1. That I am a 'Consumer' within the meaning of Section 2(7) of the Consumer Protection Act, 2019, having availed your services / purchased goods from you for a total consideration of ₹${amount}/- vide Invoice No. ________ dated ________.
+
+2. That the services/goods provided by you suffered from gross defects, shortcomings, and deficiency in service under Section 2(11) of the Consumer Protection Act 2019, causing acute financial loss, harassment, and mental agony.
+
+3. That despite bringing the defect to your attention through emails and customer support tickets, you have failed to rectify the defect or refund the paid consideration, violating statutory consumer protection standards.
+
+I HEREBY CALL UPON YOU to either replace the defective goods / rectify the deficiency or refund the entire sum of ₹${amount}/- along with ₹25,000/- as compensation for mental harassment within ${days} days of receipt of this notice, failing which I shall lodge a formal complaint on the e-Daakhil portal before the District Consumer Disputes Redressal Commission seeking punitive damages, costs, and interest.
+
+Yours sincerely,
+
+_________________________
+${sender}`;
+      }
+    }
+
+    function renderNotice() {
+      document.getElementById("noticePreview").textContent = getNoticeContent();
+    }
+
+    function updateNoticeTemplate() {
+      const type = document.getElementById("noticeType").value;
+      if (type === "chequeBounce") {
+        document.getElementById("noticeDays").value = "15";
+      } else {
+        document.getElementById("noticeDays").value = "15";
+      }
+      renderNotice();
+    }
+
+    function copyNoticeText() {
+      const text = getNoticeContent();
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Legal Notice text copied to clipboard! You can paste and edit this in any word processor.");
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", renderNotice);
+  </script>
+</body>
+</html>

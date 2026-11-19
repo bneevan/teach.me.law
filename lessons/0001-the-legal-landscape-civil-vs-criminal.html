@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lesson 0001: The Indian Citizen's Legal Map — Civil vs. Criminal Law & Court Hierarchy</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    .case-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      margin: 16px 0;
+      border-left: 4px solid var(--accent-blue);
+    }
+    .case-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 6px;
+    }
+    .case-meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .court-hierarchy-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 16px 0;
+    }
+    .court-level {
+      display: flex;
+      align-items: center;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      gap: 12px;
+    }
+    .court-badge {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: #fff;
+      flex-shrink: 0;
+      width: 90px;
+      text-align: center;
+    }
+    .badge-apex { background: #b91c1c; }
+    .badge-state { background: #b45309; }
+    .badge-district { background: #1e3a8a; }
+    .badge-magistrate { background: #15803d; }
+    .court-desc {
+      font-size: 14px;
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+    .timeline-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14.5px;
+      font-family: var(--font-sans);
+    }
+    .timeline-table th {
+      background: var(--bg-subtle);
+      color: var(--text-main);
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 2px solid var(--border-light);
+      font-weight: 700;
+    }
+    .timeline-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border-fine);
+      vertical-align: top;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lesson-container">
+
+    <!-- Top Navigation Bar -->
+    <nav class="lesson-nav">
+      <a href="../index.html" class="dashboard-link">⌂ Course Dashboard</a>
+      <span class="lesson-index-badge">Lesson 0001 of 0004</span>
+    </nav>
+
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <span class="lesson-badge">Indian Legal Foundations</span>
+      <h1 class="lesson-title">The Indian Citizen's Legal Map: Civil vs. Criminal Law & Landmark Precedents</h1>
+
+      <div class="mission-outcome-box">
+        <strong>Mission Outcome</strong>
+        Confidently classify disputes in India as civil or criminal, know which court holds jurisdiction, enforce police compliance for mandatory FIRs under <em>Lalita Kumari</em>, and distinguish civil negligence from criminal culpability under <em>Jacob Mathew</em>.
+      </div>
+
+      <!-- Spoken Pronunciation Guide for Latin & Legal Terminology -->
+      <section class="pronounce-box">
+        <span class="pronounce-box-title">Spoken Pronunciation Guide (Legal Maxims)</span>
+        <div class="pronounce-list">
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">Mens Rea</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/mɛnz ˈreɪ.ə/</span>
+                <span class="pronounce-lang">Criminal Doctrine</span>
+              </div>
+              <p class="pronounce-meaning">"Guilty mind" — the culpable mental state (intent or gross recklessness) required to convict in criminal law (*Jacob Mathew*).</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-mensrea.wav" title="Listen to pronunciation of Mens Rea" aria-label="Listen to pronunciation of Mens Rea">🔊</button>
+          </div>
+
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">Prima Facie</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/ˌpraɪ.mə ˈfeɪ.ʃi/</span>
+                <span class="pronounce-lang">Evidence Law</span>
+              </div>
+              <p class="pronounce-meaning">"At first face" — evidence sufficient to disclose an offence or civil claim on its face, triggering mandatory FIR registration under *Lalita Kumari*.</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-primafacie.wav" title="Listen to pronunciation of Prima Facie" aria-label="Listen to pronunciation of Prima Facie">🔊</button>
+          </div>
+
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">Pro Se / Party-in-Person</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/ˌproʊ ˈseɪ/</span>
+                <span class="pronounce-lang">Indian Court Procedure</span>
+              </div>
+              <p class="pronounce-meaning">Appearing and arguing your own matter directly before an Indian Magistrate, District Court, or Consumer Commission without an advocate.</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-prose.wav" title="Listen to pronunciation of Pro Se" aria-label="Listen to pronunciation of Pro Se">🔊</button>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <!-- Audio Player Companion Widget -->
+    <section class="player-widget" aria-label="Audio Lesson Player">
+      <!-- Hidden Audio Element -->
+      <audio id="lesson-audio" src="../assets/audio/lesson-0001.mp3" preload="metadata"></audio>
+
+      <div class="player-top-row">
+        <div class="player-main-controls">
+          <button id="player-play-btn" class="play-btn" aria-label="Play or Pause Narration">
+            <span id="player-play-icon">▶</span>
+          </button>
+          <div id="player-time" class="player-time-display">0:00 / 6:58</div>
+        </div>
+
+        <!-- Speed Selector -->
+        <div class="speed-selector" role="group" aria-label="Playback Speed">
+          <button class="speed-btn" data-speed="0.8">0.8×</button>
+          <button class="speed-btn active" data-speed="1.0">1.0×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+        </div>
+      </div>
+
+      <!-- Scrubber -->
+      <div class="scrub-container">
+        <input type="range" id="player-scrubber" class="scrub-slider" min="0" max="100" value="0" step="0.1" aria-label="Audio scrubber">
+      </div>
+
+      <!-- Segment Timeline Ribbon -->
+      <div class="timeline-pills" role="tablist" aria-label="Lesson Segments">
+        <button class="segment-pill active" data-segment-id="seg-1">1. Citizen's Dilemma</button>
+        <button class="segment-pill" data-segment-id="seg-2">2. Court Hierarchy</button>
+        <button class="segment-pill" data-segment-id="seg-3">3. Jacob Mathew (Negligence)</button>
+        <button class="segment-pill checkpoint" data-segment-id="chk-seg-1">⏸ Quiz 1</button>
+        <button class="segment-pill" data-segment-id="seg-4">4. Lalita Kumari (FIR)</button>
+        <button class="segment-pill" data-segment-id="seg-5">5. Cheque Bounce Sec 138</button>
+        <button class="segment-pill" data-segment-id="seg-6">6. 4-Step Action Protocol</button>
+        <button class="segment-pill checkpoint" data-segment-id="chk-seg-2">⏸ Quiz 2</button>
+      </div>
+    </section>
+
+    <!-- Checkpoint Alert Banner -->
+    <div id="checkpoint-banner" class="checkpoint-pause-banner">
+      <strong>Checkpoint Reached:</strong> Audio narration paused. Answer the retrieval question below to test your understanding of Indian judicial principles and resume playback.
+    </div>
+
+    <!-- Visual Supporting Cards (Synchronized with Audio) -->
+    <section class="visual-cards-section">
+
+      <!-- Card 1: Motivation -->
+      <div id="card-seg-1" class="visual-card active">
+        <h3>1. The Indian Citizen's Legal Dilemma</h3>
+        <p>Everyday citizens in Indian cities and towns frequently face situations where they feel powerless: an illegal tenancy lockout, an unreturned security deposit, a bounced business cheque, or an unresponsive police station.</p>
+        <div style="background: var(--bg-subtle); padding: 16px; border-radius: 6px; margin: 14px 0; border-left: 4px solid var(--accent-blue);">
+          <strong>The Cost of Confusion:</strong> Walking into a police thana for an unpaid loan or broken lease usually leads the station officer to tell you: <em>"Yeh civil maamla hai, court jao"</em> (This is a civil matter, go to court). Conversely, ignoring a statutory Legal Notice for a bounced cheque under Section 138 of the NI Act can lead directly to non-bailable arrest warrants. Knowing the difference protects your freedom and your wallet.
+        </div>
+        <p class="caption">Audio Segment 1: Grounding your dispute in the right legal arena before taking action.</p>
+      </div>
+
+      <!-- Card 2: Concept - Court Hierarchy -->
+      <div id="card-seg-2" class="visual-card">
+        <h3>2. The Indian Court Hierarchy & The Great Divide</h3>
+        <p>The Indian judicial system is unified across all states, operating under distinct criminal and civil tiers:</p>
+
+        <div class="court-hierarchy-grid">
+          <div class="court-level">
+            <span class="court-badge badge-apex">Apex Bench</span>
+            <div class="court-desc"><strong>Supreme Court of India (New Delhi):</strong> Highest appellate authority; custodian of Fundamental Rights (Article 32). Judgments are law of the land (Article 141).</div>
+          </div>
+          <div class="court-level">
+            <span class="court-badge badge-state">State Bench</span>
+            <div class="court-desc"><strong>High Court (25 across India):</strong> State constitutional bench; issues writs under Article 226; supervises district courts.</div>
+          </div>
+          <div class="court-level">
+            <span class="court-badge badge-district">District Tier</span>
+            <div class="court-desc"><strong>District & Sessions Court:</strong> District Judge (Civil appeals & high-value suits) and Sessions Judge (Criminal felonies punishable by >7 years or life).</div>
+          </div>
+          <div class="court-level">
+            <span class="court-badge badge-magistrate">Subordinate</span>
+            <div class="court-desc">
+              <strong>Criminal:</strong> Judicial Magistrate First Class (JMFC) / Metropolitan Magistrate (CMM) in cities (handles Section 138 cheque bounce, thefts, bail).<br>
+              <strong>Civil:</strong> Civil Judge (Junior/Senior Division) (contracts, partition, landlord-tenant disputes).
+            </div>
+          </div>
+        </div>
+        <p class="caption">Audio Segment 2: Understanding which magistrate or judge hears your petition.</p>
+      </div>
+
+      <!-- Card 3: Landmark Precedent 1 - Jacob Mathew -->
+      <div id="card-seg-3" class="visual-card">
+        <h3>3. Landmark Precedent: Jacob Mathew v. State of Punjab (2005)</h3>
+        <p>How does Indian law differentiate an unfortunate accident or civil negligence from a criminal offence?</p>
+
+        <div class="case-card">
+          <div class="case-title">Jacob Mathew v. State of Punjab (2005 6 SCC 1)</div>
+          <span class="case-meta">Supreme Court of India • 3-Judge Bench • CJI R.C. Lahoti</span>
+          <p><strong>The Incident:</strong> A patient in a private hospital suffered respiratory arrest. The oxygen cylinder connected to him was found empty, and replacement took time. The patient died. Police registered an FIR under Section 304A IPC (causing death by negligence) against the senior doctor.</p>
+          <p><strong>The Ruling:</strong> The Supreme Court quashed the criminal proceedings. The court drew a strict line between <em>Civil Negligence</em> and <em>Criminal Negligence</em>:</p>
+          <ul style="margin: 8px 0 8px 20px; line-height: 1.5; font-size: 14.5px;">
+            <li><strong>Civil Liability:</strong> Any failure of reasonable care that causes loss requires compensation in civil or consumer court under a <em>preponderance of probabilities</em>.</li>
+            <li><strong>Criminal Culpability:</strong> Requires <strong>gross negligence</strong> and reckless disregard for life, accompanied by <span class="pronounce-wrapper"><span class="pronounce-word"><em>Mens Rea</em></span><button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-mensrea.wav">🔊</button></span> (guilty intent), proven <em>beyond reasonable doubt</em>.</li>
+          </ul>
+        </div>
+        <p class="caption">Audio Segment 3: Why professionals and businesses face monetary civil claims rather than automatic criminal prosecution for mistakes.</p>
+      </div>
+
+      <!-- Card 4: Landmark Precedent 2 - Lalita Kumari -->
+      <div id="card-seg-4" class="visual-card">
+        <h3>4. Landmark Precedent: Lalita Kumari v. Govt of UP (2014)</h3>
+        <p>What should you do when an Indian police station refuses to register an FIR?</p>
+
+        <div class="case-card">
+          <div class="case-title">Lalita Kumari v. Govt of Uttar Pradesh (2014 2 SCC 1)</div>
+          <span class="case-meta">Supreme Court of India • 5-Judge Constitution Bench</span>
+          <p><strong>The Incident:</strong> A minor girl was kidnapped. The father approached the police station, but the officer refused to register an FIR for days, telling the father to search for the girl himself.</p>
+          <p><strong>The Constitution Bench Order:</strong></p>
+          <ul style="margin: 8px 0 8px 20px; line-height: 1.5; font-size: 14.5px;">
+            <li><strong>Mandatory FIR:</strong> Registration of an FIR under Section 154 CrPC (Sec 173 BNSS) is <strong>mandatory</strong> if the complaint discloses a <span class="pronounce-wrapper"><span class="pronounce-word"><em>prima facie</em></span><button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-primafacie.wav">🔊</button></span> cognizable offence. Police have zero discretion to conduct preliminary inquiries or refuse registration.</li>
+            <li><strong>Zero FIR Doctrine:</strong> You can register an FIR at <em>any</em> police station in India irrespective of jurisdiction. The station must log it as "Zero FIR" and transfer the file.</li>
+            <li><strong>Accountability:</strong> Any police officer who refuses to register an FIR for a cognizable offence faces criminal prosecution under Section 166A IPC for public servant dereliction of duty.</li>
+          </ul>
+        </div>
+        <p class="caption">Audio Segment 4: The Supreme Court ruling that ended police gatekeeping of FIR registration.</p>
+      </div>
+
+      <!-- Card 5: Parallel Tracks & Section 138 NI Act -->
+      <div id="card-seg-5" class="visual-card">
+        <h3>5. Parallel Tracks & The Cheque Bounce Engine (Sec 138 NI Act)</h3>
+        <p>A single act often runs on parallel civil and criminal tracks simultaneously:</p>
+
+        <div style="background: var(--bg-subtle); padding: 14px 16px; border-radius: 6px; margin: 12px 0;">
+          <h4 style="font-family: var(--font-sans); color: var(--accent-gold); margin-bottom: 6px;">How Unpaid Civil Debt Becomes Criminal (Section 138 NI Act)</h4>
+          <p style="font-size: 14.5px; line-height: 1.5;">Normally, a defaulted private loan is a purely civil matter requiring a recovery suit in civil court. However, if the borrower gave a <strong>cheque</strong> that dishonours for "Insufficient Funds":</p>
+          <ol style="margin: 8px 0 8px 20px; font-size: 14px; line-height: 1.5;">
+            <li>Send a statutory Legal Notice within <strong>30 days</strong> of receiving the Bank Return Memo.</li>
+            <li>Give the drawer <strong>15 days</strong> from receipt of notice to clear the payment.</li>
+            <li>If they fail to pay, file a complaint before the Judicial Magistrate (JMFC/CMM) within <strong>30 days</strong>.</li>
+            <li><strong>Penalty:</strong> Up to <strong>2 years imprisonment</strong> and a fine up to <strong>double the cheque amount</strong>!</li>
+          </ol>
+        </div>
+        <p class="caption">Audio Segment 5: How statutory notices convert civil defaults into criminal deterrence.</p>
+      </div>
+
+      <!-- Card 6: The Citizen's 4-Step Protocol -->
+      <div id="card-seg-6" class="visual-card">
+        <h3>6. The Indian Citizen's 4-Step Action Protocol</h3>
+        <p>Whenever you face a dispute, follow this verified operational checklist:</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 16px 0;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 6px; padding: 14px;">
+            <strong style="color: var(--accent-blue); display: block; margin-bottom: 4px;">Step 1: Classify the Dispute</strong>
+            <p style="font-size: 13.5px; color: var(--text-muted);">Is it monetary/property loss (Civil) or bodily threat/theft/extortion (Criminal)?</p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 6px; padding: 14px;">
+            <strong style="color: var(--accent-gold); display: block; margin-bottom: 4px;">Step 2: Choose the Forum</strong>
+            <p style="font-size: 13.5px; color: var(--text-muted);">Consumer deficiency? Use e-Daakhil without a lawyer. Cognizable crime? Demand an FIR.</p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 6px; padding: 14px;">
+            <strong style="color: var(--accent-red); display: block; margin-bottom: 4px;">Step 3: Invoke Landmark Rights</strong>
+            <p style="font-size: 13.5px; color: var(--text-muted);">Cite <em>Lalita Kumari</em> for mandatory FIRs and <em>D.K. Basu</em> if subjected to questioning or arrest.</p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 6px; padding: 14px;">
+            <strong style="color: var(--accent-green); display: block; margin-bottom: 4px;">Step 4: Respect Statutory Deadlines</strong>
+            <p style="font-size: 13.5px; color: var(--text-muted);">Reply to legal notices within 15–30 days and track limitation periods under Indian law.</p>
+          </div>
+        </div>
+        <p class="caption">Audio Segment 6: Your four-step citizen shield in the Indian legal landscape.</p>
+      </div>
+
+    </section>
+
+    <!-- Interactive Checkpoints Section -->
+    <section class="checkpoints-section">
+
+      <!-- Checkpoint 1 Card -->
+      <div id="card-chk-1" class="checkpoint-card">
+        <h4>Checkpoint 1: Civil Negligence vs. Criminal Manslaughter (Jacob Mathew Doctrine)</h4>
+        <p style="font-size: 15.5px; color: var(--text-muted); margin-bottom: 14px;">
+          An engineer designs a concrete roof for a warehouse that collapses during a heavy storm due to an miscalculation in load factors. The property owner wants the engineer arrested for criminal culpable homicide. Under the Supreme Court's ruling in <em>Jacob Mathew v. State of Punjab</em>, how does Indian law treat this situation?
+        </p>
+
+        <div class="options-list">
+          <button class="option-btn" data-index="0">
+            A) The police must immediately arrest the engineer under non-bailable charges because any engineering error is deemed premeditated murder.
+          </button>
+          <button class="option-btn" data-index="1">
+            B) An error of judgment or professional negligence is a civil tort actionable for monetary compensation, and constitutes a crime only if gross recklessness with culpable mental state (mens rea) is proven.
+          </button>
+          <button class="option-btn" data-index="2">
+            C) The engineer is completely immune from all civil damages and criminal prosecution under sovereign professional immunity.
+          </button>
+          <button class="option-btn" data-index="3">
+            D) The case is automatically transferred to the National Company Law Tribunal for corporate liquidation without compensation.
+          </button>
+        </div>
+
+        <div class="checkpoint-feedback"></div>
+      </div>
+
+      <!-- Checkpoint 2 Card -->
+      <div id="card-chk-2" class="checkpoint-card">
+        <h4>Checkpoint 2: Police Duty on Cognizable Complaints (Lalita Kumari Doctrine)</h4>
+        <p style="font-size: 15.5px; color: var(--text-muted); margin-bottom: 14px;">
+          You arrive at a local police station in Mumbai to report a violent bag snatching with physical assault. The station duty officer refuses to log your report, stating that the snatching occurred 200 meters outside his station's ward limits. Under the Constitution Bench ruling in <em>Lalita Kumari v. Govt of UP</em>, what is the lawful procedure?
+        </p>
+
+        <div class="options-list">
+          <button class="option-btn" data-index="0">
+            A) The officer is legally mandated to register a Zero FIR immediately, begin necessary investigation, and then transfer the case to the jurisdictional police station.
+          </button>
+          <button class="option-btn" data-index="1">
+            B) The police officer has absolute discretion to dismiss the complaint and advise the citizen to conduct a private investigation.
+          </button>
+          <button class="option-btn" data-index="2">
+            C) Citizens are prohibited by law from reporting crimes outside their residential pincode under penalty of contempt.
+          </button>
+          <button class="option-btn" data-index="3">
+            D) The officer must conduct a 30-day preliminary inquiry before deciding whether robbery constitutes a cognizable offence.
+          </button>
+        </div>
+
+        <div class="checkpoint-feedback"></div>
+      </div>
+
+    </section>
+
+    <!-- Demonstrated Learning Evidence & Export -->
+    <section class="evidence-section">
+      <h3>Demonstrated Learning Record</h3>
+      <p style="font-size: 14px; color: var(--text-muted);">
+        Complete both checkpoints above to generate verified evidence of your Indian legal fundamentals mastery.
+      </p>
+      <div id="evidence-text" class="evidence-box"></div>
+      <button id="copy-evidence-btn" class="copy-evidence-btn">Copy Evidence Record</button>
+    </section>
+
+    <!-- Complete Dual-Mode Spoken Transcript -->
+    <details class="transcript-details">
+      <summary>Read Full Spoken Narration Transcript (Ears-Free Mode)</summary>
+      <div class="transcript-body">
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 1: The Indian Citizen's Dilemma</div>
+          <p>Imagine a landlord abruptly locks you out of your rented flat in Bengaluru and seizes your laptop. Or a contractor takes a two lakh rupee deposit to renovate your home in Delhi and vanishes. Do you walk into the local thana to demand an FIR, or do you file a civil suit? In India, millions of citizens waste years and fortunes simply because they knock on the wrong courtroom door. Police officers often dismiss private contract breaches as civil matters, while citizens mistakenly ignore legal notices that carry serious criminal consequences. In this lesson, you will master the fundamental legal map of India. You will learn to recognize whether your dispute is civil or criminal, which court holds jurisdiction, and how landmark Supreme Court judgments empower you to stand your ground.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 2: The Great Divide & The Indian Court Hierarchy</div>
+          <p>In the Indian legal system, every dispute falls into one of two fundamental arenas: Civil Law and Criminal Law. Criminal law deals with offences against the public peace and the State. Because crimes like theft, assault, or fraud threaten societal order, the State itself, represented by an Assistant Public Prosecutor, prosecutes the accused. The primary goals are deterrence, punishment, and reformation, leading to penalties like fines, imprisonment in central jail, or community service. In civil law, the dispute is strictly between two private parties: you as the plaintiff, and another citizen, landlord, or company as the defendant. You initiate the suit yourself. The court's goal is never to imprison someone; it is to make you whole through monetary compensation, restitution, or an injunction ordering them to stop harmful conduct. At the grassroots, criminal cases begin before a Judicial Magistrate First Class or Metropolitan Magistrate, while civil disputes start before a Civil Judge. Above them sits the District and Sessions Judge, followed by the State High Court, and ultimately the Supreme Court of India in New Delhi.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 3: Landmark Case: Jacob Mathew v. State of Punjab</div>
+          <p>To understand the profound boundary between civil torts and criminal offences, look at the landmark 2005 Supreme Court ruling in Jacob Mathew versus State of Punjab. In this case, an elderly patient admitted to a private hospital suffered respiratory distress. The attending doctors attempted to connect an oxygen cylinder, but the cylinder was empty, and the replacement was delayed. Tragically, the patient died. The police booked the senior doctor under Section 304A of the Indian Penal Code for causing death by a rash or negligent act, a criminal charge carrying two years in jail. But the Supreme Court stepped in and drew a sharp, protective line. Chief Justice R.C. Lahoti held that simple negligence, a clinical error of judgment, or an accident is a civil wrong, for which a hospital must pay financial damages in a consumer forum. To constitute a crime, however, the negligence must be gross, reckless, and accompanied by a culpable mental state, known as Mens Rea. The Supreme Court ruled that doctors and professionals cannot be arrested on criminal charges merely because an outcome was unfavorable, unless an independent medical board confirms gross recklessness. For everyday citizens, this case teaches a vital truth: in civil law, proving mere preponderance of probability wins you financial compensation; but in criminal law, the prosecution must prove gross recklessness beyond all reasonable doubt.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 4: Landmark Case: Lalita Kumari, Mandatory FIR & Zero FIR</div>
+          <p>What happens when you are the victim of a genuine crime, but the local police station refuses to act? For decades, police officers turned away victims of theft, domestic violence, or assault by claiming a lack of territorial jurisdiction or by demanding preliminary inquiries. This unlawful gatekeeping was permanently shattered by the Constitution Bench of the Supreme Court in the 2014 landmark judgment, Lalita Kumari versus Government of Uttar Pradesh. The Supreme Court held that under Section 154 of the Code of Criminal Procedure, the registration of a First Information Report, or FIR, is mandatory if the information discloses the commission of a cognizable offence. A cognizable offence is any serious crime, such as burglary, cheating with forgery, or grievous hurt, where police have the statutory power to arrest without a warrant. The police officer has zero discretion to conduct a preliminary inquiry before lodging the FIR. Furthermore, under the doctrine of Zero FIR, if an offence occurs while you are traveling, you have the absolute legal right to register an FIR at any police station across India, regardless of where the crime took place. The station must assign it serial number zero, commence immediate investigation or medical assistance, and subsequently transfer the case files to the jurisdictional police station.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 5: Parallel Tracks & Section 138 Cheque Bounce</div>
+          <p>A crucial feature of Indian law is that a single real-world event can run on parallel tracks simultaneously. Consider a road accident where a negligent truck driver injures a pedestrian. On the criminal track, the State prosecutes the driver under Section 279 and 338 of the penal code for rash driving. On the civil track, the injured pedestrian files a claim before the Motor Accident Claims Tribunal to secure financial compensation from the insurance company. Even if the criminal court acquits the driver due to procedural reasonable doubt, the civil tribunal can still award fifty lakh rupees because civil proof only requires tipping the balance of probabilities. An even more potent example of this intersection is Section 138 of the Negotiable Instruments Act. If someone owes you money and gives you a cheque that bounces due to insufficient funds, the law creates a powerful quasi-criminal remedy. If you send a formal statutory Legal Notice via registered post within thirty days of the cheque dishonour, demanding payment within fifteen days, their failure to pay transforms an ordinary unpaid civil debt into a criminal offence punishable by up to two years in prison and a fine equal to double the cheque amount.</p>
+        </div>
+
+        <div class="transcript-segment">
+          <div class="transcript-segment-title">Segment 6: The Indian Citizen's 4-Step Action Protocol</div>
+          <p>Before you take any legal step in India, run your situation through this 4-step diagnostic protocol. Step one: identify the harm. Is it a breach of trust, unpaid rent, or property damage? That is civil. Is it bodily violence, extortion, or public endangerment? That is criminal. Step two: check the forum. If it is a consumer dispute regarding a defective product or deficient service, file an online petition on e-Daakhil before the District Consumer Commission without hiring an expensive lawyer. Step three: if dealing with police, remember Lalita Kumari. If the crime is cognizable, insist on your copy of the FIR free of charge under Section 154 subsection two. Step four: never ignore a formal Legal Notice. A notice under Section 138 for a cheque bounce or a notice of civil recovery requires a written reply within the stipulated deadline to prevent an ex-parte decree against you. Armed with these principles, you are no longer a passive bystander in the Indian legal system; you are an informed, protected citizen.</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Citations & Verified Bibliography -->
+    <footer class="citations-box">
+      <strong>Verified Landmark Indian Precedents:</strong>
+      <ul>
+        <li><a href="https://indiankanoon.org/doc/1544339/" target="_blank" rel="noopener">Supreme Court of India: Jacob Mathew v. State of Punjab (2005 6 SCC 1)</a> — Distinguishing civil torts from criminal negligence.</li>
+        <li><a href="https://indiankanoon.org/doc/102852/" target="_blank" rel="noopener">Supreme Court of India: Lalita Kumari v. Govt of U.P. (2014 2 SCC 1)</a> — Mandatory registration of FIR under Section 154 CrPC and Zero FIR doctrine.</li>
+        <li><a href="https://indiankanoon.org/doc/1823951/" target="_blank" rel="noopener">Negotiable Instruments Act 1881: Section 138 (Dishonour of Cheque for Insufficiency of Funds)</a>.</li>
+        <li><a href="https://ecourts.gov.in" target="_blank" rel="noopener">eCourts Services Portal: Citizen Case Status & Cause Lists</a>.</li>
+      </ul>
+    </footer>
+
+  </div>
+
+  <!-- Mobile Sticky Mini-Player Companion Bar -->
+  <aside id="mobile-mini-player" class="mobile-mini-player" aria-label="Mobile sticky audio player">
+    <div class="mini-progress-bar">
+      <div id="mini-progress-fill" class="mini-progress-fill"></div>
+    </div>
+    <div class="mini-player-content">
+      <button id="mini-play-btn" class="mini-play-btn" aria-label="Play or Pause">
+        <span id="mini-play-icon">▶</span>
+      </button>
+      <div id="mini-info" class="mini-info">
+        <span id="mini-segment-title" class="mini-segment-title">1. Citizen's Dilemma</span>
+        <span id="mini-time" class="mini-time">0:00 / 6:58</span>
+      </div>
+      <button id="mini-scroll-btn" class="mini-action-btn" title="Jump to top player" aria-label="Jump to top player">↑</button>
+    </div>
+  </aside>
+
+  <!-- Lesson Data Payload for runtime player -->
+  <script type="application/json" id="lesson-data">
+  {
+    "id": "0001",
+    "title": "The Indian Citizen's Legal Map: Civil vs. Criminal Law",
+    "missionOutcome": "Classify disputes as civil or criminal in India, identify court jurisdiction, and apply landmark Supreme Court rulings in Jacob Mathew and Lalita Kumari.",
+    "audioFile": "../assets/audio/lesson-0001.mp3",
+    "segments": [
+      {
+        "id": "seg-1",
+        "type": "motivation",
+        "title": "1. Citizen's Dilemma",
+        "visualCardId": "card-seg-1",
+        "durationSeconds": 45.35
+      },
+      {
+        "id": "seg-2",
+        "type": "concept",
+        "title": "2. Court Hierarchy",
+        "visualCardId": "card-seg-2",
+        "durationSeconds": 68.14
+      },
+      {
+        "id": "seg-3",
+        "type": "example",
+        "title": "3. Jacob Mathew (Negligence)",
+        "visualCardId": "card-seg-3",
+        "durationSeconds": 85.36
+      },
+      {
+        "id": "chk-seg-1",
+        "type": "checkpoint",
+        "title": "⏸ Quiz 1: Negligence",
+        "visualCardId": "card-chk-1",
+        "durationSeconds": 1.0
+      },
+      {
+        "id": "seg-4",
+        "type": "concept",
+        "title": "4. Lalita Kumari (FIR)",
+        "visualCardId": "card-seg-4",
+        "durationSeconds": 81.26
+      },
+      {
+        "id": "seg-5",
+        "type": "example",
+        "title": "5. Cheque Bounce Sec 138",
+        "visualCardId": "card-seg-5",
+        "durationSeconds": 75.93
+      },
+      {
+        "id": "seg-6",
+        "type": "summary",
+        "title": "6. 4-Step Action Protocol",
+        "visualCardId": "card-seg-6",
+        "durationSeconds": 62.41
+      },
+      {
+        "id": "chk-seg-2",
+        "type": "checkpoint",
+        "title": "⏸ Quiz 2: Mandatory FIR",
+        "visualCardId": "card-chk-2",
+        "durationSeconds": 1.0
+      }
+    ],
+    "checkpoints": [
+      {
+        "id": "chk-1",
+        "segmentId": "chk-seg-1",
+        "question": "An engineer designs a concrete roof for a warehouse that collapses during a heavy storm due to an miscalculation in load factors. The property owner wants the engineer arrested for criminal culpable homicide. Under the Supreme Court's ruling in Jacob Mathew v. State of Punjab, how does Indian law treat this situation?",
+        "options": [
+          "The police must immediately arrest the engineer under non-bailable charges because any engineering error is deemed premeditated murder.",
+          "An error of judgment or professional negligence is a civil tort actionable for monetary compensation, and constitutes a crime only if gross recklessness with culpable mental state (mens rea) is proven.",
+          "The engineer is completely immune from all civil damages and criminal prosecution under sovereign professional immunity.",
+          "The case is automatically transferred to the National Company Law Tribunal for corporate liquidation without compensation."
+        ],
+        "correctIndex": 1,
+        "explanation": "In Jacob Mathew v. State of Punjab (2005), the Supreme Court ruled that an error of judgment or simple negligence is purely a civil wrong remedied by monetary damages in civil or consumer courts. To sustain a criminal charge under Section 304A, the prosecution must establish gross negligence and reckless disregard for human life accompanied by mens rea."
+      },
+      {
+        "id": "chk-2",
+        "segmentId": "chk-seg-2",
+        "question": "You arrive at a local police station in Mumbai to report a violent bag snatching with physical assault. The station duty officer refuses to log your report, stating that the snatching occurred 200 meters outside his station's ward limits. Under the Constitution Bench ruling in Lalita Kumari v. Govt of UP, what is the lawful procedure?",
+        "options": [
+          "The officer is legally mandated to register a Zero FIR immediately, begin necessary investigation, and then transfer the case to the jurisdictional police station.",
+          "The police officer has absolute discretion to dismiss the complaint and advise the citizen to conduct a private investigation.",
+          "Citizens are prohibited by law from reporting crimes outside their residential pincode under penalty of contempt.",
+          "The officer must conduct a 30-day preliminary inquiry before deciding whether robbery constitutes a cognizable offence."
+        ],
+        "correctIndex": 0,
+        "explanation": "In Lalita Kumari v. Govt of U.P. (2014), the 5-judge Constitution Bench held that registering an FIR is mandatory for cognizable crimes. Under the Zero FIR doctrine, police cannot refuse registration on grounds of territorial jurisdiction; they must register a Zero FIR immediately, provide initial assistance, and transfer the case to the appropriate station."
+      }
+    ],
+    "pronunciations": [
+      {
+        "id": "pron-mensrea",
+        "term": "Mens Rea",
+        "transliteration": "Latin",
+        "language": "Criminal Doctrine",
+        "ipa": "/mɛnz ˈreɪ.ə/",
+        "meaning": "Guilty mind — culpable mental intent (*Jacob Mathew*).",
+        "audioFile": "../assets/audio/pronounce-mensrea.wav"
+      },
+      {
+        "id": "pron-primafacie",
+        "term": "Prima Facie",
+        "transliteration": "Latin",
+        "language": "Evidence Law",
+        "ipa": "/ˌpraɪ.mə ˈfeɪ.ʃi/",
+        "meaning": "At first face — sufficient evidence to disclose an offence (*Lalita Kumari*).",
+        "audioFile": "../assets/audio/pronounce-primafacie.wav"
+      },
+      {
+        "id": "pron-prose",
+        "term": "Pro Se",
+        "transliteration": "Latin",
+        "language": "Indian Court Procedure",
+        "ipa": "/ˌproʊ ˈseɪ/",
+        "meaning": "Party-in-person; arguing your own case without an advocate.",
+        "audioFile": "../assets/audio/pronounce-prose.wav"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Player Runtime Script -->
+  <script src="../assets/player.js"></script>
+</body>
+</html>

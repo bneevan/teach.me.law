@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Fundamentals of Indian Law for Everyday Citizens — Course Dashboard</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    :root {
+      --dash-primary: #1e3a8a;
+      --dash-accent: #b45309;
+      --dash-bg: #faf7f2;
+    }
+
+    body {
+      background-color: var(--dash-bg);
+      padding: 16px 12px 60px;
+    }
+
+    .dashboard-container {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #f8fafc;
+      padding: 36px 28px;
+      border-radius: var(--radius-md);
+      margin-bottom: 28px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.2);
+      border: 1px solid #334155;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: rgba(251, 191, 36, 0.2);
+      color: #fbbf24;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(251, 191, 36, 0.4);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(26px, 5.5vw, 40px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .hero-subtitle {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #cbd5e1;
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+
+    .progress-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 12px 16px;
+      border-radius: 8px;
+      backdrop-filter: blur(4px);
+    }
+
+    .stat-number {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 700;
+      color: #fbbf24;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 12.5px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Section Headers */
+    .section-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border-light);
+    }
+
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .section-subtext {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Row-First Card Architecture */
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .dash-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: var(--shadow-subtle);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      position: relative;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .dash-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(40, 28, 14, 0.08);
+      border-color: #cbd5e1;
+    }
+
+    .dash-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 6px;
+    }
+
+    .dash-card-num {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-faint);
+      letter-spacing: 0.05em;
+    }
+
+    .dash-card-title {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-main);
+      width: 100%;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .dash-card-desc {
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--text-muted);
+      width: 100%;
+      margin-bottom: 14px;
+    }
+
+    .dash-card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border-fine);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .card-badges {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .badge-tag {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-mastered {
+      background: #dcfce7;
+      color: #15803d;
+      border: 1px solid #86efac;
+    }
+
+    .badge-ready {
+      background: #dbeafe;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+
+    .badge-upcoming {
+      background: #f1f5f9;
+      color: #64748b;
+      border: 1px solid #e2e8f0;
+    }
+
+    .card-play-action {
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Interactive 3D Flashcards Practice Deck */
+    .flashcard-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      margin: 32px 0;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .flashcard-controls-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .flashcard-filter {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      max-width: 100%;
+    }
+
+    .filter-btn {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .filter-btn.active {
+      background: var(--accent-blue);
+      color: #fff;
+      border-color: var(--accent-blue);
+    }
+
+    .flashcard-stage {
+      perspective: 1200px;
+      width: 100%;
+      min-height: 260px;
+      margin-bottom: 18px;
+      cursor: pointer;
+    }
+
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 16px rgba(40, 28, 14, 0.08);
+    }
+
+    .flashcard-inner.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      backface-visibility: hidden;
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--border-light);
+      background: var(--bg-card);
+    }
+
+    .flashcard-back {
+      transform: rotateY(180deg);
+      background: #fdfaf3;
+      border-color: #e5ded2;
+    }
+
+    .flashcard-face-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .flashcard-cat {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-gold);
+    }
+
+    .flashcard-hint {
+      font-size: 12px;
+      color: var(--text-faint);
+    }
+
+    .flashcard-term {
+      font-family: var(--font-serif);
+      font-size: clamp(24px, 5vw, 32px);
+      font-weight: 700;
+      color: var(--text-main);
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .flashcard-meaning {
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--text-main);
+      text-align: center;
+      margin: 16px 0;
+    }
+
+    .flashcard-avoid {
+      font-size: 13.5px;
+      color: var(--accent-red);
+      font-style: italic;
+      text-align: center;
+    }
+
+    .flashcard-bottom-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .deck-nav-btn {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .deck-nav-btn:hover {
+      background: #e7e2d7;
+    }
+
+    /* Grid for Reference & Resources */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .info-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .info-card:hover {
+      border-color: var(--accent-blue);
+      transform: translateY(-2px);
+    }
+
+    .info-card h4 {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      color: var(--accent-blue);
+      margin-bottom: 6px;
+    }
+
+    .info-card p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard-container">
+
+    <!-- Hero Header -->
+    <header class="hero-banner">
+      <span class="hero-tag">Everyday Indian Citizen Empowerment</span>
+      <h1 class="hero-title">Fundamentals of Indian Law for Everyday Citizens</h1>
+      <p class="hero-subtitle">
+        Master your constitutional rights, navigate consumer & tenancy disputes, enforce mandatory police compliance under landmark Supreme Court rulings, and protect yourself without fear or confusion.
+      </p>
+
+      <div class="progress-stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">1 / 4</span>
+          <span class="stat-label">Active Lessons</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">6m 58s</span>
+          <span class="stat-label">Spoken Audio Ready</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Canonical Legal Terms</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Offline & Free</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECTION: Curriculum Roadmap (Present & Upcoming Lessons) -->
+    <section>
+      <div class="section-title-row">
+        <h2 class="section-heading">Curriculum Roadmap & Interactive Audio Lessons</h2>
+        <span class="section-subtext">Click any ready lesson to launch the audio-visual player</span>
+      </div>
+
+      <div class="card-list">
+
+        <!-- Lesson 0001: Active -->
+        <a href="lessons/0001-the-legal-landscape-civil-vs-criminal.html" class="dash-card">
+          <div class="dash-card-header">
+            <span class="dash-card-num">LESSON 0001</span>
+            <span class="badge-tag badge-ready">Ready to Play</span>
+          </div>
+          <h3 class="dash-card-title">The Indian Citizen's Legal Map: Civil vs. Criminal Law & Court Hierarchy</h3>
+          <p class="dash-card-desc">
+            Explore the landmark Supreme Court rulings in <em>Jacob Mathew</em> (distinguishing civil negligence from criminal culpability) and <em>Lalita Kumari</em> (mandatory FIR registration & Zero FIR doctrine). Master Section 138 cheque bounce mechanisms and the grassroots magistrate court tiers.
+          </p>
+          <div class="dash-card-bottom">
+            <div class="card-badges">
+              <span class="badge-tag badge-ready">Audio Narration (6:58)</span>
+              <span class="badge-tag badge-ready">Kokoro TTS Narration</span>
+              <span class="badge-tag badge-ready">2 Retrieval Checkpoints</span>
+            </div>
+            <span class="card-play-action">Launch Interactive Lesson ▶</span>
+          </div>
+        </a>
+
+        <!-- Lesson 0002: Upcoming -->
+        <div class="dash-card" style="opacity: 0.9;">
+          <div class="dash-card-header">
+            <span class="dash-card-num">LESSON 0002</span>
+            <span class="badge-tag badge-upcoming">Upcoming Roadmap</span>
+          </div>
+          <h3 class="dash-card-title">Everyday Contracts & Tenancy in India: What You Sign, Click, and Promise</h3>
+          <p class="dash-card-desc">
+            Section 10 of the Indian Contract Act 1872; click-wrap e-agreements under IT Act 2000; the legal reality of 11-month Leave & License agreements, security deposit lock-in traps, and unconscionable clauses (*Central Inland Water Transport Corp*).
+          </p>
+          <div class="dash-card-bottom">
+            <div class="card-badges">
+              <span class="badge-tag badge-upcoming">Indian Contract Act 1872</span>
+              <span class="badge-tag badge-upcoming">Rent & Tenancy Shield</span>
+            </div>
+            <span class="badge-tag badge-upcoming">In Production</span>
+          </div>
+        </div>
+
+        <!-- Lesson 0003: Upcoming -->
+        <div class="dash-card" style="opacity: 0.9;">
+          <div class="dash-card-header">
+            <span class="dash-card-num">LESSON 0003</span>
+            <span class="badge-tag badge-upcoming">Upcoming Roadmap</span>
+          </div>
+          <h3 class="dash-card-title">Consumer Protection Act 2019: Fighting Corporate Deficiency & e-Daakhil</h3>
+          <p class="dash-card-desc">
+            Holding builders, airlines, hospitals, and e-commerce companies accountable (*LDA v. M.K. Gupta*, *IMA v. V.P. Shantha*). How to draft an ironclad pre-litigation Legal Notice and file claims pro se on the e-Daakhil portal.
+          </p>
+          <div class="dash-card-bottom">
+            <div class="card-badges">
+              <span class="badge-tag badge-upcoming">CPA 2019</span>
+              <span class="badge-tag badge-upcoming">e-Daakhil Filing</span>
+            </div>
+            <span class="badge-tag badge-upcoming">In Production</span>
+          </div>
+        </div>
+
+        <!-- Lesson 0004: Upcoming -->
+        <div class="dash-card" style="opacity: 0.9;">
+          <div class="dash-card-header">
+            <span class="dash-card-num">LESSON 0004</span>
+            <span class="badge-tag badge-upcoming">Upcoming Roadmap</span>
+          </div>
+          <h3 class="dash-card-title">Encounters with Authority: The D.K. Basu Shield, Traffic Stops & Due Process</h3>
+          <p class="dash-card-desc">
+            The 11 Golden Guidelines on Arrest (*D.K. Basu*), Section 41A notices against arbitrary arrest (*Arnesh Kumar*), women arrest rules after sunset, vehicle search boundaries under Motor Vehicles Act, and the Article 20(3) right to silence (*Nandini Satpathy*).
+          </p>
+          <div class="dash-card-bottom">
+            <div class="card-badges">
+              <span class="badge-tag badge-upcoming">Constitutional Shield</span>
+              <span class="badge-tag badge-upcoming">D.K. Basu Guidelines</span>
+            </div>
+            <span class="badge-tag badge-upcoming">In Production</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: Interactive 3D Flashcards Practice Deck -->
+    <section class="flashcard-section" aria-label="Flashcards Practice Deck">
+      <div class="section-title-row" style="margin-top: 0;">
+        <div>
+          <h2 class="section-heading">Active Retrieval Practice: Legal Flashcards</h2>
+          <span class="section-subtext">Click card or press Spacebar to flip; test your recall before revealing definitions</span>
+        </div>
+      </div>
+
+      <div class="flashcard-controls-top">
+        <div class="flashcard-filter">
+          <button class="filter-btn active" data-cat="all" onclick="filterDeck('all')">All Terms (10)</button>
+          <button class="filter-btn" data-cat="criminal" onclick="filterDeck('criminal')">Criminal & Police</button>
+          <button class="filter-btn" data-cat="civil" onclick="filterDeck('civil')">Civil & Contracts</button>
+          <button class="filter-btn" data-cat="latin" onclick="filterDeck('latin')">Latin Maxims</button>
+        </div>
+        <div id="deck-counter" style="font-family: var(--font-mono); font-size: 13px; color: var(--text-muted);">Card 1 of 10</div>
+      </div>
+
+      <!-- 3D Card Stage -->
+      <div class="flashcard-stage" onclick="toggleCardFlip()">
+        <div id="cardInner" class="flashcard-inner">
+          <!-- Front -->
+          <div class="flashcard-face flashcard-front">
+            <div class="flashcard-face-top">
+              <span id="cardCat" class="flashcard-cat">CRIMINAL PROCEDURE</span>
+              <span class="flashcard-hint">Click or Space to Flip ↺</span>
+            </div>
+            <div>
+              <div id="cardTerm" class="flashcard-term">Cognizable Offence</div>
+              <div id="cardAudioBtn" style="text-align: center; margin-top: 8px;"></div>
+            </div>
+            <div style="font-size: 12px; color: var(--text-faint); text-align: center;">Press Spacebar to reveal statutory meaning</div>
+          </div>
+
+          <!-- Back -->
+          <div class="flashcard-face flashcard-back">
+            <div class="flashcard-face-top">
+              <span class="flashcard-cat">CANONICAL DEFINITION</span>
+              <span class="flashcard-hint">Click or Space to Flip ↺</span>
+            </div>
+            <div>
+              <p id="cardMeaning" class="flashcard-meaning">
+                A serious crime where police have statutory power to arrest without a warrant and are legally mandated to register an FIR under Section 154 CrPC (*Lalita Kumari*).
+              </p>
+              <div id="cardAvoid" class="flashcard-avoid">_Avoid_: Major crime, police case</div>
+            </div>
+            <div style="font-size: 12px; color: var(--text-faint); text-align: center;">Click next card to continue retrieval practice</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deck Controls -->
+      <div class="flashcard-bottom-actions">
+        <div style="display: flex; gap: 8px;">
+          <button class="deck-nav-btn" onclick="prevCard()">← Previous</button>
+          <button class="deck-nav-btn" onclick="nextCard()">Next →</button>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="deck-nav-btn" onclick="shuffleDeck()">🔀 Shuffle</button>
+          <button class="deck-nav-btn" onclick="markMastered()" style="color: var(--accent-green);">✓ Mastered</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Reference Materials & Citizen Tools -->
+    <section>
+      <div class="section-title-row">
+        <h2 class="section-heading">Printable Handbooks & Practical Citizen Tools</h2>
+        <span class="section-subtext">Verified documents and generators to use in real-world scenarios</span>
+      </div>
+
+      <div class="info-grid">
+        <a href="reference/indian-citizen-rights-handbook.html" class="info-card">
+          <div>
+            <h4>Indian Citizen Legal Rights Field Handbook</h4>
+            <p>Complete printable field guide detailing the 11 D.K. Basu arrest guidelines, sunset arrest restrictions for women, Zero FIR filing, and cheque bounce timelines.</p>
+          </div>
+          <span style="font-size: 13px; font-weight: 700; color: var(--accent-blue);">Open Field Handbook →</span>
+        </a>
+
+        <a href="reference/legal-notice-generator.html" class="info-card">
+          <div>
+            <h4>Interactive Legal Notice Generator</h4>
+            <p>Generate formal, legally compliant demand letters for landlord security deposit recovery, Section 138 cheque bounce, and consumer deficiency before filing in court.</p>
+          </div>
+          <span style="font-size: 13px; font-weight: 700; color: var(--accent-blue);">Generate Legal Notice →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION: High-Trust Verified Resources -->
+    <section>
+      <div class="section-title-row">
+        <h2 class="section-heading">Verified Legal Databases & Communities</h2>
+        <span class="section-subtext">Primary statutory sources, court portals, and free legal aid networks</span>
+      </div>
+
+      <div class="info-grid">
+        <a href="https://indiankanoon.org" target="_blank" rel="noopener" class="info-card">
+          <div>
+            <h4>Indian Kanoon</h4>
+            <p>Search engine for all Indian Supreme Court and High Court judgments, bare acts, and constitutional rulings.</p>
+          </div>
+          <span style="font-size: 12.5px; color: var(--accent-gold);">indiankanoon.org ↗</span>
+        </a>
+
+        <a href="https://ecourts.gov.in" target="_blank" rel="noopener" class="info-card">
+          <div>
+            <h4>eCourts Services Portal</h4>
+            <p>Official case tracking portal for District & Subordinate Courts across India; inspect daily orders and cause lists.</p>
+          </div>
+          <span style="font-size: 12.5px; color: var(--accent-gold);">ecourts.gov.in ↗</span>
+        </a>
+
+        <a href="https://edaakhil.nic.in" target="_blank" rel="noopener" class="info-card">
+          <div>
+            <h4>e-Daakhil Consumer Portal</h4>
+            <p>Government portal under CPA 2019 for filing complaints before District, State, and National Consumer Commissions without an advocate.</p>
+          </div>
+          <span style="font-size: 12.5px; color: var(--accent-gold);">edaakhil.nic.in ↗</span>
+        </a>
+
+        <a href="https://nalsa.gov.in" target="_blank" rel="noopener" class="info-card">
+          <div>
+            <h4>NALSA & Free Legal Aid</h4>
+            <p>Statutory authority providing free legal aid lawyers to women, children, undertrials, and low-income citizens under Article 39A.</p>
+          </div>
+          <span style="font-size: 12.5px; color: var(--accent-gold);">nalsa.gov.in ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION: Demonstrated Learning Records -->
+    <section style="margin-top: 36px;">
+      <div class="section-title-row">
+        <h2 class="section-heading">Demonstrated Learning Records</h2>
+        <span class="section-subtext">Sequential records capturing proven mastery of legal principles</span>
+      </div>
+
+      <div class="dash-card">
+        <div class="dash-card-header">
+          <span class="dash-card-num">RECORD 0001</span>
+          <span class="badge-tag badge-mastered">✓ Mastered</span>
+        </div>
+        <h3 class="dash-card-title">Indian Court Jurisdiction, Civil vs. Criminal Division, and Negligence</h3>
+        <p class="dash-card-desc">
+          Verified mastery of distinguishing civil medical/professional negligence from criminal recklessness (*Jacob Mathew*), enforcing mandatory FIR registration & Zero FIR (*Lalita Kumari*), and quasi-criminal cheque bounce mechanisms under Section 138 of the NI Act.
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Flashcards Deck Script & Audio Wiring -->
+  <script>
+    const flashcardsData = [
+      {
+        id: "fc-1",
+        cat: "criminal",
+        catTitle: "CRIMINAL PROCEDURE",
+        term: "Cognizable Offence",
+        meaning: "A serious crime where police have statutory power to arrest without a warrant and are legally mandated to register an FIR under Section 154 CrPC (*Lalita Kumari*).",
+        avoid: "Avoid: Major crime, police case",
+        audio: null
+      },
+      {
+        id: "fc-2",
+        cat: "criminal",
+        catTitle: "CRIMINAL PROCEDURE",
+        term: "Zero FIR",
+        meaning: "An FIR registered at any police station across India irrespective of territorial jurisdiction, assigned number '0' and transferred to the local station.",
+        avoid: "Avoid: Universal complaint, emergency report",
+        audio: null
+      },
+      {
+        id: "fc-3",
+        cat: "latin",
+        catTitle: "CRIMINAL DOCTRINE",
+        term: "Mens Rea",
+        meaning: "\"Guilty mind\" — the mental intent or gross recklessness required by law to establish criminal culpability (*Jacob Mathew v. State of Punjab*).",
+        avoid: "Avoid: Criminal thought, evil motive",
+        audio: "assets/audio/pronounce-mensrea.wav"
+      },
+      {
+        id: "fc-4",
+        cat: "latin",
+        catTitle: "EVIDENCE DOCTRINE",
+        term: "Prima Facie",
+        meaning: "\"At first face\" — evidence sufficient to disclose an offence or civil claim on its face, triggering mandatory FIR registration under *Lalita Kumari*.",
+        avoid: "Avoid: Surface proof, obvious look",
+        audio: "assets/audio/pronounce-primafacie.wav"
+      },
+      {
+        id: "fc-5",
+        cat: "civil",
+        catTitle: "CIVIL & CONTRACTS",
+        term: "Section 138 NI Act",
+        meaning: "Statutory quasi-criminal provision holding drawer of a dishonoured cheque liable for up to 2 years imprisonment and double cheque fine if not paid within 15 days of notice.",
+        avoid: "Avoid: Bad cheque rule, bank bounce fee",
+        audio: null
+      },
+      {
+        id: "fc-6",
+        cat: "criminal",
+        catTitle: "CONSTITUTIONAL SHIELD",
+        term: "D.K. Basu Guidelines",
+        meaning: "The 11 mandatory procedural safeguards established by the Supreme Court in 1997 governing police arrest, memo of arrest, medical checks, and relative notification.",
+        avoid: "Avoid: Police handbook, arrest guide",
+        audio: null
+      },
+      {
+        id: "fc-7",
+        cat: "latin",
+        catTitle: "COURT PROCEDURE",
+        term: "Pro Se / Party-in-Person",
+        meaning: "Appearing and arguing your own matter directly before an Indian Magistrate, District Court, or Consumer Commission without an advocate.",
+        avoid: "Avoid: Self-lawyering, solo defense",
+        audio: "assets/audio/pronounce-prose.wav"
+      },
+      {
+        id: "fc-8",
+        cat: "latin",
+        catTitle: "CONSTITUTIONAL WRIT",
+        term: "Habeas Corpus",
+        meaning: "Prerogative writ under Article 32 or Article 226 commanding detaining authorities to produce an incarcerated individual to test the lawfulness of custody.",
+        avoid: "Avoid: Jail release letter, prisoner notice",
+        audio: "assets/audio/pronounce-habeascorpus.wav"
+      },
+      {
+        id: "fc-9",
+        cat: "latin",
+        catTitle: "CONTRACT LAW",
+        term: "Bona Fide",
+        meaning: "In good faith; acting honestly, openly, and without intention to defraud or take unfair advantage of another party.",
+        avoid: "Avoid: Genuine, real",
+        audio: "assets/audio/pronounce-bonafide.wav"
+      },
+      {
+        id: "fc-10",
+        cat: "civil",
+        catTitle: "CIVIL & CONTRACTS",
+        term: "Leave & License",
+        meaning: "Temporary contractual permission granting a licensee occupancy of residential premises for a fixed term (11 months) without creating tenancy rights.",
+        avoid: "Avoid: Rental lease, rent agreement",
+        audio: null
+      }
+    ];
+
+    let currentFilter = "all";
+    let filteredCards = [...flashcardsData];
+    let currentIndex = 0;
+    let isFlipped = false;
+    let activeAudio = null;
+
+    function renderCurrentCard() {
+      if (filteredCards.length === 0) return;
+      const card = filteredCards[currentIndex];
+
+      document.getElementById("cardInner").classList.remove("flipped");
+      isFlipped = false;
+
+      document.getElementById("cardCat").textContent = card.catTitle;
+      document.getElementById("cardTerm").textContent = card.term;
+      document.getElementById("cardMeaning").textContent = card.meaning;
+      document.getElementById("cardAvoid").textContent = card.avoid;
+      document.getElementById("deck-counter").textContent = `Card ${currentIndex + 1} of ${filteredCards.length}`;
+
+      const audioBtnContainer = document.getElementById("cardAudioBtn");
+      if (card.audio) {
+        audioBtnContainer.innerHTML = `<button class="pronounce-btn" onclick="playCardAudio(event, '${card.audio}')" title="Listen to pronunciation">🔊</button>`;
+      } else {
+        audioBtnContainer.innerHTML = "";
+      }
+    }
+
+    function toggleCardFlip() {
+      const inner = document.getElementById("cardInner");
+      isFlipped = !isFlipped;
+      inner.classList.toggle("flipped", isFlipped);
+    }
+
+    function nextCard() {
+      if (currentIndex < filteredCards.length - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+      }
+      renderCurrentCard();
+    }
+
+    function prevCard() {
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = filteredCards.length - 1;
+      }
+      renderCurrentCard();
+    }
+
+    function shuffleDeck() {
+      for (let i = filteredCards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [filteredCards[i], filteredCards[j]] = [filteredCards[j], filteredCards[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    }
+
+    function markMastered() {
+      alert(`Mastery recorded for "${filteredCards[currentIndex].term}"!`);
+      nextCard();
+    }
+
+    function filterDeck(category) {
+      currentFilter = category;
+      document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.cat === category);
+      });
+
+      if (category === "all") {
+        filteredCards = [...flashcardsData];
+      } else {
+        filteredCards = flashcardsData.filter(c => c.cat === category);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    }
+
+    function playCardAudio(event, src) {
+      event.stopPropagation();
+      if (activeAudio) {
+        activeAudio.pause();
+      }
+      activeAudio = new Audio(src);
+      activeAudio.play().catch(() => {});
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (e.code === "Space" && e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA") {
+        e.preventDefault();
+        toggleCardFlip();
+      } else if (e.code === "ArrowRight") {
+        nextCard();
+      } else if (e.code === "ArrowLeft") {
+        prevCard();
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCurrentCard();
+    });
+  </script>
+
+</body>
+</html>

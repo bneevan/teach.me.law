@@ -1,0 +1,56 @@
+[
+  {
+    "id": "seg-1",
+    "type": "motivation",
+    "title": "The Indian Citizen's Dilemma",
+    "visualCardId": "card-seg-1",
+    "durationSeconds": 45.35,
+    "startTime": 0.0,
+    "endTime": 45.35
+  },
+  {
+    "id": "seg-2",
+    "type": "concept",
+    "title": "The Great Divide & The Indian Court Hierarchy",
+    "visualCardId": "card-seg-2",
+    "durationSeconds": 68.14,
+    "startTime": 45.35,
+    "endTime": 113.49
+  },
+  {
+    "id": "seg-3",
+    "type": "example",
+    "title": "Landmark Case: Jacob Mathew v. State of Punjab",
+    "visualCardId": "card-seg-3",
+    "durationSeconds": 85.36,
+    "startTime": 113.49,
+    "endTime": 198.85
+  },
+  {
+    "id": "seg-4",
+    "type": "concept",
+    "title": "Landmark Case: Lalita Kumari, Mandatory FIR & Zero FIR",
+    "visualCardId": "card-seg-4",
+    "durationSeconds": 81.26,
+    "startTime": 198.85,
+    "endTime": 280.11
+  },
+  {
+    "id": "seg-5",
+    "type": "example",
+    "title": "Parallel Tracks & Section 138 Cheque Bounce",
+    "visualCardId": "card-seg-5",
+    "durationSeconds": 75.93,
+    "startTime": 280.11,
+    "endTime": 356.04
+  },
+  {
+    "id": "seg-6",
+    "type": "summary",
+    "title": "The Indian Citizen's 4-Step Action Protocol",
+    "visualCardId": "card-seg-6",
+    "durationSeconds": 62.41,
+    "startTime": 356.04,
+    "endTime": 418.45
+  }
+]
