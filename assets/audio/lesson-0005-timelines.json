@@ -1,0 +1,56 @@
+[
+  {
+    "id": "seg-1",
+    "type": "motivation",
+    "title": "The Terror of Modern Cyber Extortion",
+    "visualCardId": "card-seg-1",
+    "durationSeconds": 65.12,
+    "startTime": 0.0,
+    "endTime": 65.12
+  },
+  {
+    "id": "seg-2",
+    "type": "concept",
+    "title": "Statutory Cyber Law & Section 66D of the IT Act",
+    "visualCardId": "card-seg-2",
+    "durationSeconds": 57.23,
+    "startTime": 65.12,
+    "endTime": 122.35
+  },
+  {
+    "id": "seg-3",
+    "type": "example",
+    "title": "Deconstructing the Digital Arrest Scam",
+    "visualCardId": "card-seg-3",
+    "durationSeconds": 65.78,
+    "startTime": 122.35,
+    "endTime": 188.13
+  },
+  {
+    "id": "seg-4",
+    "type": "concept",
+    "title": "The RBI Zero Liability Shield (Master Circular 2017)",
+    "visualCardId": "card-seg-4",
+    "durationSeconds": 57.67,
+    "startTime": 188.13,
+    "endTime": 245.8
+  },
+  {
+    "id": "seg-5",
+    "type": "example",
+    "title": "The 1930 Helpline & Golden Hour Inter-Bank Freeze",
+    "visualCardId": "card-seg-5",
+    "durationSeconds": 56.24,
+    "startTime": 245.8,
+    "endTime": 302.04
+  },
+  {
+    "id": "seg-6",
+    "type": "summary",
+    "title": "The Citizen's 4-Step Cyber Emergency Protocol",
+    "visualCardId": "card-seg-6",
+    "durationSeconds": 59.34,
+    "startTime": 302.04,
+    "endTime": 361.38
+  }
+]

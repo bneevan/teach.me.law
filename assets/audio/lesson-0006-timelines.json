@@ -1,0 +1,56 @@
+[
+  {
+    "id": "seg-1",
+    "type": "motivation",
+    "title": "The Data Harvest & The Cost of Free",
+    "visualCardId": "card-seg-1",
+    "durationSeconds": 50.77,
+    "startTime": 0.0,
+    "endTime": 50.77
+  },
+  {
+    "id": "seg-2",
+    "type": "concept",
+    "title": "The Constitutional Keystone: Justice K.S. Puttaswamy (2017)",
+    "visualCardId": "card-seg-2",
+    "durationSeconds": 74.82,
+    "startTime": 50.77,
+    "endTime": 125.59
+  },
+  {
+    "id": "seg-3",
+    "type": "concept",
+    "title": "The Statutory Shield: Digital Personal Data Protection Act 2023",
+    "visualCardId": "card-seg-3",
+    "durationSeconds": 80.64,
+    "startTime": 125.59,
+    "endTime": 206.23
+  },
+  {
+    "id": "seg-4",
+    "type": "concept",
+    "title": "Intermediary Safe Harbor & Free Speech: Section 79 IT Act & Shreya Singhal",
+    "visualCardId": "card-seg-4",
+    "durationSeconds": 79.04,
+    "startTime": 206.23,
+    "endTime": 285.27
+  },
+  {
+    "id": "seg-5",
+    "type": "example",
+    "title": "The Anti-Spam Machine: TRAI Regulations & DND 3.0",
+    "visualCardId": "card-seg-5",
+    "durationSeconds": 74.56,
+    "startTime": 285.27,
+    "endTime": 359.84
+  },
+  {
+    "id": "seg-6",
+    "type": "summary",
+    "title": "The Citizen's 4-Step Digital Defense Playbook",
+    "visualCardId": "card-seg-6",
+    "durationSeconds": 88.05,
+    "startTime": 359.84,
+    "endTime": 447.88
+  }
+]

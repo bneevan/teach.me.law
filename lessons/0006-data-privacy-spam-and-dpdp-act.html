@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lesson 0006: Data Privacy, Spam & The DPDP Act: Reclaiming Your Digital Autonomy</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    .case-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      margin: 16px 0;
+      border-left: 4px solid var(--accent-blue);
+    }
+    .case-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 6px;
+    }
+    .case-meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .rule-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+    }
+    .rule-card strong {
+      display: block;
+      color: var(--accent-blue);
+      margin-bottom: 4px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+    }
+    .rule-card p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin: 0;
+    }
+    .action-step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      margin: 12px 0;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .step-num {
+      background: var(--accent-blue);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 16px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lesson-container">
+
+    <!-- Top Navigation Bar -->
+    <nav class="lesson-nav">
+      <a href="../index.html" class="dashboard-link">⌂ Course Dashboard</a>
+      <span class="lesson-index-badge">Track 1 • Lesson 0006 of 0006</span>
+    </nav>
+
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <span class="lesson-badge">Track 1: Digital Rights & Cyber Crime</span>
+      <h1 class="lesson-title">Data Privacy, Spam & The DPDP Act: Reclaiming Your Digital Autonomy</h1>
+
+      <div class="mission-outcome-box">
+        <strong>Mission Outcome</strong>
+        Exercise your fundamental right to informational privacy under the landmark 9-judge Supreme Court ruling in <em>Justice K.S. Puttaswamy</em>, enforce the Digital Personal Data Protection (DPDP) Act 2023 against data fiduciaries, invoke intermediary safe-harbor takedowns under Section 79 IT Act (<em>Shreya Singhal</em>), and terminate predatory telemarketing spam using TRAI DND 3.0.
+      </div>
+
+      <!-- Spoken Pronunciation Guide for Legal Terms -->
+      <section class="pronounce-box">
+        <span class="pronounce-box-title">Spoken Pronunciation Guide (Constitutional & Tech Law)</span>
+        <div class="pronounce-list">
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">Ultra Vires</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/ˌʌl.trə ˈvaɪ.riːz/</span>
+                <span class="pronounce-lang">Constitutional Doctrine</span>
+              </div>
+              <p class="pronounce-meaning">"Beyond the powers" — when state surveillance, executive data collection, or corporate clauses exceed constitutional authority under Article 21.</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-ultravires.wav" title="Listen to pronunciation of Ultra Vires" aria-label="Listen to pronunciation of Ultra Vires">🔊</button>
+          </div>
+
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">Nemo Tenetur Seipsum Accusare</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/ˈneɪ.moʊ tɛˈneɪ.tʊər seɪ.ɪpˈsʊm əˌkjuːˈzɑː.reɪ/</span>
+                <span class="pronounce-lang">Constitutional Maxim</span>
+              </div>
+              <p class="pronounce-meaning">"No man is bound to accuse himself" — privacy rights extending to biometric decryption and personal phone unlocks (*Selvi v. State of Karnataka*).</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-nemotenetur.wav" title="Listen to pronunciation of Nemo Tenetur" aria-label="Listen to pronunciation of Nemo Tenetur">🔊</button>
+          </div>
+
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">Res Ipsa Loquitur</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/ˌreɪz ˈɪp.sə loʊˈkwɪ.tʊər/</span>
+                <span class="pronounce-lang">Tort Doctrine</span>
+              </div>
+              <p class="pronounce-meaning">"The thing speaks for itself" — when a massive corporate data leak directly proves gross negligence without complex technical forensics.</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-resipsaloquitur.wav" title="Listen to pronunciation of Res Ipsa Loquitur" aria-label="Listen to pronunciation of Res Ipsa Loquitur">🔊</button>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <!-- Top Integrated Audio Player -->
+    <section class="lesson-audio-player" aria-label="Lesson Audio Player">
+      <div class="player-controls">
+        <button id="player-play-btn" class="player-btn primary" aria-label="Play or Pause">
+          <span id="play-icon">▶</span>
+          <span id="play-text">Play Audio (7:28)</span>
+        </button>
+
+        <div class="time-display">
+          <span id="current-time">0:00</span> / <span id="total-time">7:28</span>
+        </div>
+
+        <div class="speed-selector" aria-label="Playback Speed">
+          <button class="speed-btn active" data-speed="1.0">1.0×</button>
+          <button class="speed-btn" data-speed="1.2">1.2×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+        </div>
+      </div>
+
+      <div class="scrub-container">
+        <input type="range" id="player-scrubber" class="scrub-slider" min="0" max="100" value="0" step="0.1" aria-label="Audio scrubber">
+      </div>
+
+      <!-- Segment Timeline Ribbon -->
+      <div class="timeline-pills" role="tablist" aria-label="Lesson Segments">
+        <button class="segment-pill active" data-segment-id="seg-1">1. The Data Harvest</button>
+        <button class="segment-pill" data-segment-id="seg-2">2. Puttaswamy & Art 21</button>
+        <button class="segment-pill" data-segment-id="seg-3">3. DPDP Act 2023</button>
+        <button class="segment-pill checkpoint" data-segment-id="chk-seg-1">⏸ Quiz 1</button>
+        <button class="segment-pill" data-segment-id="seg-4">4. Sec 79 IT & Safe Harbor</button>
+        <button class="segment-pill" data-segment-id="seg-5">5. TRAI DND 3.0 Anti-Spam</button>
+        <button class="segment-pill" data-segment-id="seg-6">6. Defense Playbook</button>
+        <button class="segment-pill checkpoint" data-segment-id="chk-seg-2">⏸ Quiz 2</button>
+      </div>
+    </section>
+
+    <!-- Checkpoint Alert Banner -->
+    <div id="checkpoint-banner" class="checkpoint-pause-banner">
+      <strong>Checkpoint Reached:</strong> Audio narration paused. Answer the retrieval question below to test your understanding of data privacy laws and resume playback.
+    </div>
+
+    <!-- Visual Supporting Cards (Synchronized with Audio) -->
+    <section class="visual-cards-section">
+
+      <!-- Card 1: Motivation -->
+      <div id="card-seg-1" class="visual-card active">
+        <h3>1. The Data Harvest & The Cost of "Free"</h3>
+        <p>In the digital economy, if you are not paying for the product, your personal data is the currency. Everyday activities in India—shopping mall billing, delivery apps, fitness trackers, and fintech loan calculators—feed an aggressive, unregulated underground data brokerage ecosystem.</p>
+        <div style="background: var(--bg-subtle); padding: 14px 16px; border-radius: 6px; margin: 14px 0; border-left: 4px solid var(--accent-blue);">
+          <strong>The Danger of Data Sprawl:</strong> Unrestricted data collection fuels targeted spam, biometric profiling, credit score manipulation, and high-impact identity theft. For decades, citizens were told that privacy in India was an elitist luxury. The Supreme Court decisively rejected this premise.
+        </div>
+        <p class="caption">Audio Segment 1: How mass data harvesting undermines individual liberty.</p>
+      </div>
+
+      <!-- Card 2: Landmark Case - Puttaswamy -->
+      <div id="card-seg-2" class="visual-card">
+        <h3>2. The Constitutional Keystone: Justice K.S. Puttaswamy (2017)</h3>
+        <p>The landmark 9-judge Constitution Bench ruling that established privacy as a non-negotiable fundamental human right:</p>
+
+        <div class="case-card">
+          <div class="case-title">Justice K.S. Puttaswamy (Retd.) v. Union of India (2017 10 SCC 1)</div>
+          <span class="case-meta">Supreme Court of India • Unanimous 9-Judge Constitution Bench</span>
+          <p><strong>The Context:</strong> Challenges to the Aadhaar biometric database prompted the State to argue that the Indian Constitution contains no fundamental right to privacy, relying on obsolete 1950s rulings (*M.P. Sharma* and *Kharak Singh*).</p>
+          <p><strong>The Core Ruling:</strong></p>
+          <ul style="margin: 8px 0 8px 20px; font-size: 14.5px; line-height: 1.5;">
+            <li><strong>Fundamental Right Under Article 21:</strong> Privacy is an intrinsic element of life, dignity, and personal liberty under Article 21, and is woven through all of Part III.</li>
+            <li><strong>Informational Self-Determination:</strong> Privacy extends to the control individuals exercise over their personal data. The state and corporations do not own your digital footprint.</li>
+            <li><strong>The 4-Prong Proportionality Test:</strong> Any restriction on privacy must satisfy:
+              <br>1. <em>Legality:</em> Authorized by a valid enacted law.
+              <br>2. <em>Legitimate Aim:</em> Serving a genuine public objective.
+              <br>3. <em>Proportionality:</em> Rational nexus between the measure and the goal.
+              <br>4. <em>Strict Necessity:</em> Using the least intrusive means possible.
+            </li>
+          </ul>
+        </div>
+        <p class="caption">Audio Segment 2: How the 9-judge Constitution Bench anchored informational privacy in Article 21.</p>
+      </div>
+
+      <!-- Card 3: The DPDP Act 2023 -->
+      <div id="card-seg-3" class="visual-card">
+        <h3>3. The Statutory Shield: Digital Personal Data Protection Act 2023</h3>
+        <p>The comprehensive statutory regime codifying the Puttaswamy mandate into operational business law:</p>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <strong>Data Principal (Citizen)</strong>
+            <p>The individual to whom personal data relates. You hold absolute sovereign ownership over your personal identifiers.</p>
+          </div>
+          <div class="rule-card">
+            <strong>Data Fiduciary (Company)</strong>
+            <p>Any corporate, banking, or state entity determining the purpose and means of data processing. Held to fiduciary trust duties.</p>
+          </div>
+          <div class="rule-card">
+            <strong>Affirmative Unbundled Consent</strong>
+            <p>Section 6: Consent must be free, specific, informed, and unbundled. Dark patterns, pre-checked tickboxes, and coercive terms are void.</p>
+          </div>
+          <div class="rule-card">
+            <strong>Penalties up to ₹250 Crores</strong>
+            <p>The Data Protection Board of India (DPBI) possesses statutory jurisdiction to levy penalties up to ₹250 Cr for data breaches and systemic non-compliance.</p>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 6px; padding: 14px; margin: 12px 0;">
+          <h4 style="font-family: var(--font-sans); color: var(--accent-blue); margin-bottom: 6px;">Your 4 Enforceable Citizen Rights Under DPDP Act:</h4>
+          <ol style="margin: 0 0 0 20px; font-size: 14px; line-height: 1.5;">
+            <li><strong>Right to Access:</strong> Demand a summary of personal data processed and identities of all third parties with whom data was shared.</li>
+            <li><strong>Right to Correction & Erasure:</strong> Rectify inaccurate records and compel complete data deletion ("Right to be Forgotten") once the purpose is fulfilled or consent is revoked.</li>
+            <li><strong>Right to Grievance Redressal:</strong> Mandated response from company Grievance Officer within designated statutory timelines before escalating to DPBI.</li>
+            <li><strong>Right to Nominate:</strong> Authorize a representative to manage your digital data in case of death or incapacity.</li>
+          </ol>
+        </div>
+        <p class="caption">Audio Segment 3: The structural framework of the DPDP Act 2023 and the Data Protection Board of India.</p>
+      </div>
+
+      <!-- Checkpoint 1 Card -->
+      <div id="card-chk-1" class="visual-card checkpoint-card">
+        <h3>⏸ Checkpoint Quiz 1: DPDP Act Mandates</h3>
+        <p class="checkpoint-prompt">Verify your mastery of statutory data protection roles and consent revocation rules:</p>
+        <div id="quiz-container-1"></div>
+      </div>
+
+      <!-- Card 4: Intermediary Liability & Free Speech -->
+      <div id="card-seg-4" class="visual-card">
+        <h3>4. Intermediary Safe Harbor: Section 79 IT Act & Shreya Singhal</h3>
+        <p>How the law regulates digital platforms, defamatory uploads, deepfakes, and online harassment:</p>
+
+        <div class="case-card">
+          <div class="case-title">Shreya Singhal v. Union of India (2015 5 SCC 1) & IT Rules 2021</div>
+          <span class="case-meta">Supreme Court of India • Section 79 Safe Harbor Jurisprudence</span>
+          <p><strong>The Safe Harbor Principle:</strong> Under Section 79 of the Information Technology Act, social media platforms (Meta, YouTube, X) are not liable for user-generated content, <em>provided</em> they act as passive conduits and exercise strict statutory "due diligence".</p>
+          <p><strong>When Safe Harbor Is Forfeited:</strong></p>
+          <ul style="margin: 8px 0 8px 20px; font-size: 14.5px; line-height: 1.5;">
+            <li><strong>24-Hour Non-Consensual Imagery Rule:</strong> Under Rule 3(2)(b) of the IT Rules 2021, if intimate pictures, morphs, or deepfakes are reported, the platform MUST remove or disable access within <strong>24 hours</strong>.</li>
+            <li><strong>36-Hour Judicial/Government Order Rule:</strong> In <em>Shreya Singhal</em>, the SC held that intermediaries must remove unlawful content within <strong>36 hours</strong> upon receiving actual knowledge via court order or authorized government notification.</li>
+            <li><strong>Consequence of Default:</strong> Failure to act strips safe harbor immunity, subjecting platform directors to direct criminal liability for defamation, extortion, or IT Act violations.</li>
+          </ul>
+        </div>
+        <p class="caption">Audio Segment 4: How Section 79 strikes the balance between free speech and rapid takedowns of harmful content.</p>
+      </div>
+
+      <!-- Card 5: TRAI Anti-Spam Machine -->
+      <div id="card-seg-5" class="visual-card">
+        <h3>5. The Anti-Spam Machine: TRAI Regulations & DND 3.0</h3>
+        <p>The regulatory mechanics that combat unsolicited commercial communications (UCC) and predatory phone spam:</p>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <strong>Telecom Commercial Regulations (TCCCPR)</strong>
+            <p>Promulgated by Telecom Regulatory Authority of India (TRAI). Forbids promotional calling from regular 10-digit consumer numbers.</p>
+          </div>
+          <div class="rule-card">
+            <strong>140 & 160 Numbering Series</strong>
+            <p>Registered telemarketers must call from <strong>140 series</strong> (promotions) or <strong>160 series</strong> (transactional alerts). Unregistered callers face instant disconnection.</p>
+          </div>
+          <div class="rule-card">
+            <strong>National DND Registry (DND 3.0)</strong>
+            <p>Granular opt-outs via the TRAI DND application or SMS. Categorically block financial services, real estate, education, or all promotional calls.</p>
+          </div>
+          <div class="rule-card">
+            <strong>The 72-Hour Reporting Window</strong>
+            <p>Filing a UCC complaint via SMS to <strong>1909</strong> within 3 days triggers mandatory telecom investigation, financial penalties, and 2-year blacklisting.</p>
+          </div>
+        </div>
+        <p class="caption">Audio Segment 5: How TRAI's regulatory framework empowers consumers to shut down predatory telemarketing.</p>
+      </div>
+
+      <!-- Card 6: Citizen Digital Defense Playbook -->
+      <div id="card-seg-6" class="visual-card">
+        <h3>6. The Citizen's 4-Step Digital Defense Playbook</h3>
+        <p>A concrete, four-step protocol to systematically purge your personal data and protect your digital autonomy:</p>
+
+        <div class="action-step-card">
+          <div class="step-num">1</div>
+          <div>
+            <strong>Audit & Revoke Permissions (DPDP Act Sec 6)</strong>
+            <p style="margin: 4px 0 0; font-size: 14px; color: var(--text-muted);">Audit mobile apps. Send formal consent withdrawal emails to services you no longer utilize, requesting formal written confirmation of complete database erasure.</p>
+          </div>
+        </div>
+
+        <div class="action-step-card">
+          <div class="step-num">2</div>
+          <div>
+            <strong>Activate Absolute DND Block via 1909</strong>
+            <p style="margin: 4px 0 0; font-size: 14px; color: var(--text-muted);">Send an SMS containing <strong>'START 0'</strong> to <strong>1909</strong>. Whenever an unregistered promotional caller calls, submit an immediate complaint via the TRAI DND app within 72 hours.</p>
+          </div>
+        </div>
+
+        <div class="action-step-card">
+          <div class="step-num">3</div>
+          <div>
+            <strong>Issue Formal Intermediary Takedown Notices</strong>
+            <p style="margin: 4px 0 0; font-size: 14px; color: var(--text-muted);">If your private media or defamatory content is shared on social media, notify the Resident Grievance Officer citing Section 79 IT Act and Rule 3(2)(b) demanding removal within 24 hours.</p>
+          </div>
+        </div>
+
+        <div class="action-step-card">
+          <div class="step-num">4</div>
+          <div>
+            <strong>Escalate Systemic Breaches to DPBI & CERT-In</strong>
+            <p style="margin: 4px 0 0; font-size: 14px; color: var(--text-muted);">When a corporation suffers a security breach compromising your identity or ignores statutory erasure notices, lodge a formal grievance before the Data Protection Board of India and report to CERT-In.</p>
+          </div>
+        </div>
+        <p class="caption">Audio Segment 6: Practical operational steps to assert digital sovereignty in everyday life.</p>
+      </div>
+
+      <!-- Checkpoint 2 Card -->
+      <div id="card-chk-2" class="visual-card checkpoint-card">
+        <h3>⏸ Checkpoint Quiz 2: Takedowns & Consent</h3>
+        <p class="checkpoint-prompt">Verify your understanding of intermediary obligations and privacy remedies:</p>
+        <div id="quiz-container-2"></div>
+      </div>
+
+    </section>
+
+    <!-- References & Statutory Footnotes -->
+    <footer class="lesson-footer">
+      <h3>Statutory Authorities & Landmark Precedents Cited</h3>
+      <ul>
+        <li><a href="https://indiankanoon.org/doc/127517806/" target="_blank" rel="noopener">Supreme Court of India: Justice K.S. Puttaswamy (Retd.) v. Union of India (2017 10 SCC 1)</a> — 9-judge bench declaring privacy a fundamental right under Article 21.</li>
+        <li><a href="https://www.meity.gov.in/writereaddata/files/Digital%20Personal%20Data%20Protection%20Act%202023.pdf" target="_blank" rel="noopener">Digital Personal Data Protection Act 2023 (Act No. 22 of 2023)</a> — Data Principal rights, Data Fiduciary obligations, DPBI penalties.</li>
+        <li><a href="https://indiankanoon.org/doc/110813550/" target="_blank" rel="noopener">Supreme Court of India: Shreya Singhal v. Union of India (2015 5 SCC 1)</a> — Section 79 intermediary liability and free speech protections.</li>
+        <li><a href="https://www.trai.gov.in/telecom-commercial-communication-customer-preference-regulations-2018" target="_blank" rel="noopener">TRAI: Telecom Commercial Communications Customer Preference Regulations (TCCCPR 2018)</a> — National DND 3.0 registry and spam penalties.</li>
+      </ul>
+    </footer>
+
+  </div>
+
+  <!-- Mobile Sticky Mini-Player Companion Bar -->
+  <aside id="mobile-mini-player" class="mobile-mini-player" aria-label="Mobile sticky audio player">
+    <div class="mini-progress-bar">
+      <div id="mini-progress-fill" class="mini-progress-fill"></div>
+    </div>
+    <div class="mini-player-content">
+      <button id="mini-play-btn" class="mini-play-btn" aria-label="Play or Pause">
+        <span id="mini-play-icon">▶</span>
+      </button>
+      <div id="mini-info" class="mini-info">
+        <span id="mini-segment-title" class="mini-segment-title">1. The Data Harvest</span>
+        <span id="mini-time" class="mini-time">0:00 / 7:28</span>
+      </div>
+      <button id="mini-scroll-btn" class="mini-action-btn" title="Jump to top player" aria-label="Jump to top player">↑</button>
+    </div>
+  </aside>
+
+  <!-- Lesson Data Payload for runtime player -->
+  <script type="application/json" id="lesson-data">
+  {
+    "id": "0006",
+    "title": "Data Privacy, Spam & The DPDP Act: Reclaiming Your Digital Autonomy",
+    "missionOutcome": "Exercise your fundamental right to informational privacy under Justice K.S. Puttaswamy, enforce the Digital Personal Data Protection (DPDP) Act 2023 against data fiduciaries, invoke intermediary safe-harbor takedowns under Section 79 IT Act (Shreya Singhal), and terminate predatory telemarketing spam using TRAI DND 3.0.",
+    "audioFile": "../assets/audio/lesson-0006.mp3",
+    "segments": [
+      {
+        "id": "seg-1",
+        "type": "motivation",
+        "title": "1. The Data Harvest",
+        "visualCardId": "card-seg-1",
+        "durationSeconds": 50.77
+      },
+      {
+        "id": "seg-2",
+        "type": "concept",
+        "title": "2. Puttaswamy & Art 21",
+        "visualCardId": "card-seg-2",
+        "durationSeconds": 74.82
+      },
+      {
+        "id": "seg-3",
+        "type": "concept",
+        "title": "3. DPDP Act 2023",
+        "visualCardId": "card-seg-3",
+        "durationSeconds": 80.64
+      },
+      {
+        "id": "chk-seg-1",
+        "type": "checkpoint",
+        "title": "⏸ Quiz 1: DPDP Act Mandates",
+        "visualCardId": "card-chk-1",
+        "durationSeconds": 1.0
+      },
+      {
+        "id": "seg-4",
+        "type": "concept",
+        "title": "4. Sec 79 IT & Safe Harbor",
+        "visualCardId": "card-seg-4",
+        "durationSeconds": 79.04
+      },
+      {
+        "id": "seg-5",
+        "type": "example",
+        "title": "5. TRAI DND 3.0 Anti-Spam",
+        "visualCardId": "card-seg-5",
+        "durationSeconds": 74.56
+      },
+      {
+        "id": "seg-6",
+        "type": "summary",
+        "title": "6. Defense Playbook",
+        "visualCardId": "card-seg-6",
+        "durationSeconds": 88.05
+      },
+      {
+        "id": "chk-seg-2",
+        "type": "checkpoint",
+        "title": "⏸ Quiz 2: Takedowns & Consent",
+        "visualCardId": "card-chk-2",
+        "durationSeconds": 1.0
+      }
+    ],
+    "checkpoints": [
+      {
+        "id": "chk-1",
+        "segmentId": "chk-seg-1",
+        "question": "Under the Digital Personal Data Protection (DPDP) Act 2023 and the Supreme Court's landmark judgment in Justice K.S. Puttaswamy v. Union of India, what is the legal designation of a citizen whose personal data is collected, and what happens when that citizen revokes their consent from a mobile application?",
+        "options": [
+          "The citizen is an 'End-User' with no legal right to delete historical records once terms of service are accepted.",
+          "The citizen is legally designated as the 'Data Principal'; upon withdrawing consent, the 'Data Fiduciary' (company) must cease processing and permanently erase the personal data unless retention is specifically mandated by another statute.",
+          "The citizen becomes a 'Co-Owner' of the company's database and can only demand financial dividends.",
+          "Data cannot be erased unless the citizen files a High Court writ petition within 30 days of registration."
+        ],
+        "correctIndex": 1,
+        "explanation": "Under Section 2 and Section 6 of the DPDP Act 2023, the citizen is the 'Data Principal' and the processing entity is the 'Data Fiduciary'. Consent can be withdrawn at any time with equal ease. Once revoked, the Data Fiduciary must cease processing and permanently delete the personal data unless retention is required under another law."
+      },
+      {
+        "id": "chk-2",
+        "segmentId": "chk-seg-2",
+        "question": "An online defamatory post, impersonation account, or non-consensual private photograph of a citizen is published on a major social media platform. Under Section 79 of the Information Technology Act (as interpreted in Shreya Singhal) and the IT Rules 2021, what is the platform's statutory obligation upon receiving notice to maintain its 'Safe Harbor' immunity?",
+        "options": [
+          "Intermediaries enjoy unconditional immunity and can never be forced to remove content without a unanimous Supreme Court order.",
+          "Intermediaries must act expeditiously within statutory timelines (24 hours for non-consensual intimate imagery/deepfakes; up to 36 hours for court/government unlawful orders) to disable access or face forfeiture of safe harbor immunity and direct criminal liability.",
+          "The platform can keep the content online indefinitely provided they place an advertising banner above it.",
+          "The citizen must personally travel to the platform's overseas headquarters to serve physical court papers."
+        ],
+        "correctIndex": 1,
+        "explanation": "Under Section 79 of the IT Act and the IT Intermediary Guidelines 2021, safe harbor immunity is conditional upon due diligence. For non-consensual intimate imagery or deepfakes, platforms must remove or disable access within 24 hours of notification; for other unlawful content under valid court/government orders, within 36 hours. Failure to act strips platform immunity, opening them to direct prosecution."
+      }
+    ],
+    "pronunciations": [
+      {
+        "id": "pron-ultravires",
+        "term": "Ultra Vires",
+        "transliteration": "Latin",
+        "language": "Constitutional Doctrine",
+        "ipa": "/ˌʌl.trə ˈvaɪ.riːz/",
+        "meaning": "Beyond legal powers — exceeding constitutional or statutory bounds.",
+        "audioFile": "../assets/audio/pronounce-ultravires.wav"
+      },
+      {
+        "id": "pron-nemotenetur",
+        "term": "Nemo Tenetur Seipsum Accusare",
+        "transliteration": "Latin",
+        "language": "Constitutional Maxim",
+        "ipa": "/ˈneɪ.moʊ tɛˈneɪ.tʊər seɪ.ɪpˈsʊm əˌkjuːˈzɑː.reɪ/",
+        "meaning": "No man is bound to accuse himself — Article 20(3) right to silence.",
+        "audioFile": "../assets/audio/pronounce-nemotenetur.wav"
+      },
+      {
+        "id": "pron-resipsaloquitur",
+        "term": "Res Ipsa Loquitur",
+        "transliteration": "Latin",
+        "language": "Tort Doctrine",
+        "ipa": "/ˌreɪz ˈɪp.sə loʊˈkwɪ.tʊər/",
+        "meaning": "The thing speaks for itself — obvious systemic breach without complex forensics.",
+        "audioFile": "../assets/audio/pronounce-resipsaloquitur.wav"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Player Runtime Script -->
+  <script src="../assets/player.js"></script>
+</body>
+</html>

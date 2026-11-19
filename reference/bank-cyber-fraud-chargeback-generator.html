@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Cyber Fraud Zero Liability Dispute Notice Generator</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    .notice-builder-container {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-subtle);
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      background: var(--bg-card);
+    }
+    .preview-paper {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 40px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #000;
+      white-space: pre-wrap;
+      margin-top: 24px;
+      border-top: 6px solid #b91c1c;
+    }
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+    .action-btn-primary {
+      background: var(--accent-red);
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .action-btn-secondary {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .lesson-nav, .notice-builder-container, .handbook-header, .btn-row { display: none !important; }
+      .preview-paper { border: none; box-shadow: none; padding: 0; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lesson-container">
+
+    <nav class="lesson-nav">
+      <a href="../index.html" class="dashboard-link">⌂ Course Dashboard</a>
+      <span class="lesson-index-badge">Track 1 Interactive Tool</span>
+    </nav>
+
+    <header class="lesson-header">
+      <span class="lesson-badge" style="color: var(--accent-red);">Banking Protection</span>
+      <h1 class="lesson-title">Bank Cyber Fraud Zero Liability Dispute Notice Generator</h1>
+      <p style="color: var(--text-muted); font-size: 16px;">
+        Generate a legally binding dispute letter to your bank invoking the <strong>RBI Master Circular on Customer Protection (July 2017)</strong> for full refund of unauthorized electronic transactions within the 3-day statutory window.
+      </p>
+    </header>
+
+    <div class="notice-builder-container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div class="form-group">
+          <label for="bankName">Bank Name & Branch</label>
+          <input type="text" id="bankName" class="form-control" value="State Bank of India, Koramangala Branch, Bengaluru" oninput="renderNotice()">
+        </div>
+        <div class="form-group">
+          <label for="accNo">Your Account / Card Number</label>
+          <input type="text" id="accNo" class="form-control" value="A/C No. 38472910482" oninput="renderNotice()">
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div class="form-group">
+          <label for="customerName">Your Full Name</label>
+          <input type="text" id="customerName" class="form-control" value="Priya Nambiar" oninput="renderNotice()">
+        </div>
+        <div class="form-group">
+          <label for="contactInfo">Your Phone & Email</label>
+          <input type="text" id="contactInfo" class="form-control" value="+91 98450 XXXXX | priya.nambiar@email.com" oninput="renderNotice()">
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+        <div class="form-group">
+          <label for="fraudAmount">Unauthorized Debited Amount (₹)</label>
+          <input type="text" id="fraudAmount" class="form-control" value="48,500" oninput="renderNotice()">
+        </div>
+        <div class="form-group">
+          <label for="fraudDate">Transaction Date & Time</label>
+          <input type="text" id="fraudDate" class="form-control" value="19 November 2026, 14:22 IST" oninput="renderNotice()">
+        </div>
+        <div class="form-group">
+          <label for="txnRef">UTR / Transaction Reference No.</label>
+          <input type="text" id="txnRef" class="form-control" value="UPI/632489210482/DR" oninput="renderNotice()">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cybercrimeAck">National Cybercrime Portal / 1930 Ack Number</label>
+        <input type="text" id="cybercrimeAck" class="form-control" value="CC-ACK-2026-9482018" oninput="renderNotice()">
+      </div>
+
+      <div class="btn-row">
+        <button class="action-btn-primary" onclick="copyNoticeText()">📋 Copy Formal Letter Text</button>
+        <button class="action-btn-secondary" onclick="window.print()">🖨 Print or Export PDF</button>
+      </div>
+
+      <div class="preview-paper" id="noticePreview"></div>
+    </div>
+
+  </div>
+
+  <script>
+    function getNoticeContent() {
+      const bank = document.getElementById("bankName").value;
+      const acc = document.getElementById("accNo").value;
+      const name = document.getElementById("customerName").value;
+      const contact = document.getElementById("contactInfo").value;
+      const amount = document.getElementById("fraudAmount").value;
+      const date = document.getElementById("fraudDate").value;
+      const uTr = document.getElementById("txnRef").value;
+      const ack = document.getElementById("cybercrimeAck").value;
+      const today = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+
+      return `URGENT — FRAUD DISPUTE & ZERO LIABILITY CLAIM UNDER RBI CIRCULAR
+
+Date: ${today}
+
+To,
+The Branch Manager / Nodal Grievance Officer,
+${bank}
+
+FROM:
+${name}
+${contact}
+Account / Card Identifier: ${acc}
+
+SUBJECT: FORMAL REPORT OF UNAUTHORIZED ELECTRONIC TRANSACTION OF ₹${amount}/- AND MANDATORY ZERO LIABILITY CLAIM UNDER RBI MASTER CIRCULAR DBR.No.Leg.BC.78/09.07.005/2017-18
+
+Sir/Madam,
+
+1. That I am a bonafide account holder with your bank holding ${acc}.
+
+2. That on ${date}, an unauthorized fraudulent transaction occurred on my account for an aggregate amount of ₹${amount}/- under transaction reference / UTR No. ${uTr}, without my consent, knowledge, or authorization.
+
+3. That I immediately reported this transaction to the National Cybercrime Reporting Portal (Helpline 1930) and obtained official Acknowledgment Number: ${ack}. Furthermore, I blocked my card/banking access immediately upon detecting the alert.
+
+4. That in accordance with Paragraph 6 of the Reserve Bank of India Master Circular on "Customer Protection — Limiting Liability of Customers in Unauthorised Electronic Banking Transactions" dated July 6, 2017:
+   "A customer has ZERO LIABILITY where the unauthorized transaction occurs and the customer notifies the bank within three working days of receiving the communication from the bank regarding the transaction."
+
+5. That this formal communication is being delivered within the mandatory 3-working-day statutory notification period. In accordance with Paragraph 9 of the aforesaid RBI Circular, the bank is legally mandated to:
+   a) Credit the full disputed sum of ₹${amount}/- (Shadow Reversal) to my account within 10 working days from the date of this intimation.
+   b) Resolve the complaint and establish proof of customer liability, if any, within a maximum period of 90 days.
+
+I hereby call upon you to register this formal fraud dispute, coordinate with the recipient bank nodal team to freeze the beneficiary account, and restore the amount of ₹${amount}/- to my account within 10 working days, failing which I shall escalate this matter to the RBI Integrated Ombudsman (cms.rbi.org.in) and file for deficiency of service before the District Consumer Commission.
+
+Yours faithfully,
+
+_________________________
+${name}
+Encl:
+1. Copy of Bank Statement reflecting unauthorized debit
+2. Copy of National Cybercrime Portal 1930 Acknowledgment (${ack})`;
+    }
+
+    function renderNotice() {
+      document.getElementById("noticePreview").textContent = getNoticeContent();
+    }
+
+    function copyNoticeText() {
+      navigator.clipboard.writeText(getNoticeContent()).then(() => {
+        alert("Formal Bank Zero Liability letter copied to clipboard!");
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", renderNotice);
+  </script>
+</body>
+</html>

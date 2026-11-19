@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Course Notes: Pedagogy & Audio Synthesis Specs</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    .notes-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #fff;
+      padding: 36px 28px;
+      border-radius: var(--radius-md);
+      margin-bottom: 28px;
+    }
+    .notes-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(24px, 5vw, 36px);
+      margin-bottom: 10px;
+    }
+    .notes-hero p {
+      font-size: 16px;
+      color: #cbd5e1;
+      max-width: 760px;
+      line-height: 1.55;
+    }
+    .notes-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-subtle);
+    }
+    .notes-section h2 {
+      font-family: var(--font-serif);
+      font-size: 21px;
+      color: var(--accent-blue);
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 8px;
+      margin-bottom: 18px;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 14.5px;
+      font-family: var(--font-sans);
+    }
+    .spec-table th {
+      background: var(--bg-subtle);
+      color: var(--text-main);
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 2px solid var(--border-light);
+      font-weight: 700;
+    }
+    .spec-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border-fine);
+      vertical-align: top;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lesson-container">
+
+    <nav class="lesson-nav">
+      <a href="index.html" class="dashboard-link">⌂ Course Dashboard</a>
+      <span class="lesson-index-badge">Canonical Document: NOTES.md</span>
+    </nav>
+
+    <header class="notes-hero">
+      <span class="lesson-badge" style="color: #fbbf24;">Architecture & Pedagogy</span>
+      <h1>Teaching Notes & System Specifications</h1>
+      <p>
+        Learner profiling, unconstrained audio-first instructional design, and Kokoro TTS speech synthesis specifications.
+      </p>
+    </header>
+
+    <section class="notes-section">
+      <h2>Learner Profile & Tone</h2>
+      <ul style="margin-left: 20px; line-height: 1.6; font-size: 15px; color: var(--text-muted);">
+        <li><strong>Audience:</strong> Everyday Indian citizens, tenants, employees, consumers, and digital banking users with no formal legal background.</li>
+        <li><strong>Pedagogical Stance:</strong> Empathetic, empowering, objective, and practical. Jargon is introduced only alongside immediate plain-English expansions.</li>
+        <li><strong>Active Retrieval Priority:</strong> Fluency during listening is reinforced through mandatory checkpoint pauses and 3D flashcards practice.</li>
+      </ul>
+    </section>
+
+    <section class="notes-section">
+      <h2>Audio & Kokoro TTS Specifications</h2>
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Configuration</th>
+            <th>Rationale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>TTS Engine</strong></td>
+            <td>Kokoro TTS (`/Users/vault/.local/bin/kokoro-tts-tool`)</td>
+            <td>Local, offline-ready 82M model with natural cadence and no cloud API costs.</td>
+          </tr>
+          <tr>
+            <td><strong>Narrator Voice</strong></td>
+            <td><code>am_adam</code> (Grade A- Narrator)</td>
+            <td>Deep, authoritative, highly intelligible voice suited for legal exposition.</td>
+          </tr>
+          <tr>
+            <td><strong>Pronunciation Voice</strong></td>
+            <td><code>am_adam</code> @ 0.95x speed</td>
+            <td>Slightly deliberate tempo to ensure clean phonetics on Latin maxims and doctrines.</td>
+          </tr>
+          <tr>
+            <td><strong>Audio Packaging</strong></td>
+            <td>24,000 Hz WAV concatenated into 128kbps MP3</td>
+            <td>Lightweight, fast browser streaming with sub-10MB footprints per 7-minute lesson.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Indian Legal Fundamentals Glossary
 
-Canonical terminology for everyday Indian citizens navigating police encounters, contracts, consumer disputes, and courts.
+Canonical terminology for everyday Indian citizens navigating police encounters, contracts, consumer disputes, courts, and cyber safety.
 
 ## Criminal Procedure & Police Powers
 
@@ -31,6 +31,32 @@ _Avoid_: Jail-only crime, no-release case
 **D.K. Basu Guidelines**:
 The 11 mandatory procedural safeguards established by the Supreme Court in *D.K. Basu v. State of West Bengal (1997)* governing police arrest, requiring name badges, a signed arrest memo with a witness, mandatory notification to relatives within 8-12 hours, and bi-daily medical examinations.
 _Avoid_: Police rules, arrest handbook
+
+## Track 1: Cyber Law, Banking & Digital Privacy
+
+**Digital Arrest Scam**:
+A cyber extortion scheme where fraudsters impersonate CBI, Police, ED, or Customs officers over Skype/WhatsApp video calls, falsely claiming the victim is implicated in narcotics or money laundering to coerce panic bank transfers into mule accounts.
+_Avoid_: Fake police call, video fraud
+
+**Zero Liability (RBI 2017)**:
+The binding statutory principle under the Reserve Bank of India Master Circular (July 2017) establishing that a bank customer has zero financial liability for unauthorized electronic debit transactions if notified to the bank within three working days.
+_Avoid_: Bank refund guarantee, loss cover
+
+**Section 66D IT Act (Cheating by Personation)**:
+The penal provision of the Information Technology Act 2000 punishing anyone who cheats by impersonating another person or agency using a computer device or network with up to three years imprisonment and a fine up to ₹1 Lakh.
+_Avoid_: Online fraud rule, cyber trick penalty
+
+**Data Principal**:
+The individual to whom personal data relates under Section 2(j) of the Digital Personal Data Protection Act 2023, possessing statutory rights to consent withdrawal, data correction, and data erasure.
+_Avoid_: Data user, internet user
+
+**Data Fiduciary**:
+Any person, corporation, or agency that determines the purpose and means of processing personal data under the DPDP Act 2023, subject to statutory security safeguards and penalties up to ₹250 Crores for data breaches.
+_Avoid_: Tech company, data collector
+
+**Intermediary Liability (Section 79 IT Act)**:
+The statutory safe-harbour immunity protecting internet platforms from liability for third-party user content, conditioned on strict compliance with government takedown orders and judicial decrees (*Shreya Singhal v. Union of India*).
+_Avoid_: Platform shield, app immunity
 
 ## Civil Law & Everyday Agreements
 
@@ -79,6 +105,16 @@ _Audio_: `assets/audio/pronounce-primafacie.wav`
 A litigant who chooses to argue and present their case directly before a Magistrate, Consumer Commission, or High Court without the representation of an advocate.
 _Avoid_: Self-lawyering, solo defense
 _Audio_: `assets/audio/pronounce-prose.wav`
+
+**Res Ipsa Loquitur**:
+"The thing speaks for itself"; the legal doctrine that negligence can be inferred from the very nature of an accident without direct proof of negligent acts (*IMA v. V.P. Shantha*).
+_Avoid_: Obvious fault, clear blunder
+_Audio_: `assets/audio/pronounce-resipsaloquitur.wav`
+
+**Nemo Tenetur Seipsum Accusare**:
+"No man is bound to accuse himself"; the Latin maxim forming the core of Article 20(3) right to silence against self-incrimination.
+_Avoid_: Self-blame rule, confession shield
+_Audio_: `assets/audio/pronounce-nemotenetur.wav`
 
 **Caveat Emptor**:
 "Let the buyer beware"; the traditional principle that buyers bear the risk of defects, significantly curtailed in modern Indian jurisprudence by the Consumer Protection Act 2019's statutory product liability.
