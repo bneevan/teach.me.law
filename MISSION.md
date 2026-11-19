@@ -21,6 +21,6 @@ Demystify the Indian legal system so that everyday citizens can confidently prot
 
 ## Planned Lessons
 - [x] **Lesson 0001: The Indian Citizen's Legal Map — Civil vs. Criminal, Court Hierarchy & Landmark Precedents**
-- [ ] **Lesson 0002: Everyday Contracts & Tenancy in India — What You Sign, Click, and Promise**
+- [x] **Lesson 0002: Everyday Contracts & Tenancy in India — What You Sign, Click, and Promise**
 - [ ] **Lesson 0003: Consumer Protection Act 2019 — How to Hold Corporations Accountable & Draft Legal Notices**
 - [ ] **Lesson 0004: Police Encounters, Traffic Stops & Arrest Rights — The D.K. Basu Shield**
