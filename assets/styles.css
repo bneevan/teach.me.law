@@ -1404,3 +1404,89 @@ h1.lesson-title {
 .spec-table tr:hover td {
   background: rgba(0, 0, 0, 0.015);
 }
+
+/* Responsive Grid & Info Card Components */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.info-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-subtle);
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.info-card:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.info-card h4 {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  color: var(--accent-blue);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.info-card p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+
+.portal-url {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-blue);
+  background: var(--bg-subtle);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+  width: fit-content;
+  transition: all 0.15s ease;
+}
+
+.info-card:hover .portal-url {
+  background: var(--accent-blue);
+  color: #ffffff;
+  border-color: var(--accent-blue);
+}
+
+.portal-url.theme-cyber {
+  color: var(--accent-red);
+}
+
+.info-card:hover .portal-url.theme-cyber {
+  background: var(--accent-red);
+  color: #ffffff;
+  border-color: var(--accent-red);
+}
+
+.portal-url.theme-labor {
+  color: #047857;
+}
+
+.info-card:hover .portal-url.theme-labor {
+  background: #047857;
+  color: #ffffff;
+  border-color: #047857;
+}
