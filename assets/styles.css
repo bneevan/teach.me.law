@@ -808,6 +808,232 @@ h1.lesson-title {
   border-top: 1px dashed var(--border-fine);
 }
 
+/* Card Components: Case Studies & Landmark Precedents */
+.case-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  margin: 16px 0;
+  border-left: 4px solid var(--accent-blue);
+}
+
+.case-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-blue);
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+.case-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Card Components: Rules & Pillars Grids */
+.rules-grid,
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.rule-card,
+.pillar-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+}
+
+.rule-card strong,
+.pillar-card strong {
+  display: block;
+  color: var(--accent-blue);
+  margin-bottom: 4px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+}
+
+.rule-card p,
+.pillar-card p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Card Components: Action Steps & Citizen Playbooks */
+.action-step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin: 12px 0;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.step-num {
+  background: var(--accent-blue);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Card Components: Court Hierarchy */
+.court-hierarchy-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.court-level {
+  display: flex;
+  align-items: center;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  gap: 12px;
+}
+
+.court-badge {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #fff;
+  flex-shrink: 0;
+  width: 90px;
+  text-align: center;
+}
+
+.badge-apex { background: #b91c1c; }
+.badge-state { background: #b45309; }
+.badge-district { background: #1e3a8a; }
+.badge-magistrate { background: #15803d; }
+
+.court-desc {
+  font-size: 14px;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+/* Card Components: Timeline & Tenancy Comparison Tables */
+.timeline-table,
+.tenancy-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14.5px;
+  font-family: var(--font-sans);
+}
+
+.timeline-table th,
+.tenancy-table th {
+  background: var(--bg-subtle);
+  color: var(--text-main);
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--border-light);
+  font-weight: 700;
+}
+
+.timeline-table td,
+.tenancy-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-fine);
+  vertical-align: top;
+}
+
+/* Card Components: Pecuniary Jurisdictions & Forum Tiers */
+.pecuniary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.tier-box {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+
+.tier-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.tier-district { background: #1e3a8a; }
+.tier-state { background: #b45309; }
+.tier-national { background: #b91c1c; }
+
+.tier-box h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  font-family: var(--font-sans);
+}
+
+.tier-box p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Card Components: Diagram Containers */
+.diagram-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.diagram-box svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Word Pronunciation Inline Helper */
+.pronounce-word {
+  font-weight: 600;
+}
+
 /* ==========================================================================
    10. Interactive Checkpoints (Thumb Ergonomics)
    ========================================================================== */
@@ -1017,7 +1243,24 @@ h1.lesson-title {
   color: var(--accent-gold);
 }
 
-.transcript-body {
+.transcript-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.transcript-toggle-icon {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+details[open] .transcript-toggle-icon {
+  transform: rotate(180deg);
+}
+
+.transcript-body,
+.transcript-content {
   margin-top: 16px;
   font-size: 16.5px;
   line-height: 1.65;
@@ -1029,7 +1272,8 @@ h1.lesson-title {
   border-bottom: 1px dotted var(--border-light);
 }
 
-.transcript-segment-title {
+.transcript-segment-title,
+.transcript-segment h4 {
   font-family: var(--font-sans);
   font-size: 11.5px;
   text-transform: uppercase;

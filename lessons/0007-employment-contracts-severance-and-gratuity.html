@@ -10,235 +10,266 @@
 
   <div class="lesson-container">
 
-    <!-- Header Navigation -->
+    <!-- Top Navigation Bar -->
     <nav class="lesson-nav">
       <a href="../index.html" class="dashboard-link">⌂ Course Dashboard</a>
-      <span class="lesson-index-badge">Track 2: Employment & Labor • Lesson 0007</span>
+      <span class="lesson-index-badge">Track 2: Employment • Lesson 0007 of 0008</span>
     </nav>
 
     <!-- Lesson Header -->
     <header class="lesson-header">
-      <span class="lesson-badge" style="color: #047857;">Workplace & Terminal Rights</span>
+      <span class="lesson-badge">Track 2: Employment, Workplace Rights & Labor</span>
       <h1 class="lesson-title">Employment Contracts, Severance & The Gratuity Shield</h1>
-      <p style="color: var(--text-muted); font-size: 16px;">
-        Master your statutory protections against arbitrary termination, enforce the Payment of Gratuity Act 1972 continuous service thresholds (the 240/190-day rule), recover withheld Full & Final dues with 10% statutory interest, and invoke Section 12 Maternity Benefit protections.
-      </p>
+
+      <div class="mission-outcome-box">
+        <strong>Mission Outcome</strong>
+        Enforce statutory severance rights on termination, calculate gratuity under the Section 2A 240/190-day continuous service rule, recover withheld terminal dues with 10% statutory interest, and assert Section 12 absolute dismissal immunity under the Maternity Benefit Act.
+      </div>
+
+      <!-- Spoken Pronunciation Guide for Legal Terms -->
+      <section class="pronounce-box">
+        <span class="pronounce-box-title">Spoken Pronunciation Guide (Labor & Contract Doctrines)</span>
+        <div class="pronounce-list">
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">Quantum Meruit</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/ˈkwɒn.təm ˈmɛr.u.ɪt/</span>
+                <span class="pronounce-lang">Contract Maxim</span>
+              </div>
+              <p class="pronounce-meaning">"As much as he deserved" — legal doctrine under Section 70 of the Contract Act guaranteeing fair remuneration for services rendered prior to premature termination.</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-quantummeruit.wav" title="Listen to pronunciation of Quantum Meruit" aria-label="Listen to pronunciation of Quantum Meruit">🔊</button>
+          </div>
+
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">Bona Fide</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/ˌboʊ.nə ˈfaɪ.di/</span>
+                <span class="pronounce-lang">Employment Doctrine</span>
+              </div>
+              <p class="pronounce-meaning">"In good faith" — an employer's lawful obligation to act with honesty, fairness, and procedural transparency rather than bad-faith pretext.</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-bonafide.wav" title="Listen to pronunciation of Bona Fide" aria-label="Listen to pronunciation of Bona Fide">🔊</button>
+          </div>
+
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">Ultra Vires</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/ˌʌl.trə ˈvaɪ.riːz/</span>
+                <span class="pronounce-lang">Administrative Law</span>
+              </div>
+              <p class="pronounce-meaning">"Beyond the powers" — arbitrary employer termination clauses that exceed statutory limits and are void under Section 23 of the Contract Act.</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-ultravires.wav" title="Listen to pronunciation of Ultra Vires" aria-label="Listen to pronunciation of Ultra Vires">🔊</button>
+          </div>
+        </div>
+      </section>
     </header>
 
     <!-- Audio Player Companion Widget -->
-    <div class="player-widget" role="region" aria-label="Audio player for lesson narration">
+    <section class="player-widget" aria-label="Audio Lesson Player">
+      <!-- Hidden Audio Element -->
       <audio id="lesson-audio" src="../assets/audio/lesson-0007.mp3" preload="metadata"></audio>
 
       <div class="player-top-row">
-        <button id="player-play-btn" class="play-btn" aria-label="Play audio">
-          <span id="player-play-icon">▶</span>
-        </button>
-
-        <div class="player-meta-group">
-          <span id="player-segment-title" class="player-segment-title">1. The Sudden Termination Dilemma</span>
-          <span id="player-time" class="player-time">0:00 / 5:46</span>
+        <div class="player-main-controls">
+          <button id="player-play-btn" class="play-btn" aria-label="Play or Pause Narration">
+            <span id="player-play-icon">▶</span>
+          </button>
+          <div id="player-time" class="player-time-display">0:00 / 5:46</div>
         </div>
 
-        <div class="player-controls-right">
-          <div class="speed-selector" aria-label="Playback speed">
-            <button class="speed-btn" data-speed="0.8">0.8×</button>
-            <button class="speed-btn active" data-speed="1.0">1.0×</button>
-            <button class="speed-btn" data-speed="1.25">1.25×</button>
-            <button class="speed-btn" data-speed="1.5">1.5×</button>
-          </div>
+        <!-- Speed Selector -->
+        <div class="speed-selector" role="group" aria-label="Playback Speed">
+          <button class="speed-btn" data-speed="0.8">0.8×</button>
+          <button class="speed-btn active" data-speed="1.0">1.0×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
         </div>
       </div>
 
-      <!-- Scrubbing Bar -->
-      <div class="scrub-container" id="scrub-container" role="slider" aria-label="Audio progress scrub track">
-        <div class="scrub-track" id="scrub-track">
-          <div class="scrub-fill" id="scrub-fill"></div>
-          <div class="scrub-handle" id="scrub-handle"></div>
-        </div>
+      <!-- Scrubber -->
+      <div class="scrub-container">
+        <input type="range" id="player-scrubber" class="scrub-slider" min="0" max="100" value="0" step="0.1" aria-label="Audio scrubber">
       </div>
 
-      <!-- Segment Navigation Pills -->
-      <div class="segment-pills-row" id="segment-pills" role="tablist">
-        <button class="segment-pill active" data-segment-id="seg-1">1. The Sudden Termination</button>
-        <button class="segment-pill" data-segment-id="seg-2">2. The Gratuity Shield</button>
+      <!-- Segment Timeline Ribbon -->
+      <div class="timeline-pills" role="tablist" aria-label="Lesson Segments">
+        <button class="segment-pill active" data-segment-id="seg-1">1. Sudden Termination</button>
+        <button class="segment-pill" data-segment-id="seg-2">2. Gratuity Shield</button>
         <button class="segment-pill" data-segment-id="seg-3">3. Full & Final Dues</button>
         <button class="segment-pill checkpoint" data-segment-id="chk-seg-1">⏸ Quiz 1</button>
         <button class="segment-pill" data-segment-id="seg-4">4. Maternity Protection</button>
         <button class="segment-pill checkpoint" data-segment-id="chk-seg-2">⏸ Quiz 2</button>
         <button class="segment-pill" data-segment-id="seg-5">5. 4-Step Recovery</button>
       </div>
+    </section>
+
+    <!-- Checkpoint Alert Banner -->
+    <div id="checkpoint-banner" class="checkpoint-pause-banner">
+      <strong>Checkpoint Reached:</strong> Audio narration paused. Answer the retrieval question below to test your understanding of Indian employment law and resume playback.
     </div>
 
-    <!-- Dynamic Visual Cards Section (Synced to Narration Segments) -->
+    <!-- Visual Supporting Cards (Synchronized with Audio) -->
     <section class="visual-cards-section">
 
-      <!-- Card 1: Motivation / The Sudden Termination Dilemma -->
+      <!-- Card 1: Motivation -->
       <div id="card-seg-1" class="visual-card active">
-        <div class="visual-card-header">
-          <span class="card-step-badge">Segment 1 • Motivation</span>
-          <h3>The Sudden Termination Dilemma: Contract vs. Statute</h3>
+        <h3>1. The Sudden Termination Dilemma: Contract vs. Statute</h3>
+        <p>When employers execute sudden layoffs on Friday afternoons, they often attempt to intimidate departing employees into waiving statutory severance, withholding earned salaries pending "audits", or forfeiting earned gratuity.</p>
+        <div style="background: var(--bg-subtle); padding: 14px 16px; border-radius: 6px; margin: 14px 0; border-left: 4px solid var(--accent-red);">
+          <strong>The Legal Asymmetry:</strong> Private employment agreements frequently contain one-sided, oppressive clauses drafted by corporate law firms. However, under Indian labor jurisprudence, statutory rights override private contractual waivers. An employer cannot compel an employee to sign away statutory benefits.
         </div>
-        <div class="visual-card-body">
-          <p>
-            When employers execute surprise layoffs on Friday afternoons, they often attempt to intimidate departing employees into waiving statutory severance, withholding earned salaries pending "audits", or forfeiting earned gratuity.
-          </p>
-          <div class="diagram-box">
-            <svg viewBox="0 0 760 190" width="100%" height="160" xmlns="http://www.w3.org/2000/svg">
-              <rect x="20" y="20" width="220" height="145" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
-              <text x="130" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#991b1b" text-anchor="middle">Corporate Intimidation</text>
-              <text x="130" y="85" font-family="sans-serif" font-size="12" fill="#7f1d1d" text-anchor="middle">• Immediate laptop seizure</text>
-              <text x="130" y="108" font-family="sans-serif" font-size="12" fill="#7f1d1d" text-anchor="middle">• Coerced resignation waivers</text>
-              <text x="130" y="131" font-family="sans-serif" font-size="12" fill="#7f1d1d" text-anchor="middle">• Withholding F&F dues</text>
+        <div class="diagram-box">
+          <svg viewBox="0 0 760 190" width="100%" height="160" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="20" width="220" height="145" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+            <text x="130" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#991b1b" text-anchor="middle">Corporate Intimidation</text>
+            <text x="130" y="85" font-family="sans-serif" font-size="12" fill="#7f1d1d" text-anchor="middle">• Immediate laptop seizure</text>
+            <text x="130" y="108" font-family="sans-serif" font-size="12" fill="#7f1d1d" text-anchor="middle">• Coerced resignation waivers</text>
+            <text x="130" y="131" font-family="sans-serif" font-size="12" fill="#7f1d1d" text-anchor="middle">• Withholding F&F dues</text>
 
-              <path d="M 245 92 L 275 92" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow)"/>
+            <path d="M 245 92 L 275 92" stroke="#94a3b8" stroke-width="3"/>
 
-              <rect x="280" y="20" width="200" height="145" rx="8" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
-              <text x="380" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#1e293b" text-anchor="middle">The Legal Reality</text>
-              <text x="380" y="85" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">Contracts CANNOT waive</text>
-              <text x="380" y="108" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">statutory labor rights</text>
-              <text x="380" y="131" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">(Sec 23 Contract Act)</text>
+            <rect x="280" y="20" width="200" height="145" rx="8" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+            <text x="380" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#1e293b" text-anchor="middle">The Legal Reality</text>
+            <text x="380" y="85" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">Contracts CANNOT waive</text>
+            <text x="380" y="108" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">statutory labor rights</text>
+            <text x="380" y="131" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">(Sec 23 Contract Act)</text>
 
-              <path d="M 485 92 L 515 92" stroke="#94a3b8" stroke-width="3"/>
+            <path d="M 485 92 L 515 92" stroke="#94a3b8" stroke-width="3"/>
 
-              <rect x="520" y="20" width="220" height="145" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
-              <text x="630" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#14532d" text-anchor="middle">Statutory Remedies</text>
-              <text x="630" y="85" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• Gratuity Act 1972 (10% int)</text>
-              <text x="630" y="108" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• Shops & Est. Act (F&F)</text>
-              <text x="630" y="131" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• Section 12 Maternity Shield</text>
-            </svg>
-          </div>
-          <p class="caption">Audio Segment 1: The legal asymmetry between corporate HR intimidation and citizen statutory labor rights.</p>
+            <rect x="520" y="20" width="220" height="145" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+            <text x="630" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#14532d" text-anchor="middle">Statutory Remedies</text>
+            <text x="630" y="85" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• Gratuity Act 1972 (10% int)</text>
+            <text x="630" y="108" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• Shops & Est. Act (F&F)</text>
+            <text x="630" y="131" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• Section 12 Maternity Shield</text>
+          </svg>
         </div>
+        <p class="caption">Audio Segment 1: The legal asymmetry between corporate HR intimidation and citizen statutory labor rights.</p>
       </div>
 
-      <!-- Card 2: Concept / Payment of Gratuity Act & Continuous Service -->
+      <!-- Card 2: Concept / Payment of Gratuity Act -->
       <div id="card-seg-2" class="visual-card">
-        <div class="visual-card-header">
-          <span class="card-step-badge">Segment 2 • Statutory Protection</span>
-          <h3>The Gratuity Shield: Continuous Service & Formula</h3>
-        </div>
-        <div class="visual-card-body">
-          <p>
-            The <strong>Payment of Gratuity Act 1972</strong> applies to every establishment employing 10 or more persons. Under Section 2A, completing <strong>240 days</strong> in the 5th year (190 days for 5-day workweeks) satisfies the 5-year continuous service threshold.
-          </p>
-          <div class="info-grid">
-            <div class="info-card">
-              <h4>The 240/190-Day Rule</h4>
-              <p>Under Section 2A(2), an employee who has worked 4 years and 240 days (or 190 days in a 5-day corporate office) has legally satisfied the 5-year continuous service threshold.</p>
-            </div>
-            <div class="info-card">
-              <h4>Mandatory Statutory Formula</h4>
-              <p><strong>Gratuity = (15 × Last Drawn Basic + DA × Completed Years) ÷ 26</strong>. Tax-free up to ₹20 Lakhs under Section 10(10) of the Income Tax Act.</p>
-            </div>
-            <div class="info-card">
-              <h4>Mandatory 30-Day Payout</h4>
-              <p>Under Section 7(3), the employer must disburse gratuity within 30 days of exit. Delayed payout attracts mandatory <strong>10% simple interest p.a.</strong> under Section 7(3A).</p>
-            </div>
+        <h3>2. The Gratuity Shield: Continuous Service & Calculation Formula</h3>
+        <p>The <strong>Payment of Gratuity Act 1972</strong> is a mandatory statutory entitlement applying to every establishment employing 10 or more persons. Section 2A governs the continuous service threshold:</p>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <strong>The 240/190-Day Rule</strong>
+            <p>Under Section 2A(2), an employee who has worked 4 years and 240 days in a 6-day week (or 190 days in a 5-day corporate office) satisfies the 5-year continuous service rule.</p>
           </div>
-          <p class="caption">Audio Segment 2: Statutory computation formula, continuous service eligibility, and mandatory 10% interest for delay.</p>
+          <div class="rule-card">
+            <strong>Mandatory Formula</strong>
+            <p><strong>Gratuity = (15 × Last Drawn Basic + DA × Completed Years) ÷ 26</strong>. Gratuity up to ₹20 Lakhs is exempt from income tax under Section 10(10).</p>
+          </div>
+          <div class="rule-card">
+            <strong>Mandatory 30-Day Payout</strong>
+            <p>Under Section 7(3), the employer must disburse gratuity within 30 days of exit. Delayed payout attracts mandatory <strong>10% simple interest p.a.</strong> under Section 7(3A).</p>
+          </div>
+          <div class="rule-card">
+            <strong>Strict Forfeiture Limits</strong>
+            <p>Section 4(6) permits forfeiture only for proven riotous/disorderly conduct causing financial loss, and only to the extent of actual damage caused.</p>
+          </div>
         </div>
+        <p class="caption">Audio Segment 2: Statutory computation formula, continuous service eligibility, and mandatory 10% interest for delay.</p>
       </div>
 
-      <!-- Card 3: Concept / Full & Final Settlements & Notice Period Deductions -->
+      <!-- Card 3: Concept / Full & Final Settlements -->
       <div id="card-seg-3" class="visual-card">
-        <div class="visual-card-header">
-          <span class="card-step-badge">Segment 3 • Wage Security</span>
-          <h3>Full & Final (F&F) Settlements: Barring Unlawful Deductions</h3>
-        </div>
-        <div class="visual-card-body">
-          <p>
-            Under state Shops & Commercial Establishments Acts and the Payment of Wages Act, all terminal wages, accrued leave encashment, and bonuses must be disbursed within <strong>7 to 30 days</strong> of the last working day.
-          </p>
-          <div class="diagram-box">
-            <table class="spec-table">
-              <thead>
-                <tr>
-                  <th>Employer Claim</th>
-                  <th>The Legal Position</th>
-                  <th>Governing Authority</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>"We are deducting 3 months notice pay during layoff"</strong></td>
-                  <td>If the employer terminates without cause, the <em>employer</em> must pay notice pay in lieu of notice; deducting notice from the employee is illegal.</td>
-                  <td>Contract Act Sec 73 & Shops & Est. Act</td>
-                </tr>
-                <tr>
-                  <td><strong>"Training bond deduction from final dues"</strong></td>
-                  <td>Unreasonable training bonds without actual proven institutional training expenses are void penalties under Section 74.</td>
-                  <td><em>Central Inland Water</em> & <em>Sicpa India</em></td>
-                </tr>
-                <tr>
-                  <td><strong>"Withholding salary pending audit clearance"</strong></td>
-                  <td>Earned salary is protected property under Article 300A; employers cannot convert earned wages into hostage funds.</td>
-                  <td>Payment of Wages Act Sec 15</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="caption">Audio Segment 3: Dismantling arbitrary notice-period deductions, training bonds, and withheld wages.</p>
-        </div>
+        <h3>3. Full & Final (F&F) Settlements: Barring Unlawful Deductions</h3>
+        <p>Under state Shops & Commercial Establishments Acts and the Payment of Wages Act, all terminal dues must be settled within <strong>7 to 30 days</strong> of the last working day.</p>
+
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Employer Claim</th>
+              <th>The Legal Position</th>
+              <th>Governing Authority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>"We are deducting 3 months notice pay during layoff"</strong></td>
+              <td>If the employer terminates without cause, the <em>employer</em> must pay notice pay in lieu of notice; deducting notice from the employee is illegal.</td>
+              <td>Contract Act Sec 73 & Shops & Est. Act</td>
+            </tr>
+            <tr>
+              <td><strong>"Training bond deduction from final dues"</strong></td>
+              <td>Unreasonable training bonds without actual proven institutional training expenses are void penalties under Section 74.</td>
+              <td><em>Central Inland Water</em> & <em>Sicpa India</em></td>
+            </tr>
+            <tr>
+              <td><strong>"Withholding salary pending audit clearance"</strong></td>
+              <td>Earned salary is protected property under Article 300A; employers cannot convert earned wages into hostage funds.</td>
+              <td>Payment of Wages Act Sec 15</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="caption">Audio Segment 3: Dismantling arbitrary notice-period deductions, training bonds, and withheld wages.</p>
       </div>
 
       <!-- Card 4: Example / Section 12 Maternity Benefit Shield -->
       <div id="card-seg-4" class="visual-card">
-        <div class="visual-card-header">
-          <span class="card-step-badge">Segment 4 • Case Example</span>
-          <h3>Section 12 Maternity Shield: Absolute Dismissal Immunity</h3>
+        <h3>4. Section 12 Maternity Shield: Absolute Dismissal Immunity</h3>
+        <p>Under Section 12 of the <strong>Maternity Benefit Act 1961 (Amended 2017)</strong>, there is an <strong>absolute statutory ban</strong> on discharging or dismissing a woman employee at any time during pregnancy or maternity leave.</p>
+
+        <div class="case-card">
+          <div class="case-title">Absolute Protection Against Dismissal During Pregnancy</div>
+          <span class="case-meta">Statutory Directive: Section 12 Maternity Benefit Act 1961</span>
+          <p><strong>Key Statutory Guarantees:</strong></p>
+          <ul style="margin: 8px 0 8px 20px; font-size: 14.5px; line-height: 1.5;">
+            <li><strong>Dismissal is Void Ab Initio:</strong> Any discharge or termination issued during pregnancy is legally non-existent. Employers cannot cite "performance redundancy" or "corporate restructuring" to bypass Section 12.</li>
+            <li><strong>26 Weeks Paid Leave:</strong> Guarantees 26 weeks of fully paid leave for up to two surviving children, paid at the average daily wage.</li>
+            <li><strong>Mandatory Creche Facility:</strong> Every establishment with 50 or more employees must provide a creche within 500 meters, allowing four daily nursing visits.</li>
+            <li><strong>Criminal Penalties:</strong> Employers violating Section 12 face prosecution under Section 21 with mandatory imprisonment of up to 1 year and fines.</li>
+          </ul>
         </div>
-        <div class="visual-card-body">
-          <p>
-            Under Section 12 of the <strong>Maternity Benefit Act 1961 (Amended 2017)</strong>, there is an <strong>absolute statutory ban</strong> on discharging or dismissing a woman employee at any time during pregnancy or maternity leave.
-          </p>
-          <div class="info-grid">
-            <div class="info-card" style="border-left: 4px solid var(--accent-red);">
-              <h4>Section 12 Absolute Bar</h4>
-              <p>Any dismissal, discharge, or adverse notice issued during pregnancy or maternity leave is void ab initio. Corporate restructuring or PIP excuses cannot override Section 12.</p>
-            </div>
-            <div class="info-card" style="border-left: 4px solid var(--accent-blue);">
-              <h4>26 Weeks Paid Leave</h4>
-              <p>Guarantees 26 weeks of fully paid leave for up to two surviving children. Employers must pay average daily wage for the period of actual absence.</p>
-            </div>
-            <div class="info-card" style="border-left: 4px solid #047857;">
-              <h4>Criminal Penalties</h4>
-              <p>Under Section 21, employers who discharge pregnant workers face mandatory imprisonment of up to 1 year and statutory fines, enforceable via the Labour Court.</p>
-            </div>
-          </div>
-          <p class="caption">Audio Segment 4: Absolute statutory immunity against termination during pregnancy and maternity leave under Section 12.</p>
-        </div>
+        <p class="caption">Audio Segment 4: Absolute statutory immunity against termination during pregnancy and maternity leave under Section 12.</p>
       </div>
 
       <!-- Card 5: Action / 4-Step Terminal Dues Recovery Playbook -->
       <div id="card-seg-5" class="visual-card">
-        <div class="visual-card-header">
-          <span class="card-step-badge">Segment 5 • Action Protocol</span>
-          <h3>The Citizen 4-Step Terminal Dues Recovery Playbook</h3>
-        </div>
-        <div class="visual-card-body">
-          <p>
-            Execute this four-step statutory roadmap whenever an employer withholds your final salary, refuses gratuity, or executes an unlawful termination.
-          </p>
-          <div class="checklist-grid">
-            <div class="checklist-item">
-              <strong>Step 1: Download & Preserve Evidentiary Records</strong>
-              Export payslips, Form 16/26AS, appointment letter, performance appraisals, and official exit emails before IT access is severed.
-            </div>
-            <div class="checklist-item">
-              <strong>Step 2: Serve Formal Statutory Demand Notice</strong>
-              Issue a registered legal notice demanding full F&F settlement and gratuity with 10% statutory interest within 15 days under Gratuity Act Sec 7(3).
-            </div>
-            <div class="checklist-item">
-              <strong>Step 3: Submit Form I to Controlling Authority</strong>
-              If gratuity is unpaid after 30 days, file Form I under Payment of Gratuity Rules with the regional Labour Commissioner (Controlling Authority).
-            </div>
-            <div class="checklist-item">
-              <strong>Step 4: Escalate to SAMADHAN & Labour Court</strong>
-              Lodge online wage dispute on the Ministry of Labour SAMADHAN portal (samadhan.labour.gov.in) for immediate conciliation and recovery certificate.
-            </div>
+        <h3>5. The Citizen 4-Step Terminal Dues Recovery Playbook</h3>
+        <p>Execute this four-step statutory roadmap whenever an employer withholds your final salary, refuses gratuity, or executes an unlawful termination:</p>
+
+        <div class="action-step-card">
+          <div class="step-num">1</div>
+          <div>
+            <strong>Download & Preserve Evidentiary Records</strong>
+            <p style="margin: 4px 0 0; font-size: 14px; color: var(--text-muted);">Export payslips, Form 16/26AS, appointment letter, performance appraisals, and official exit emails before IT access is severed.</p>
           </div>
-          <p class="caption">Audio Segment 5: The complete evidentiary and regulatory process for recovering terminal dues.</p>
         </div>
+
+        <div class="action-step-card">
+          <div class="step-num">2</div>
+          <div>
+            <strong>Serve Formal Statutory Demand Notice</strong>
+            <p style="margin: 4px 0 0; font-size: 14px; color: var(--text-muted);">Issue a registered legal notice demanding full F&F settlement and gratuity with 10% statutory interest within 15 days under Gratuity Act Sec 7(3).</p>
+          </div>
+        </div>
+
+        <div class="action-step-card">
+          <div class="step-num">3</div>
+          <div>
+            <strong>Submit Form I to Controlling Authority</strong>
+            <p style="margin: 4px 0 0; font-size: 14px; color: var(--text-muted);">If gratuity is unpaid after 30 days, file Form I under Payment of Gratuity Rules with the regional Labour Commissioner (Controlling Authority).</p>
+          </div>
+        </div>
+
+        <div class="action-step-card">
+          <div class="step-num">4</div>
+          <div>
+            <strong>Escalate to SAMADHAN & Labour Court</strong>
+            <p style="margin: 4px 0 0; font-size: 14px; color: var(--text-muted);">Lodge an online wage dispute on the Ministry of Labour SAMADHAN portal (samadhan.labour.gov.in) for immediate conciliation and recovery certificate.</p>
+          </div>
+        </div>
+        <p class="caption">Audio Segment 5: The complete evidentiary and regulatory process for recovering terminal dues.</p>
       </div>
 
     </section>
@@ -307,40 +338,40 @@
       <div id="evidence-text" class="evidence-box"></div>
       <button id="copy-evidence-btn" class="copy-evidence-btn">Copy Evidence Record</button>
     </section>
-
     <!-- Collapsible Full Narration Transcript -->
     <details class="transcript-details">
-      <summary class="transcript-summary">
-        <span>📖 View Complete Verbatim Audio Transcript (5:46)</span>
-        <span class="transcript-toggle-icon">▼</span>
-      </summary>
-      <div class="transcript-content">
+      <summary>Read Full Spoken Narration Transcript (Ears-Free Mode)</summary>
+      <div class="transcript-body">
         <div class="transcript-segment">
-          <h4>Segment 1: The Sudden Termination Dilemma</h4>
+          <div class="transcript-segment-title">Segment 1: The Sudden Termination Dilemma</div>
           <p>It is four o'clock on a Friday afternoon. Your manager schedules an unexpected meeting. Without warning, you are handed a termination letter, your corporate laptop is seized, and your email access is revoked within minutes. The HR representative casually tells you that due to corporate restructuring, your three-month notice period will be waived without pay, your final two months of earned salary will be withheld indefinitely pending financial audits, and your five years of earned gratuity will be forfeited. In corporate offices, startups, and factories across India, thousands of professionals face this exact power imbalance every month. Most employees believe they are at the total mercy of corporate employment contracts. But under Indian labor and employment jurisprudence, statutory rights override private contractual waivers. In this lesson, you will master your statutory rights on termination, the mandatory five-year gratuity calculation rules, legal protections against wrongful deduction, and the absolute statutory shield protecting pregnant employees under the Maternity Benefit Act.</p>
         </div>
+
         <div class="transcript-segment">
-          <h4>Segment 2: Gratuity Shield & 5-Year Continuous Service</h4>
+          <div class="transcript-segment-title">Segment 2: Gratuity Shield & 5-Year Continuous Service</div>
           <p>The Payment of Gratuity Act of 1972 is a non-negotiable statutory benefit created to reward long-term service. Every establishment employing ten or more persons is legally bound by this statute. An employee becomes eligible for gratuity upon completing five years of continuous service. However, under Section 2A of the Act, continuous service does not require 365 days of physical work each year. In an establishment operating on a six-day workweek, completing two hundred and forty days of actual work in the fifth year satisfies the statutory test. For five-day corporate workweeks, just one hundred and ninety days in the fifth year legally qualifies you as having completed that full year. Gratuity is calculated using a mandatory formula: fifteen days of your last drawn basic salary plus dearness allowance, multiplied by your total completed years of service, divided by twenty-six. Under Section 7(3), the employer must disburse your gratuity within thirty days of termination. If the employer delays, Section 7(3A) mandates simple interest at ten percent per annum until the full sum is paid. Forfeiture is permitted only under narrow circumstances of proven riotous or violent conduct leading to financial damage, and only to the extent of actual damage caused.</p>
         </div>
+
         <div class="transcript-segment">
-          <h4>Segment 3: Full & Final Settlement & Unlawful Deductions</h4>
+          <div class="transcript-segment-title">Segment 3: Full & Final Settlement & Unlawful Deductions</div>
           <p>When an employment relationship ends, the employer is legally obligated to issue your Full and Final settlement. Under state Shops and Commercial Establishments Acts and the Payment of Wages Act, all earned wages, accrued leave encashment, and statutory bonuses must be settled within seven to thirty days following the employee's last working day. Employers frequently attempt to deduct arbitrary penalties for alleged training costs, unserved notice periods during employer-initiated layoffs, or unreturned non-material assets. The Supreme Court established in Central Inland Water Transport Corporation that arbitrary, one-sided clauses imposed by employers through unequal bargaining power are unconscionable and void under Section 23 of the Indian Contract Act. If an employer terminates you immediately without cause, they must pay notice pay in lieu of the contractual notice period. Withholding earned wages is an actionable civil debt and an unfair labor practice. An employer cannot convert your terminal dues into hostage capital.</p>
         </div>
+
         <div class="transcript-segment">
-          <h4>Segment 4: Maternity Protection Under Section 12</h4>
+          <div class="transcript-segment-title">Segment 4: Maternity Protection Under Section 12</div>
           <p>Consider Priya, a senior project lead at a software firm in Pune. When she informed HR that she was expecting a child and submitted her maternity leave application, the company placed her on a sudden performance improvement plan and issued a termination letter three weeks later, citing redundancy. Under Section 12 of the Maternity Benefit Act of 1961, as amended in 2017, this termination is completely illegal and void ab initio. Section 12 explicitly prohibits an employer from discharging or dismissing a woman worker at any time during her pregnancy or during her absence on maternity leave. Any termination during this period constitutes an offence punishable by imprisonment and hefty fines. Furthermore, the amended Act guarantees twenty-six weeks of fully paid maternity leave for up to two surviving children, mandatory creche facilities for establishments with fifty or more employees, and protection of all terminal benefits. When Priya served a formal statutory notice citing Section 12, the firm was compelled to withdraw the termination, reinstate her salary, and provide full paid maternity benefits.</p>
         </div>
+
         <div class="transcript-segment">
-          <h4>Segment 5: The 4-Step Terminal Dues Recovery Playbook</h4>
+          <div class="transcript-segment-title">Segment 5: The 4-Step Terminal Dues Recovery Playbook</div>
           <p>If an employer unlawfully terminates your employment, withholds your terminal wages, or refuses to pay gratuity, execute this four-step legal playbook. Step One: Document and preserve all employment evidence. Download your payslips, appointment letter, official appraisal ratings, resignation or termination emails, and Form 26AS tax statements before corporate access is disabled. Step Two: Issue a Formal Statutory Demand Notice. Send a registered demand letter under the Payment of Gratuity Act and state Shops and Establishments Act demanding release of all pending salary, leave encashment, and gratuity with ten percent interest within fifteen days. Step Three: File Form I under the Gratuity Rules before the Controlling Authority. If gratuity is withheld past thirty days, submit Form I directly to the jurisdictional Labour Commissioner acting as the Controlling Authority. The authority has judicial powers to issue recovery certificates enforced as land revenue arrears. Step Four: Escalate wage violations to the Labour Court or SAMADHAN portal. Unpaid earned salaries can be reported online through the Ministry of Labour SAMADHAN grievance system, leading to conciliation proceedings and recovery orders.</p>
         </div>
       </div>
     </details>
 
-    <!-- References & Legal Authorities -->
-    <footer class="lesson-footer">
-      <h3>Statutory Authorities & Landmark Precedents</h3>
+    <!-- Citations & Verified Bibliography -->
+    <footer class="citations-box">
+      <strong>Verified Landmark Indian Precedents:</strong>
       <ul>
         <li><a href="https://clc.gov.in" target="_blank" rel="noopener">Payment of Gratuity Act 1972: Section 2A (Continuous Service) & Section 7 (Disbursement within 30 days & 10% Interest)</a>.</li>
         <li><a href="https://labour.gov.in" target="_blank" rel="noopener">Maternity Benefit (Amendment) Act 2017: Section 12 (Absolute Bar on Dismissal During Pregnancy)</a>.</li>
@@ -361,7 +392,7 @@
         <span id="mini-play-icon">▶</span>
       </button>
       <div id="mini-info" class="mini-info">
-        <span id="mini-segment-title" class="mini-segment-title">1. The Sudden Termination</span>
+        <span id="mini-segment-title" class="mini-segment-title">1. Sudden Termination</span>
         <span id="mini-time" class="mini-time">0:00 / 5:46</span>
       </div>
       <button id="mini-scroll-btn" class="mini-action-btn" title="Jump to top player" aria-label="Jump to top player">↑</button>
@@ -379,21 +410,21 @@
       {
         "id": "seg-1",
         "type": "motivation",
-        "title": "1. The Sudden Termination Dilemma",
+        "title": "1. Sudden Termination",
         "visualCardId": "card-seg-1",
         "durationSeconds": 62.86
       },
       {
         "id": "seg-2",
         "type": "concept",
-        "title": "2. Gratuity Shield & 5-Year Continuous Service",
+        "title": "2. Gratuity Shield",
         "visualCardId": "card-seg-2",
         "durationSeconds": 80.86
       },
       {
         "id": "seg-3",
         "type": "concept",
-        "title": "3. Full & Final Settlement & Unlawful Deductions",
+        "title": "3. Full & Final Dues",
         "visualCardId": "card-seg-3",
         "durationSeconds": 61.45
       },
@@ -407,7 +438,7 @@
       {
         "id": "seg-4",
         "type": "example",
-        "title": "4. Maternity Protection Under Section 12",
+        "title": "4. Maternity Protection",
         "visualCardId": "card-seg-4",
         "durationSeconds": 67.66
       },
@@ -421,7 +452,7 @@
       {
         "id": "seg-5",
         "type": "action",
-        "title": "5. The 4-Step Terminal Dues Recovery Playbook",
+        "title": "5. 4-Step Recovery",
         "visualCardId": "card-seg-5",
         "durationSeconds": 71.5
       }
@@ -459,19 +490,28 @@
         "id": "pron-quantummeruit",
         "term": "Quantum Meruit",
         "transliteration": "Latin",
-        "language": "Contract Law",
+        "language": "Contract Maxim",
         "ipa": "/ˈkwɒn.təm ˈmɛr.u.ɪt/",
-        "meaning": "As much as deserved — entitlement to compensation for work actually performed (*Sec 70 Contract Act*).",
+        "meaning": "As much as he deserved — entitlement to compensation for work actually performed (*Sec 70 Contract Act*).",
         "audioFile": "../assets/audio/pronounce-quantummeruit.wav"
       },
       {
         "id": "pron-bonafide",
         "term": "Bona Fide",
         "transliteration": "Latin",
-        "language": "Employment Jurisprudence",
+        "language": "Employment Doctrine",
         "ipa": "/ˌboʊ.nə ˈfaɪ.di/",
         "meaning": "In good faith — genuine without intent to deceive.",
         "audioFile": "../assets/audio/pronounce-bonafide.wav"
+      },
+      {
+        "id": "pron-ultravires",
+        "term": "Ultra Vires",
+        "transliteration": "Latin",
+        "language": "Administrative Law",
+        "ipa": "/ˌʌl.trə ˈvaɪ.riːz/",
+        "meaning": "Beyond the powers — arbitrary employer termination clauses that exceed statutory limits.",
+        "audioFile": "../assets/audio/pronounce-ultravires.wav"
       }
     ]
   }

@@ -10,55 +10,97 @@
 
   <div class="lesson-container">
 
-    <!-- Header Navigation -->
+    <!-- Top Navigation Bar -->
     <nav class="lesson-nav">
       <a href="../index.html" class="dashboard-link">⌂ Course Dashboard</a>
-      <span class="lesson-index-badge">Track 2 Capstone • Lesson 0008</span>
+      <span class="lesson-index-badge">Track 2 Capstone • Lesson 0008 of 0008</span>
     </nav>
 
     <!-- Lesson Header -->
     <header class="lesson-header">
-      <span class="lesson-badge" style="color: #9333ea;">Workplace Safety & Dignity</span>
+      <span class="lesson-badge">Track 2 Capstone: Workplace Dignity & Safety</span>
       <h1 class="lesson-title">Workplace Safety & The POSH Act 2013: The Vishaka Shield & ICC Due Process</h1>
-      <p style="color: var(--text-muted); font-size: 16px;">
-        Master the constitutional foundations of workplace safety from <em>Vishaka</em> to the POSH Act 2013, enforce the mandatory Internal Committee (IC) composition rules (including the independent external member), navigate statutory 90-day inquiry timelines, secure Section 12 interim relief, and enforce Section 16 strict confidentiality.
-      </p>
+
+      <div class="mission-outcome-box">
+        <strong>Mission Outcome</strong>
+        Navigate the POSH Act 2013 statutory framework, enforce mandatory Internal Committee (IC) composition rules (including the independent external member), utilize Section 12 interim relief, protect confidential inquiry rights under Section 16, and file formal complaints via She-Box.
+      </div>
+
+      <!-- Spoken Pronunciation Guide for Legal Terms -->
+      <section class="pronounce-box">
+        <span class="pronounce-box-title">Spoken Pronunciation Guide (Workplace & Judicial Doctrines)</span>
+        <div class="pronounce-list">
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">In Camera</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/ɪn ˈkæm.ər.ə/</span>
+                <span class="pronounce-lang">Judicial Procedure</span>
+              </div>
+              <p class="pronounce-meaning">"In private chambers" — proceedings held confidentially where the public, media, and unauthorized employees are strictly excluded (*Sec 16 POSH Act*).</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-incamera.wav" title="Listen to pronunciation of In Camera" aria-label="Listen to pronunciation of In Camera">🔊</button>
+          </div>
+
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">Quid Pro Quo</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/ˌkwɪd proʊ ˈkwoʊ/</span>
+                <span class="pronounce-lang">Harassment Doctrine</span>
+              </div>
+              <p class="pronounce-meaning">"Something for something" — conditioning employment benefits, promotions, or appraisals on sexual compliance, or threatening detriment on refusal.</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-quidproquo.wav" title="Listen to pronunciation of Quid Pro Quo" aria-label="Listen to pronunciation of Quid Pro Quo">🔊</button>
+          </div>
+
+          <div class="pronounce-row">
+            <div class="pronounce-row-main">
+              <div class="pronounce-term-header">
+                <span class="pronounce-term">Prima Facie</span>
+                <span class="pronounce-translit">Latin</span>
+                <span class="pronounce-ipa">/ˌpraɪ.mə ˈfeɪ.ʃi/</span>
+                <span class="pronounce-lang">Evidence Law</span>
+              </div>
+              <p class="pronounce-meaning">"At first face" — evidence sufficient on initial examination to establish workplace harassment and warrant protective interim relief.</p>
+            </div>
+            <button class="pronounce-btn" data-audio-src="../assets/audio/pronounce-primafacie.wav" title="Listen to pronunciation of Prima Facie" aria-label="Listen to pronunciation of Prima Facie">🔊</button>
+          </div>
+        </div>
+      </section>
     </header>
 
     <!-- Audio Player Companion Widget -->
-    <div class="player-widget" role="region" aria-label="Audio player for lesson narration">
+    <section class="player-widget" aria-label="Audio Lesson Player">
+      <!-- Hidden Audio Element -->
       <audio id="lesson-audio" src="../assets/audio/lesson-0008.mp3" preload="metadata"></audio>
 
       <div class="player-top-row">
-        <button id="player-play-btn" class="play-btn" aria-label="Play audio">
-          <span id="player-play-icon">▶</span>
-        </button>
-
-        <div class="player-meta-group">
-          <span id="player-segment-title" class="player-segment-title">1. The Hostile Workplace Dilemma</span>
-          <span id="player-time" class="player-time">0:00 / 5:54</span>
+        <div class="player-main-controls">
+          <button id="player-play-btn" class="play-btn" aria-label="Play or Pause Narration">
+            <span id="player-play-icon">▶</span>
+          </button>
+          <div id="player-time" class="player-time-display">0:00 / 5:54</div>
         </div>
 
-        <div class="player-controls-right">
-          <div class="speed-selector" aria-label="Playback speed">
-            <button class="speed-btn" data-speed="0.8">0.8×</button>
-            <button class="speed-btn active" data-speed="1.0">1.0×</button>
-            <button class="speed-btn" data-speed="1.25">1.25×</button>
-            <button class="speed-btn" data-speed="1.5">1.5×</button>
-          </div>
+        <!-- Speed Selector -->
+        <div class="speed-selector" role="group" aria-label="Playback Speed">
+          <button class="speed-btn" data-speed="0.8">0.8×</button>
+          <button class="speed-btn active" data-speed="1.0">1.0×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
         </div>
       </div>
 
-      <!-- Scrubbing Bar -->
-      <div class="scrub-container" id="scrub-container" role="slider" aria-label="Audio progress scrub track">
-        <div class="scrub-track" id="scrub-track">
-          <div class="scrub-fill" id="scrub-fill"></div>
-          <div class="scrub-handle" id="scrub-handle"></div>
-        </div>
+      <!-- Scrubber -->
+      <div class="scrub-container">
+        <input type="range" id="player-scrubber" class="scrub-slider" min="0" max="100" value="0" step="0.1" aria-label="Audio scrubber">
       </div>
 
-      <!-- Segment Navigation Pills -->
-      <div class="segment-pills-row" id="segment-pills" role="tablist">
+      <!-- Segment Timeline Ribbon -->
+      <div class="timeline-pills" role="tablist" aria-label="Lesson Segments">
         <button class="segment-pill active" data-segment-id="seg-1">1. Hostile Workplace</button>
         <button class="segment-pill" data-segment-id="seg-2">2. Vishaka to POSH</button>
         <button class="segment-pill" data-segment-id="seg-3">3. IC Composition</button>
@@ -67,183 +109,173 @@
         <button class="segment-pill checkpoint" data-segment-id="chk-seg-2">⏸ Quiz 2</button>
         <button class="segment-pill" data-segment-id="seg-5">5. 4-Step Playbook</button>
       </div>
+    </section>
+
+    <!-- Checkpoint Alert Banner -->
+    <div id="checkpoint-banner" class="checkpoint-pause-banner">
+      <strong>Checkpoint Reached:</strong> Audio narration paused. Answer the retrieval question below to test your understanding of POSH statutory protections and resume playback.
     </div>
 
-    <!-- Dynamic Visual Cards Section (Synced to Narration Segments) -->
+    <!-- Visual Supporting Cards (Synchronized with Audio) -->
     <section class="visual-cards-section">
 
-      <!-- Card 1: Motivation / The Hostile Workplace Dilemma -->
+      <!-- Card 1: Motivation -->
       <div id="card-seg-1" class="visual-card active">
-        <div class="visual-card-header">
-          <span class="card-step-badge">Segment 1 • Motivation</span>
-          <h3>The Hostile Workplace Dilemma: Power Imbalances & Retaliation</h3>
+        <h3>1. The Hostile Workplace Dilemma: Power Imbalances & Retaliation</h3>
+        <p>Workplace sexual harassment rarely takes the form of overt violence; it thrives in organizational hierarchies, subtle gaslighting, suggestive late-night messages, quid-pro-quo promotion demands, and fear of career retaliation.</p>
+        <div style="background: var(--bg-subtle); padding: 14px 16px; border-radius: 6px; margin: 14px 0; border-left: 4px solid var(--accent-red);">
+          <strong>The Scammer's Core Strategy: Isolation & Coercion.</strong> Victims frequently stay silent out of fear: fear of reputational smear, fear of retaliation during annual appraisals, and fear that HR departments will protect senior management at all costs. But under Indian constitutional law, a safe working environment is a non-negotiable fundamental human right under Article 21.
         </div>
-        <div class="visual-card-body">
-          <p>
-            Workplace sexual harassment rarely takes the form of overt violence; it thrives in organizational hierarchies, subtle gaslighting, suggestive late-night messages, quid-pro-quo promotion demands, and fear of career retaliation.
-          </p>
-          <div class="diagram-box">
-            <svg viewBox="0 0 760 190" width="100%" height="160" xmlns="http://www.w3.org/2000/svg">
-              <rect x="20" y="20" width="220" height="145" rx="8" fill="#fdf4ff" stroke="#c084fc" stroke-width="2"/>
-              <text x="130" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#7e22ce" text-anchor="middle">Corporate Vulnerability</text>
-              <text x="130" y="85" font-family="sans-serif" font-size="12" fill="#581c87" text-anchor="middle">• Reporting manager power</text>
-              <text x="130" y="108" font-family="sans-serif" font-size="12" fill="#581c87" text-anchor="middle">• Fear of bad appraisals</text>
-              <text x="130" y="131" font-family="sans-serif" font-size="12" fill="#581c87" text-anchor="middle">• HR management bias</text>
+        <div class="diagram-box">
+          <svg viewBox="0 0 760 190" width="100%" height="160" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="20" width="220" height="145" rx="8" fill="#fdf4ff" stroke="#c084fc" stroke-width="2"/>
+            <text x="130" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#7e22ce" text-anchor="middle">Corporate Vulnerability</text>
+            <text x="130" y="85" font-family="sans-serif" font-size="12" fill="#581c87" text-anchor="middle">• Reporting manager power</text>
+            <text x="130" y="108" font-family="sans-serif" font-size="12" fill="#581c87" text-anchor="middle">• Fear of bad appraisals</text>
+            <text x="130" y="131" font-family="sans-serif" font-size="12" fill="#581c87" text-anchor="middle">• HR management bias</text>
 
-              <path d="M 245 92 L 275 92" stroke="#94a3b8" stroke-width="3"/>
+            <path d="M 245 92 L 275 92" stroke="#94a3b8" stroke-width="3"/>
 
-              <rect x="280" y="20" width="200" height="145" rx="8" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
-              <text x="380" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#1e293b" text-anchor="middle">Constitutional Mandate</text>
-              <text x="380" y="85" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">Article 21: Right to Life</text>
-              <text x="380" y="108" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">with human dignity &</text>
-              <text x="380" y="131" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">harassment-free work</text>
+            <rect x="280" y="20" width="200" height="145" rx="8" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+            <text x="380" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#1e293b" text-anchor="middle">Constitutional Mandate</text>
+            <text x="380" y="85" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">Article 21: Right to Life</text>
+            <text x="380" y="108" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">with human dignity &</text>
+            <text x="380" y="131" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">harassment-free work</text>
 
-              <path d="M 485 92 L 515 92" stroke="#94a3b8" stroke-width="3"/>
+            <path d="M 485 92 L 515 92" stroke="#94a3b8" stroke-width="3"/>
 
-              <rect x="520" y="20" width="220" height="145" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
-              <text x="630" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#14532d" text-anchor="middle">POSH Statutory Shield</text>
-              <text x="630" y="85" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• Mandatory IC (External Member)</text>
-              <text x="630" y="108" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• 90-day timebound inquiry</text>
-              <text x="630" y="131" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• Sec 12 Interim Relief</text>
-            </svg>
-          </div>
-          <p class="caption">Audio Segment 1: The constitutional foundation linking Article 21 personal liberty to workplace safety.</p>
+            <rect x="520" y="20" width="220" height="145" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+            <text x="630" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#14532d" text-anchor="middle">POSH Statutory Shield</text>
+            <text x="630" y="85" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• Mandatory IC (External Member)</text>
+            <text x="630" y="108" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• 90-day timebound inquiry</text>
+            <text x="630" y="131" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• Sec 12 Interim Relief</text>
+          </svg>
         </div>
+        <p class="caption">Audio Segment 1: The constitutional foundation linking Article 21 personal liberty to workplace safety.</p>
       </div>
 
       <!-- Card 2: Concept / Vishaka to POSH Act 2013 & Extended Workplace -->
       <div id="card-seg-2" class="visual-card">
-        <div class="visual-card-header">
-          <span class="card-step-badge">Segment 2 • Legal Evolution</span>
-          <h3>From Vishaka Guidelines to POSH: The Extended Workplace</h3>
-        </div>
-        <div class="visual-card-body">
-          <p>
-            Stemming from the historic <em>Vishaka v. State of Rajasthan (1997)</em> ruling, Parliament codified protections under the <strong>POSH Act 2013</strong>. Under Section 2(o), the Act covers the <strong>Extended Workplace</strong>:
-          </p>
-          <div class="info-grid">
-            <div class="info-card">
-              <h4>Quid Pro Quo Harassment</h4>
-              <p>Promising career advancement, favorable appraisals, or job security in exchange for sexual favors, or penalizing rejection with unfavorable ratings or termination.</p>
-            </div>
-            <div class="info-card">
-              <h4>Hostile Work Environment</h4>
-              <p>Creating an intimidating, hostile, or offensive work environment through pervasive unwelcome verbal, non-verbal, physical, or visual conduct.</p>
-            </div>
-            <div class="info-card">
-              <h4>The Extended Workplace</h4>
-              <p>Under Section 2(o), covers physical offices, client sites, company offsites, employer-provided transit, hotel stays, and digital channels (Slack, Zoom, WhatsApp).</p>
-            </div>
+        <h3>2. From Vishaka Guidelines to POSH: The Extended Workplace</h3>
+        <p>Stemming from the historic <em>Vishaka v. State of Rajasthan (1997)</em> ruling, Parliament codified protections under the <strong>POSH Act 2013</strong>. Under Section 2(o), the Act covers the <strong>Extended Workplace</strong>:</p>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <strong>Quid Pro Quo Harassment</strong>
+            <p>Promising career advancement, favorable appraisals, or job security in exchange for sexual favors, or penalizing rejection with unfavorable ratings or termination.</p>
           </div>
-          <p class="caption">Audio Segment 2: Codification of Vishaka guidelines and the broad definition of the Extended Workplace.</p>
+          <div class="rule-card">
+            <strong>Hostile Work Environment</strong>
+            <p>Creating an intimidating, hostile, or offensive work environment through pervasive unwelcome verbal, non-verbal, physical, or visual conduct.</p>
+          </div>
+          <div class="rule-card">
+            <strong>The Extended Workplace</strong>
+            <p>Under Section 2(o), covers physical offices, client sites, company offsites, employer-provided transit, hotel stays, and digital channels (Slack, Zoom, WhatsApp).</p>
+          </div>
+          <div class="rule-card">
+            <strong>Universal Coverage</strong>
+            <p>Protects women across all sectors: permanent employees, probationers, contract workers, interns, daily-wage laborers, and remote contractors.</p>
+          </div>
         </div>
+        <p class="caption">Audio Segment 2: Codification of Vishaka guidelines and the broad definition of the Extended Workplace.</p>
       </div>
 
       <!-- Card 3: Concept / Internal Committee & The External Member Mandate -->
       <div id="card-seg-3" class="visual-card">
-        <div class="visual-card-header">
-          <span class="card-step-badge">Segment 3 • Committee Architecture</span>
-          <h3>The Internal Committee (IC): Mandatory Composition Rules</h3>
-        </div>
-        <div class="visual-card-body">
-          <p>
-            Under Section 4 of the POSH Act, every employer with 10 or more employees must constitute an Internal Committee. The statutory composition is strictly mandated to counter management bias:
-          </p>
-          <div class="diagram-box">
-            <table class="spec-table">
-              <thead>
-                <tr>
-                  <th>Statutory Role</th>
-                  <th>Legal Requirement</th>
-                  <th>Statutory Purpose</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Presiding Officer</strong></td>
-                  <td>Senior woman employee employed at the workplace</td>
-                  <td>Ensures female leadership of the inquiry process</td>
-                </tr>
-                <tr>
-                  <td><strong>Employee Members</strong></td>
-                  <td>Not less than 2 members committed to the cause of women or experienced in social work</td>
-                  <td>Provides internal workplace context</td>
-                </tr>
-                <tr>
-                  <td><strong>External Member</strong></td>
-                  <td>From an NGO, association committed to women, or person familiar with sexual harassment law</td>
-                  <td><strong>Mandatory neutral anchor</strong>; prevents corporate cover-ups and management collusion</td>
-                </tr>
-                <tr>
-                  <td><strong>Overall Gender Balance</strong></td>
-                  <td>At least <strong>50% (half)</strong> of total committee members must be women</td>
-                  <td>Eliminates male-dominated organizational bias</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="caption">Audio Segment 3: Statutory rules governing Internal Committee composition and the crucial role of the independent external member.</p>
-        </div>
+        <h3>3. The Internal Committee (IC): Mandatory Composition Rules</h3>
+        <p>Under Section 4 of the POSH Act, every employer with 10 or more employees must constitute an Internal Committee. The statutory composition is strictly mandated to counter management bias:</p>
+
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Statutory Role</th>
+              <th>Legal Requirement</th>
+              <th>Statutory Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Presiding Officer</strong></td>
+              <td>Senior woman employee employed at the workplace</td>
+              <td>Ensures female leadership of the inquiry process</td>
+            </tr>
+            <tr>
+              <td><strong>Employee Members</strong></td>
+              <td>Not less than 2 members committed to the cause of women or experienced in social work</td>
+              <td>Provides internal workplace context</td>
+            </tr>
+            <tr>
+              <td><strong>External Member</strong></td>
+              <td>From an NGO, association committed to women, or person familiar with sexual harassment law</td>
+              <td><strong>Mandatory neutral anchor</strong>; prevents corporate cover-ups and management collusion</td>
+            </tr>
+            <tr>
+              <td><strong>Overall Gender Balance</strong></td>
+              <td>At least <strong>50% (half)</strong> of total committee members must be women</td>
+              <td>Eliminates male-dominated organizational bias</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="caption">Audio Segment 3: Statutory rules governing Internal Committee composition and the crucial role of the independent external member.</p>
       </div>
 
       <!-- Card 4: Example / Timelines, Interim Relief & Section 16 Confidentiality -->
       <div id="card-seg-4" class="visual-card">
-        <div class="visual-card-header">
-          <span class="card-step-badge">Segment 4 • Inquiry Due Process</span>
-          <h3>Statutory Timelines, Section 12 Interim Relief & Section 16 Privacy</h3>
-        </div>
-        <div class="visual-card-body">
-          <p>
-            The POSH Act enforces timebound inquiries while arming the Internal Committee with powerful interim protective remedies for complainants:
-          </p>
-          <div class="info-grid">
-            <div class="info-card" style="border-left: 4px solid var(--accent-blue);">
-              <h4>Strict Inquiry Timelines</h4>
-              <p>Complaint within <strong>3 months</strong> (extendable by 3 months). Complete inquiry within <strong>90 days</strong>. Submit report within 10 days; employer action within 60 days.</p>
-            </div>
-            <div class="info-card" style="border-left: 4px solid #047857;">
-              <h4>Section 12 Interim Relief</h4>
-              <p>The IC can recommend: paid leave up to <strong>3 months</strong> (over and above standard leaves), transferring either party, or restraining respondent from reporting on complainant.</p>
-            </div>
-            <div class="info-card" style="border-left: 4px solid var(--accent-red);">
-              <h4>Section 16 Confidentiality</h4>
-              <p>Strict bar on disclosing complainant, respondent, or witness identities to media or public. Violations attract immediate monetary fines under Section 17.</p>
-            </div>
-          </div>
-          <p class="caption">Audio Segment 4: Strict 90-day inquiry deadlines, Section 12 interim protective measures, and mandatory confidentiality.</p>
-        </div>
-      </div>
+        <h3>4. Statutory Timelines, Section 12 Interim Relief & Section 16 Privacy</h3>
+        <p>The POSH Act enforces timebound inquiries while arming the Internal Committee with powerful interim protective remedies for complainants:</p>
 
+        <div class="case-card">
+          <div class="case-title">Due Process Timelines & Interim Protective Powers</div>
+          <span class="case-meta">Statutory Directives: Sections 9, 11, 12 & 16 of the POSH Act 2013</span>
+          <p><strong>Key Statutory Procedural Rules:</strong></p>
+          <ul style="margin: 8px 0 8px 20px; font-size: 14.5px; line-height: 1.5;">
+            <li><strong>Filing Limitation:</strong> Written complaint must be submitted within <strong>3 months</strong> of the incident (extendable by 3 months on sufficient cause).</li>
+            <li><strong>90-Day Inquiry Deadline:</strong> The Internal Committee must conclude inquiry and submit its report within 90 days. Employers must act on recommendations within 60 days.</li>
+            <li><strong>Section 12 Interim Relief:</strong> The IC can recommend: paid leave up to <strong>3 months</strong> (over and above standard leaves), transferring either party, or restraining respondent from reporting on complainant.</li>
+            <li><strong>Section 16 Confidentiality:</strong> Absolute ban on disclosing complainant, respondent, or witness identities to media or public. Violations attract immediate monetary fines under Section 17.</li>
+          </ul>
+        </div>
+        <p class="caption">Audio Segment 4: Strict 90-day inquiry deadlines, Section 12 interim protective measures, and mandatory confidentiality.</p>
+      </div>
       <!-- Card 5: Action / 4-Step POSH Filing & Evidence Playbook -->
       <div id="card-seg-5" class="visual-card">
-        <div class="visual-card-header">
-          <span class="card-step-badge">Segment 5 • Action Protocol</span>
-          <h3>The Citizen 4-Step POSH Filing & Enforcement Playbook</h3>
-        </div>
-        <div class="visual-card-body">
-          <p>
-            Follow this decisive statutory roadmap to document incidents, submit complaints, and enforce due process against corporate misconduct:
-          </p>
-          <div class="checklist-grid">
-            <div class="checklist-item">
-              <strong>Step 1: Contemporaneous Evidence Preservation</strong>
-              Immediately back up Slack/Teams messages, WhatsApp chats, emails, call logs, and calendar invites to a secure personal device. Log dates, times, and witnesses.
-            </div>
-            <div class="checklist-item">
-              <strong>Step 2: Formal Written Complaint to Presiding Officer</strong>
-              Submit a detailed factual complaint within 3 months to the IC Presiding Officer with attached evidence, demanding written acknowledgment of receipt.
-            </div>
-            <div class="checklist-item">
-              <strong>Step 3: Formal Application for Section 12 Interim Relief</strong>
-              Request protective measures in writing: paid administrative leave, reassignment of reporting hierarchy, or remote work during the 90-day inquiry.
-            </div>
-            <div class="checklist-item">
-              <strong>Step 4: Statutory Escalation to She-Box & Labour Court</strong>
-              If the company lacks a valid IC, retaliates, or suppresses the report, file on the central government portal (shebox.wcd.gov.in) or appeal under Section 18.
-            </div>
+        <h3>5. The Citizen 4-Step POSH Filing & Enforcement Playbook</h3>
+        <p>Follow this decisive statutory roadmap to document incidents, submit complaints, and enforce due process against corporate misconduct:</p>
+
+        <div class="action-step-card">
+          <div class="step-num">1</div>
+          <div>
+            <strong>Contemporaneous Evidence Preservation</strong>
+            <p style="margin: 4px 0 0; font-size: 14px; color: var(--text-muted);">Immediately back up Slack/Teams messages, WhatsApp chats, emails, call logs, and calendar invites to a secure personal device. Log dates, times, and witnesses.</p>
           </div>
-          <p class="caption">Audio Segment 5: The complete self-advocacy protocol for filing POSH complaints and securing interim remedies.</p>
         </div>
+
+        <div class="action-step-card">
+          <div class="step-num">2</div>
+          <div>
+            <strong>Formal Written Complaint to Presiding Officer</strong>
+            <p style="margin: 4px 0 0; font-size: 14px; color: var(--text-muted);">Submit a detailed factual complaint within 3 months to the IC Presiding Officer with attached evidence, demanding written acknowledgment of receipt.</p>
+          </div>
+        </div>
+
+        <div class="action-step-card">
+          <div class="step-num">3</div>
+          <div>
+            <strong>Formal Application for Section 12 Interim Relief</strong>
+            <p style="margin: 4px 0 0; font-size: 14px; color: var(--text-muted);">Request protective measures in writing: paid administrative leave up to 3 months, reassignment of reporting hierarchy, or remote work during the 90-day inquiry.</p>
+          </div>
+        </div>
+
+        <div class="action-step-card">
+          <div class="step-num">4</div>
+          <div>
+            <strong>Statutory Escalation to She-Box & Appellate Court</strong>
+            <p style="margin: 4px 0 0; font-size: 14px; color: var(--text-muted);">If the company lacks a valid IC, retaliates, or suppresses the report, file on the central government portal (shebox.wcd.gov.in) or appeal under Section 18.</p>
+          </div>
+        </div>
+        <p class="caption">Audio Segment 5: The complete self-advocacy protocol for filing POSH complaints and securing interim remedies.</p>
+      </div>
+        <p class="caption">Audio Segment 5: The complete self-advocacy protocol for filing POSH complaints and securing interim remedies.</p>
       </div>
 
     </section>
@@ -312,40 +344,40 @@
       <div id="evidence-text" class="evidence-box"></div>
       <button id="copy-evidence-btn" class="copy-evidence-btn">Copy Evidence Record</button>
     </section>
-
     <!-- Collapsible Full Narration Transcript -->
     <details class="transcript-details">
-      <summary class="transcript-summary">
-        <span>📖 View Complete Verbatim Audio Transcript (5:54)</span>
-        <span class="transcript-toggle-icon">▼</span>
-      </summary>
-      <div class="transcript-content">
+      <summary>Read Full Spoken Narration Transcript (Ears-Free Mode)</summary>
+      <div class="transcript-body">
         <div class="transcript-segment">
-          <h4>Segment 1: The Hostile Workplace Dilemma</h4>
+          <div class="transcript-segment-title">Segment 1: The Hostile Workplace Dilemma</div>
           <p>Workplace sexual harassment rarely resembles overt physical violence. More often, it manifests as persistent, subtle misconduct: suggestive messages sent late at night by a reporting manager, unwelcome comments on appearance during team calls, inappropriate personal inquiries disguised as mentorship, or implicit threats that refusing a private dinner will derail an upcoming promotion. Victims—whether junior associates, interns, or remote contractors—frequently stay silent out of fear: fear of reputational smear, fear of retaliation during annual appraisals, and fear that the company HR department will protect senior leadership at all costs. But under Indian constitutional and statutory law, a safe working environment is not a corporate perk; it is a fundamental human right anchored directly in Article 21 of the Constitution. In this capstone lesson of Track 2, you will master the legal architecture of the POSH Act 2013, the non-negotiable composition rules of the Internal Committee, statutory interim reliefs, strict confidentiality protections, and your step-by-step roadmap for holding organizations legally accountable.</p>
         </div>
+
         <div class="transcript-segment">
-          <h4>Segment 2: The Vishaka Shield to POSH Act 2013</h4>
+          <div class="transcript-segment-title">Segment 2: The Vishaka Shield to POSH Act 2013</div>
           <p>The statutory framework protecting Indian workers originated in the historic Supreme Court judgment of Vishaka versus State of Rajasthan in 1997. Following the brutal gang-rape of social worker Bhanwari Devi, the Supreme Court invoked international conventions under Articles 14, 19, and 21 of the Constitution to frame judicial guidelines against workplace harassment in the absence of legislation. Sixteen years later, Parliament enacted the Sexual Harassment of Women at Workplace Prevention, Prohibition and Redressal Act of 2013, commonly known as the POSH Act. Crucially, the POSH Act operates on the doctrine of the Extended Workplace. Under Section 2(o), a workplace is not limited to physical office cubicles; it includes any department, company offsite, business conference, corporate transportation, client dinner, or digital communication channel—including Slack channels, WhatsApp messages, Zoom calls, and official emails. The Act categorizes harassment into two major legal forms: Quid Pro Quo harassment, where employment benefits or promotions are traded for sexual favors, and Hostile Work Environment, where pervasive unwelcome conduct creates an intimidating or offensive work climate.</p>
         </div>
+
         <div class="transcript-segment">
-          <h4>Segment 3: The Internal Committee & The External Member Rule</h4>
+          <div class="transcript-segment-title">Segment 3: The Internal Committee & The External Member Rule</div>
           <p>Under Section 4 of the POSH Act, every employer operating an administrative unit or branch employing ten or more workers must constitute an Internal Committee, known as the IC or ICC. The law strictly regulates the committee's composition to eliminate management bias. The committee must be headed by a Presiding Officer who must be a woman employed at a senior level in the workplace. At least half of the total committee members must be women. Most importantly, Section 4(2)(c) mandates the inclusion of at least one independent external member—someone from a non-governmental organization, an association committed to women's rights, or a qualified legal practitioner familiar with issues of sexual harassment. The presence of this external member is a non-negotiable statutory safeguard designed to ensure neutrality, prevent corporate cover-ups, and counteract organizational hierarchies. For workplaces with fewer than ten employees, complaints are investigated by the government-constituted Local Committee at the district level.</p>
         </div>
+
         <div class="transcript-segment">
-          <h4>Segment 4: Statutory Timelines, Interim Relief & Section 16</h4>
+          <div class="transcript-segment-title">Segment 4: Statutory Timelines, Interim Relief & Section 16</div>
           <p>The POSH inquiry procedure follows strict statutory timelines to guarantee due process. A formal complaint must be submitted in writing within three months of the incident, extendable by up to another three months if the committee is satisfied that exceptional circumstances prevented earlier filing. The inquiry itself must be completed within a statutory deadline of ninety days. Crucially, while the inquiry is ongoing, Section 12 empowers the Internal Committee to grant binding interim relief upon the complainant's request. The committee can recommend transferring the aggrieved woman or the respondent to another department, granting the complainant up to three months of fully paid leave over and above statutory leave entitlements, or restraining the respondent from reporting on the complainant's performance. Furthermore, Section 16 of the Act imposes strict confidentiality: publishing or disclosing the identity, address, or details of the complainant, respondent, witnesses, or inquiry findings to the press or public is strictly prohibited and carries severe statutory fines on the organization.</p>
         </div>
+
         <div class="transcript-segment">
-          <h4>Segment 5: The 4-Step POSH Filing & Evidence Playbook</h4>
+          <div class="transcript-segment-title">Segment 5: The 4-Step POSH Filing & Evidence Playbook</div>
           <p>If you or a colleague experience workplace sexual harassment, take these four decisive steps to enforce your statutory rights. Step One: Create a contemporaneous evidentiary trail. Immediately export and safely back up all relevant chat logs, WhatsApp screenshots, call recordings, emails, and calendar entries to a secure personal device. Write down dates, exact times, locations, and names of any nearby witnesses while memories are fresh. Step Two: File a formal written complaint with the Internal Committee. Address your signed complaint to the Presiding Officer of the IC, setting out a clear factual chronology with attached documentary evidence. Keep an official acknowledgment of receipt. Step Three: Formally request interim relief under Section 12. If continuing in your current role causes distress, request in writing a change in reporting lines, temporary work-from-home status, or paid administrative leave during the ninety-day inquiry. Step Four: Exercise legal remedies if the IC fails to act. If the employer fails to constitute a compliant committee, delays beyond ninety days, or retaliates, file a complaint online on the central government She-Box portal at shebox.wcd.gov.in, or approach the appellate court under Section 18 of the Act.</p>
         </div>
       </div>
     </details>
 
-    <!-- References & Legal Authorities -->
-    <footer class="lesson-footer">
-      <h3>Statutory Authorities & Landmark Precedents</h3>
+    <!-- Citations & Verified Bibliography -->
+    <footer class="citations-box">
+      <strong>Verified Landmark Indian Precedents:</strong>
       <ul>
         <li><a href="https://indiankanoon.org/doc/1031794/" target="_blank" rel="noopener">Supreme Court of India: Vishaka v. State of Rajasthan (1997 6 SCC 241)</a> — Judicial framing of guidelines against workplace harassment under Article 21.</li>
         <li><a href="https://wcd.nic.in" target="_blank" rel="noopener">Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act 2013 (POSH Act)</a>.</li>
@@ -384,21 +416,21 @@
       {
         "id": "seg-1",
         "type": "motivation",
-        "title": "1. The Hostile Workplace Dilemma",
+        "title": "1. Hostile Workplace",
         "visualCardId": "card-seg-1",
         "durationSeconds": 70.55
       },
       {
         "id": "seg-2",
         "type": "concept",
-        "title": "2. The Vishaka Shield to POSH Act 2013",
+        "title": "2. Vishaka to POSH",
         "visualCardId": "card-seg-2",
         "durationSeconds": 76.5
       },
       {
         "id": "seg-3",
         "type": "concept",
-        "title": "3. The Internal Committee & The External Member Rule",
+        "title": "3. IC Composition",
         "visualCardId": "card-seg-3",
         "durationSeconds": 62.67
       },
@@ -412,7 +444,7 @@
       {
         "id": "seg-4",
         "type": "example",
-        "title": "4. Statutory Timelines, Interim Relief & Section 16",
+        "title": "4. Relief & Privacy",
         "visualCardId": "card-seg-4",
         "durationSeconds": 64.52
       },
@@ -426,7 +458,7 @@
       {
         "id": "seg-5",
         "type": "action",
-        "title": "5. The 4-Step POSH Filing & Evidence Playbook",
+        "title": "5. 4-Step Playbook",
         "visualCardId": "card-seg-5",
         "durationSeconds": 77.93
       }
@@ -473,10 +505,19 @@
         "id": "pron-quidproquo",
         "term": "Quid Pro Quo",
         "transliteration": "Latin",
-        "language": "Workplace Law",
+        "language": "Harassment Doctrine",
         "ipa": "/ˌkwɪd proʊ ˈkwoʊ/",
         "meaning": "Something for something — conditioning employment benefits on sexual compliance.",
         "audioFile": "../assets/audio/pronounce-quidproquo.wav"
+      },
+      {
+        "id": "pron-primafacie",
+        "term": "Prima Facie",
+        "transliteration": "Latin",
+        "language": "Evidence Law",
+        "ipa": "/ˌpraɪ.mə ˈfeɪ.ʃi/",
+        "meaning": "At first face — evidence sufficient on initial examination to establish workplace harassment.",
+        "audioFile": "../assets/audio/pronounce-primafacie.wav"
       }
     ]
   }
