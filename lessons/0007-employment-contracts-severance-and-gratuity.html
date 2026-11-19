@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lesson 0007: Employment Contracts, Severance & The Gratuity Shield</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+  <div class="lesson-container">
+
+    <!-- Header Navigation -->
+    <nav class="lesson-nav">
+      <a href="../index.html" class="dashboard-link">⌂ Course Dashboard</a>
+      <span class="lesson-index-badge">Track 2: Employment & Labor • Lesson 0007</span>
+    </nav>
+
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <span class="lesson-badge" style="color: #047857;">Workplace & Terminal Rights</span>
+      <h1 class="lesson-title">Employment Contracts, Severance & The Gratuity Shield</h1>
+      <p style="color: var(--text-muted); font-size: 16px;">
+        Master your statutory protections against arbitrary termination, enforce the Payment of Gratuity Act 1972 continuous service thresholds (the 240/190-day rule), recover withheld Full & Final dues with 10% statutory interest, and invoke Section 12 Maternity Benefit protections.
+      </p>
+    </header>
+
+    <!-- Audio Player Companion Widget -->
+    <div class="player-widget" role="region" aria-label="Audio player for lesson narration">
+      <audio id="lesson-audio" src="../assets/audio/lesson-0007.mp3" preload="metadata"></audio>
+
+      <div class="player-top-row">
+        <button id="player-play-btn" class="play-btn" aria-label="Play audio">
+          <span id="player-play-icon">▶</span>
+        </button>
+
+        <div class="player-meta-group">
+          <span id="player-segment-title" class="player-segment-title">1. The Sudden Termination Dilemma</span>
+          <span id="player-time" class="player-time">0:00 / 5:46</span>
+        </div>
+
+        <div class="player-controls-right">
+          <div class="speed-selector" aria-label="Playback speed">
+            <button class="speed-btn" data-speed="0.8">0.8×</button>
+            <button class="speed-btn active" data-speed="1.0">1.0×</button>
+            <button class="speed-btn" data-speed="1.25">1.25×</button>
+            <button class="speed-btn" data-speed="1.5">1.5×</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrubbing Bar -->
+      <div class="scrub-container" id="scrub-container" role="slider" aria-label="Audio progress scrub track">
+        <div class="scrub-track" id="scrub-track">
+          <div class="scrub-fill" id="scrub-fill"></div>
+          <div class="scrub-handle" id="scrub-handle"></div>
+        </div>
+      </div>
+
+      <!-- Segment Navigation Pills -->
+      <div class="segment-pills-row" id="segment-pills" role="tablist">
+        <button class="segment-pill active" data-segment-id="seg-1">1. The Sudden Termination</button>
+        <button class="segment-pill" data-segment-id="seg-2">2. The Gratuity Shield</button>
+        <button class="segment-pill" data-segment-id="seg-3">3. Full & Final Dues</button>
+        <button class="segment-pill checkpoint" data-segment-id="chk-seg-1">⏸ Quiz 1</button>
+        <button class="segment-pill" data-segment-id="seg-4">4. Maternity Protection</button>
+        <button class="segment-pill checkpoint" data-segment-id="chk-seg-2">⏸ Quiz 2</button>
+        <button class="segment-pill" data-segment-id="seg-5">5. 4-Step Recovery</button>
+      </div>
+    </div>
+
+    <!-- Dynamic Visual Cards Section (Synced to Narration Segments) -->
+    <section class="visual-cards-section">
+
+      <!-- Card 1: Motivation / The Sudden Termination Dilemma -->
+      <div id="card-seg-1" class="visual-card active">
+        <div class="visual-card-header">
+          <span class="card-step-badge">Segment 1 • Motivation</span>
+          <h3>The Sudden Termination Dilemma: Contract vs. Statute</h3>
+        </div>
+        <div class="visual-card-body">
+          <p>
+            When employers execute surprise layoffs on Friday afternoons, they often attempt to intimidate departing employees into waiving statutory severance, withholding earned salaries pending "audits", or forfeiting earned gratuity.
+          </p>
+          <div class="diagram-box">
+            <svg viewBox="0 0 760 190" width="100%" height="160" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="220" height="145" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+              <text x="130" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#991b1b" text-anchor="middle">Corporate Intimidation</text>
+              <text x="130" y="85" font-family="sans-serif" font-size="12" fill="#7f1d1d" text-anchor="middle">• Immediate laptop seizure</text>
+              <text x="130" y="108" font-family="sans-serif" font-size="12" fill="#7f1d1d" text-anchor="middle">• Coerced resignation waivers</text>
+              <text x="130" y="131" font-family="sans-serif" font-size="12" fill="#7f1d1d" text-anchor="middle">• Withholding F&F dues</text>
+
+              <path d="M 245 92 L 275 92" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow)"/>
+
+              <rect x="280" y="20" width="200" height="145" rx="8" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+              <text x="380" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#1e293b" text-anchor="middle">The Legal Reality</text>
+              <text x="380" y="85" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">Contracts CANNOT waive</text>
+              <text x="380" y="108" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">statutory labor rights</text>
+              <text x="380" y="131" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">(Sec 23 Contract Act)</text>
+
+              <path d="M 485 92 L 515 92" stroke="#94a3b8" stroke-width="3"/>
+
+              <rect x="520" y="20" width="220" height="145" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+              <text x="630" y="55" font-family="sans-serif" font-weight="700" font-size="15" fill="#14532d" text-anchor="middle">Statutory Remedies</text>
+              <text x="630" y="85" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• Gratuity Act 1972 (10% int)</text>
+              <text x="630" y="108" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• Shops & Est. Act (F&F)</text>
+              <text x="630" y="131" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">• Section 12 Maternity Shield</text>
+            </svg>
+          </div>
+          <p class="caption">Audio Segment 1: The legal asymmetry between corporate HR intimidation and citizen statutory labor rights.</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Concept / Payment of Gratuity Act & Continuous Service -->
+      <div id="card-seg-2" class="visual-card">
+        <div class="visual-card-header">
+          <span class="card-step-badge">Segment 2 • Statutory Protection</span>
+          <h3>The Gratuity Shield: Continuous Service & Formula</h3>
+        </div>
+        <div class="visual-card-body">
+          <p>
+            The <strong>Payment of Gratuity Act 1972</strong> applies to every establishment employing 10 or more persons. Under Section 2A, completing <strong>240 days</strong> in the 5th year (190 days for 5-day workweeks) satisfies the 5-year continuous service threshold.
+          </p>
+          <div class="info-grid">
+            <div class="info-card">
+              <h4>The 240/190-Day Rule</h4>
+              <p>Under Section 2A(2), an employee who has worked 4 years and 240 days (or 190 days in a 5-day corporate office) has legally satisfied the 5-year continuous service threshold.</p>
+            </div>
+            <div class="info-card">
+              <h4>Mandatory Statutory Formula</h4>
+              <p><strong>Gratuity = (15 × Last Drawn Basic + DA × Completed Years) ÷ 26</strong>. Tax-free up to ₹20 Lakhs under Section 10(10) of the Income Tax Act.</p>
+            </div>
+            <div class="info-card">
+              <h4>Mandatory 30-Day Payout</h4>
+              <p>Under Section 7(3), the employer must disburse gratuity within 30 days of exit. Delayed payout attracts mandatory <strong>10% simple interest p.a.</strong> under Section 7(3A).</p>
+            </div>
+          </div>
+          <p class="caption">Audio Segment 2: Statutory computation formula, continuous service eligibility, and mandatory 10% interest for delay.</p>
+        </div>
+      </div>
+
+      <!-- Card 3: Concept / Full & Final Settlements & Notice Period Deductions -->
+      <div id="card-seg-3" class="visual-card">
+        <div class="visual-card-header">
+          <span class="card-step-badge">Segment 3 • Wage Security</span>
+          <h3>Full & Final (F&F) Settlements: Barring Unlawful Deductions</h3>
+        </div>
+        <div class="visual-card-body">
+          <p>
+            Under state Shops & Commercial Establishments Acts and the Payment of Wages Act, all terminal wages, accrued leave encashment, and bonuses must be disbursed within <strong>7 to 30 days</strong> of the last working day.
+          </p>
+          <div class="diagram-box">
+            <table class="spec-table">
+              <thead>
+                <tr>
+                  <th>Employer Claim</th>
+                  <th>The Legal Position</th>
+                  <th>Governing Authority</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>"We are deducting 3 months notice pay during layoff"</strong></td>
+                  <td>If the employer terminates without cause, the <em>employer</em> must pay notice pay in lieu of notice; deducting notice from the employee is illegal.</td>
+                  <td>Contract Act Sec 73 & Shops & Est. Act</td>
+                </tr>
+                <tr>
+                  <td><strong>"Training bond deduction from final dues"</strong></td>
+                  <td>Unreasonable training bonds without actual proven institutional training expenses are void penalties under Section 74.</td>
+                  <td><em>Central Inland Water</em> & <em>Sicpa India</em></td>
+                </tr>
+                <tr>
+                  <td><strong>"Withholding salary pending audit clearance"</strong></td>
+                  <td>Earned salary is protected property under Article 300A; employers cannot convert earned wages into hostage funds.</td>
+                  <td>Payment of Wages Act Sec 15</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="caption">Audio Segment 3: Dismantling arbitrary notice-period deductions, training bonds, and withheld wages.</p>
+        </div>
+      </div>
+
+      <!-- Card 4: Example / Section 12 Maternity Benefit Shield -->
+      <div id="card-seg-4" class="visual-card">
+        <div class="visual-card-header">
+          <span class="card-step-badge">Segment 4 • Case Example</span>
+          <h3>Section 12 Maternity Shield: Absolute Dismissal Immunity</h3>
+        </div>
+        <div class="visual-card-body">
+          <p>
+            Under Section 12 of the <strong>Maternity Benefit Act 1961 (Amended 2017)</strong>, there is an <strong>absolute statutory ban</strong> on discharging or dismissing a woman employee at any time during pregnancy or maternity leave.
+          </p>
+          <div class="info-grid">
+            <div class="info-card" style="border-left: 4px solid var(--accent-red);">
+              <h4>Section 12 Absolute Bar</h4>
+              <p>Any dismissal, discharge, or adverse notice issued during pregnancy or maternity leave is void ab initio. Corporate restructuring or PIP excuses cannot override Section 12.</p>
+            </div>
+            <div class="info-card" style="border-left: 4px solid var(--accent-blue);">
+              <h4>26 Weeks Paid Leave</h4>
+              <p>Guarantees 26 weeks of fully paid leave for up to two surviving children. Employers must pay average daily wage for the period of actual absence.</p>
+            </div>
+            <div class="info-card" style="border-left: 4px solid #047857;">
+              <h4>Criminal Penalties</h4>
+              <p>Under Section 21, employers who discharge pregnant workers face mandatory imprisonment of up to 1 year and statutory fines, enforceable via the Labour Court.</p>
+            </div>
+          </div>
+          <p class="caption">Audio Segment 4: Absolute statutory immunity against termination during pregnancy and maternity leave under Section 12.</p>
+        </div>
+      </div>
+
+      <!-- Card 5: Action / 4-Step Terminal Dues Recovery Playbook -->
+      <div id="card-seg-5" class="visual-card">
+        <div class="visual-card-header">
+          <span class="card-step-badge">Segment 5 • Action Protocol</span>
+          <h3>The Citizen 4-Step Terminal Dues Recovery Playbook</h3>
+        </div>
+        <div class="visual-card-body">
+          <p>
+            Execute this four-step statutory roadmap whenever an employer withholds your final salary, refuses gratuity, or executes an unlawful termination.
+          </p>
+          <div class="checklist-grid">
+            <div class="checklist-item">
+              <strong>Step 1: Download & Preserve Evidentiary Records</strong>
+              Export payslips, Form 16/26AS, appointment letter, performance appraisals, and official exit emails before IT access is severed.
+            </div>
+            <div class="checklist-item">
+              <strong>Step 2: Serve Formal Statutory Demand Notice</strong>
+              Issue a registered legal notice demanding full F&F settlement and gratuity with 10% statutory interest within 15 days under Gratuity Act Sec 7(3).
+            </div>
+            <div class="checklist-item">
+              <strong>Step 3: Submit Form I to Controlling Authority</strong>
+              If gratuity is unpaid after 30 days, file Form I under Payment of Gratuity Rules with the regional Labour Commissioner (Controlling Authority).
+            </div>
+            <div class="checklist-item">
+              <strong>Step 4: Escalate to SAMADHAN & Labour Court</strong>
+              Lodge online wage dispute on the Ministry of Labour SAMADHAN portal (samadhan.labour.gov.in) for immediate conciliation and recovery certificate.
+            </div>
+          </div>
+          <p class="caption">Audio Segment 5: The complete evidentiary and regulatory process for recovering terminal dues.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Interactive Checkpoints Section -->
+    <section class="checkpoints-section">
+
+      <!-- Checkpoint 1 Card -->
+      <div id="card-chk-1" class="checkpoint-card">
+        <h4>Checkpoint 1: Gratuity Eligibility & Continuous Service Threshold</h4>
+        <p style="font-size: 15.5px; color: var(--text-muted); margin-bottom: 14px;">
+          An engineer working at a software multinational in Bengaluru resigns after completing 4 years and 7 months (working 5 days a week, having completed over 200 actual working days in his fifth year). The company refuses to pay gratuity, claiming that the statute strictly requires 5 full calendar years of 365 days each. Under Section 2A of the Payment of Gratuity Act 1972, what is the lawful position?
+        </p>
+
+        <div class="options-list">
+          <button class="option-btn" data-index="0">
+            A) Gratuity is only payable after 10 continuous years, and employers can withhold it indefinitely during annual audits without interest.
+          </button>
+          <button class="option-btn" data-index="1">
+            B) In a 5-day workweek, completing 4 years and 190 days (or 240 days in a 6-day workweek) satisfies the 5-year continuous service rule, and the employer must pay within 30 days or incur 10% statutory interest per annum.
+          </button>
+          <button class="option-btn" data-index="2">
+            C) Gratuity is purely an optional discretionary bonus that employers may revoke if the employee leaves for a competing firm.
+          </button>
+          <button class="option-btn" data-index="3">
+            D) The employee must file a civil suit in the High Court within 7 days of exit to calculate gratuity through a court receiver.
+          </button>
+        </div>
+
+        <div class="checkpoint-feedback"></div>
+      </div>
+
+      <!-- Checkpoint 2 Card -->
+      <div id="card-chk-2" class="checkpoint-card">
+        <h4>Checkpoint 2: Section 12 Maternity Benefit Protection Against Termination</h4>
+        <p style="font-size: 15.5px; color: var(--text-muted); margin-bottom: 14px;">
+          A senior analyst informs her HR department that she is pregnant and applies for statutory 26-week maternity leave. Two weeks later, the management issues her an immediate termination letter, citing "role redundancy and project reorganisation" under her contract's termination clause. Under Section 12 of the Maternity Benefit Act 1961 (Amended 2017), how does Indian law treat this action?
+        </p>
+
+        <div class="options-list">
+          <button class="option-btn" data-index="0">
+            A) The termination is legally valid because private employment contracts override statutory labor benefits whenever corporate redundancy occurs.
+          </button>
+          <button class="option-btn" data-index="1">
+            B) The company only needs to pay one week of severance pay to extinguish all maternity liabilities.
+          </button>
+          <button class="option-btn" data-index="2">
+            C) The employee is required to forfeit all earned wages and pay 6 months of notice pay to the company for leaving her project incomplete.
+          </button>
+          <button class="option-btn" data-index="3">
+            D) The termination is completely unlawful and void ab initio; Section 12 imposes an absolute statutory bar on discharging or dismissing a woman during pregnancy or maternity absence, making the employer criminally liable.
+          </button>
+        </div>
+
+        <div class="checkpoint-feedback"></div>
+      </div>
+
+    </section>
+
+    <!-- Demonstrated Learning Evidence & Export -->
+    <section class="evidence-section">
+      <h3>Demonstrated Learning Record</h3>
+      <p style="font-size: 14px; color: var(--text-muted);">
+        Complete both checkpoints above to generate verified evidence of your Track 2 workplace rights mastery.
+      </p>
+      <div id="evidence-text" class="evidence-box"></div>
+      <button id="copy-evidence-btn" class="copy-evidence-btn">Copy Evidence Record</button>
+    </section>
+
+    <!-- Collapsible Full Narration Transcript -->
+    <details class="transcript-details">
+      <summary class="transcript-summary">
+        <span>📖 View Complete Verbatim Audio Transcript (5:46)</span>
+        <span class="transcript-toggle-icon">▼</span>
+      </summary>
+      <div class="transcript-content">
+        <div class="transcript-segment">
+          <h4>Segment 1: The Sudden Termination Dilemma</h4>
+          <p>It is four o'clock on a Friday afternoon. Your manager schedules an unexpected meeting. Without warning, you are handed a termination letter, your corporate laptop is seized, and your email access is revoked within minutes. The HR representative casually tells you that due to corporate restructuring, your three-month notice period will be waived without pay, your final two months of earned salary will be withheld indefinitely pending financial audits, and your five years of earned gratuity will be forfeited. In corporate offices, startups, and factories across India, thousands of professionals face this exact power imbalance every month. Most employees believe they are at the total mercy of corporate employment contracts. But under Indian labor and employment jurisprudence, statutory rights override private contractual waivers. In this lesson, you will master your statutory rights on termination, the mandatory five-year gratuity calculation rules, legal protections against wrongful deduction, and the absolute statutory shield protecting pregnant employees under the Maternity Benefit Act.</p>
+        </div>
+        <div class="transcript-segment">
+          <h4>Segment 2: Gratuity Shield & 5-Year Continuous Service</h4>
+          <p>The Payment of Gratuity Act of 1972 is a non-negotiable statutory benefit created to reward long-term service. Every establishment employing ten or more persons is legally bound by this statute. An employee becomes eligible for gratuity upon completing five years of continuous service. However, under Section 2A of the Act, continuous service does not require 365 days of physical work each year. In an establishment operating on a six-day workweek, completing two hundred and forty days of actual work in the fifth year satisfies the statutory test. For five-day corporate workweeks, just one hundred and ninety days in the fifth year legally qualifies you as having completed that full year. Gratuity is calculated using a mandatory formula: fifteen days of your last drawn basic salary plus dearness allowance, multiplied by your total completed years of service, divided by twenty-six. Under Section 7(3), the employer must disburse your gratuity within thirty days of termination. If the employer delays, Section 7(3A) mandates simple interest at ten percent per annum until the full sum is paid. Forfeiture is permitted only under narrow circumstances of proven riotous or violent conduct leading to financial damage, and only to the extent of actual damage caused.</p>
+        </div>
+        <div class="transcript-segment">
+          <h4>Segment 3: Full & Final Settlement & Unlawful Deductions</h4>
+          <p>When an employment relationship ends, the employer is legally obligated to issue your Full and Final settlement. Under state Shops and Commercial Establishments Acts and the Payment of Wages Act, all earned wages, accrued leave encashment, and statutory bonuses must be settled within seven to thirty days following the employee's last working day. Employers frequently attempt to deduct arbitrary penalties for alleged training costs, unserved notice periods during employer-initiated layoffs, or unreturned non-material assets. The Supreme Court established in Central Inland Water Transport Corporation that arbitrary, one-sided clauses imposed by employers through unequal bargaining power are unconscionable and void under Section 23 of the Indian Contract Act. If an employer terminates you immediately without cause, they must pay notice pay in lieu of the contractual notice period. Withholding earned wages is an actionable civil debt and an unfair labor practice. An employer cannot convert your terminal dues into hostage capital.</p>
+        </div>
+        <div class="transcript-segment">
+          <h4>Segment 4: Maternity Protection Under Section 12</h4>
+          <p>Consider Priya, a senior project lead at a software firm in Pune. When she informed HR that she was expecting a child and submitted her maternity leave application, the company placed her on a sudden performance improvement plan and issued a termination letter three weeks later, citing redundancy. Under Section 12 of the Maternity Benefit Act of 1961, as amended in 2017, this termination is completely illegal and void ab initio. Section 12 explicitly prohibits an employer from discharging or dismissing a woman worker at any time during her pregnancy or during her absence on maternity leave. Any termination during this period constitutes an offence punishable by imprisonment and hefty fines. Furthermore, the amended Act guarantees twenty-six weeks of fully paid maternity leave for up to two surviving children, mandatory creche facilities for establishments with fifty or more employees, and protection of all terminal benefits. When Priya served a formal statutory notice citing Section 12, the firm was compelled to withdraw the termination, reinstate her salary, and provide full paid maternity benefits.</p>
+        </div>
+        <div class="transcript-segment">
+          <h4>Segment 5: The 4-Step Terminal Dues Recovery Playbook</h4>
+          <p>If an employer unlawfully terminates your employment, withholds your terminal wages, or refuses to pay gratuity, execute this four-step legal playbook. Step One: Document and preserve all employment evidence. Download your payslips, appointment letter, official appraisal ratings, resignation or termination emails, and Form 26AS tax statements before corporate access is disabled. Step Two: Issue a Formal Statutory Demand Notice. Send a registered demand letter under the Payment of Gratuity Act and state Shops and Establishments Act demanding release of all pending salary, leave encashment, and gratuity with ten percent interest within fifteen days. Step Three: File Form I under the Gratuity Rules before the Controlling Authority. If gratuity is withheld past thirty days, submit Form I directly to the jurisdictional Labour Commissioner acting as the Controlling Authority. The authority has judicial powers to issue recovery certificates enforced as land revenue arrears. Step Four: Escalate wage violations to the Labour Court or SAMADHAN portal. Unpaid earned salaries can be reported online through the Ministry of Labour SAMADHAN grievance system, leading to conciliation proceedings and recovery orders.</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- References & Legal Authorities -->
+    <footer class="lesson-footer">
+      <h3>Statutory Authorities & Landmark Precedents</h3>
+      <ul>
+        <li><a href="https://clc.gov.in" target="_blank" rel="noopener">Payment of Gratuity Act 1972: Section 2A (Continuous Service) & Section 7 (Disbursement within 30 days & 10% Interest)</a>.</li>
+        <li><a href="https://labour.gov.in" target="_blank" rel="noopener">Maternity Benefit (Amendment) Act 2017: Section 12 (Absolute Bar on Dismissal During Pregnancy)</a>.</li>
+        <li><a href="https://indiankanoon.org/doc/1199182/" target="_blank" rel="noopener">Supreme Court of India: Central Inland Water Transport Corp v. Brojo Nath Ganguly (1986 3 SCC 156)</a> — Unconscionable and arbitrary termination clauses are void under Section 23 of the Contract Act.</li>
+        <li><a href="https://samadhan.labour.gov.in" target="_blank" rel="noopener">Ministry of Labour & Employment: SAMADHAN Industrial Dispute Portal</a>.</li>
+      </ul>
+    </footer>
+
+  </div>
+
+  <!-- Mobile Sticky Mini-Player Companion Bar -->
+  <aside id="mobile-mini-player" class="mobile-mini-player" aria-label="Mobile sticky audio player">
+    <div class="mini-progress-bar">
+      <div id="mini-progress-fill" class="mini-progress-fill"></div>
+    </div>
+    <div class="mini-player-content">
+      <button id="mini-play-btn" class="mini-play-btn" aria-label="Play or Pause">
+        <span id="mini-play-icon">▶</span>
+      </button>
+      <div id="mini-info" class="mini-info">
+        <span id="mini-segment-title" class="mini-segment-title">1. The Sudden Termination</span>
+        <span id="mini-time" class="mini-time">0:00 / 5:46</span>
+      </div>
+      <button id="mini-scroll-btn" class="mini-action-btn" title="Jump to top player" aria-label="Jump to top player">↑</button>
+    </div>
+  </aside>
+
+  <!-- Lesson Data Payload for runtime player -->
+  <script type="application/json" id="lesson-data">
+  {
+    "id": "0007",
+    "title": "Employment Contracts, Severance & The Gratuity Shield",
+    "missionOutcome": "Enforce statutory severance rights on termination, calculate gratuity under the Section 2A 240/190-day continuous service rule, recover withheld terminal dues with 10% statutory interest, and assert Section 12 absolute dismissal immunity under the Maternity Benefit Act.",
+    "audioFile": "../assets/audio/lesson-0007.mp3",
+    "segments": [
+      {
+        "id": "seg-1",
+        "type": "motivation",
+        "title": "1. The Sudden Termination Dilemma",
+        "visualCardId": "card-seg-1",
+        "durationSeconds": 62.86
+      },
+      {
+        "id": "seg-2",
+        "type": "concept",
+        "title": "2. Gratuity Shield & 5-Year Continuous Service",
+        "visualCardId": "card-seg-2",
+        "durationSeconds": 80.86
+      },
+      {
+        "id": "seg-3",
+        "type": "concept",
+        "title": "3. Full & Final Settlement & Unlawful Deductions",
+        "visualCardId": "card-seg-3",
+        "durationSeconds": 61.45
+      },
+      {
+        "id": "chk-seg-1",
+        "type": "checkpoint",
+        "title": "⏸ Quiz 1: Gratuity Rule",
+        "visualCardId": "card-chk-1",
+        "durationSeconds": 1.0
+      },
+      {
+        "id": "seg-4",
+        "type": "example",
+        "title": "4. Maternity Protection Under Section 12",
+        "visualCardId": "card-seg-4",
+        "durationSeconds": 67.66
+      },
+      {
+        "id": "chk-seg-2",
+        "type": "checkpoint",
+        "title": "⏸ Quiz 2: Maternity Shield",
+        "visualCardId": "card-chk-2",
+        "durationSeconds": 1.0
+      },
+      {
+        "id": "seg-5",
+        "type": "action",
+        "title": "5. The 4-Step Terminal Dues Recovery Playbook",
+        "visualCardId": "card-seg-5",
+        "durationSeconds": 71.5
+      }
+    ],
+    "checkpoints": [
+      {
+        "id": "chk-1",
+        "segmentId": "chk-seg-1",
+        "question": "An engineer working at a software multinational in Bengaluru resigns after completing 4 years and 7 months (working 5 days a week, having completed over 200 actual working days in his fifth year). The company refuses to pay gratuity, claiming that the statute strictly requires 5 full calendar years of 365 days each. Under Section 2A of the Payment of Gratuity Act 1972, what is the lawful position?",
+        "options": [
+          "Gratuity is only payable after 10 continuous years, and employers can withhold it indefinitely during annual audits without interest.",
+          "In a 5-day workweek, completing 4 years and 190 days (or 240 days in a 6-day workweek) satisfies the 5-year continuous service rule, and the employer must pay within 30 days or incur 10% statutory interest per annum.",
+          "Gratuity is purely an optional discretionary bonus that employers may revoke if the employee leaves for a competing firm.",
+          "The employee must file a civil suit in the High Court within 7 days of exit to calculate gratuity through a court receiver."
+        ],
+        "correctIndex": 1,
+        "explanation": "Under Section 2A of the Payment of Gratuity Act 1972, completing 240 days of actual work in the 5th year (190 days for a 5-day workweek) satisfies the 5-year continuous service threshold (Surendra Kumar v. Union of India). Section 7(3) mandates payment within 30 days of termination, failing which Section 7(3A) imposes simple interest at 10% per annum payable to the employee."
+      },
+      {
+        "id": "chk-2",
+        "segmentId": "chk-seg-2",
+        "question": "A senior analyst informs her HR department that she is pregnant and applies for statutory 26-week maternity leave. Two weeks later, the management issues her an immediate termination letter, citing 'role redundancy and project reorganisation' under her contract's termination clause. Under Section 12 of the Maternity Benefit Act 1961 (Amended 2017), how does Indian law treat this action?",
+        "options": [
+          "The termination is legally valid because private employment contracts override statutory labor benefits whenever corporate redundancy occurs.",
+          "The company only needs to pay one week of severance pay to extinguish all maternity liabilities.",
+          "The employee is required to forfeit all earned wages and pay 6 months of notice pay to the company for leaving her project incomplete.",
+          "The termination is completely unlawful and void ab initio; Section 12 imposes an absolute statutory bar on discharging or dismissing a woman during pregnancy or maternity absence, making the employer criminally liable."
+        ],
+        "correctIndex": 3,
+        "explanation": "Section 12 of the Maternity Benefit Act 1961 strictly prohibits an employer from discharging or dismissing a woman worker during or on account of pregnancy or absence on maternity leave. Any termination during this period is void ab initio and deprives the employer of any legal defense, exposing company executives to criminal penalties and fines under Section 21."
+      }
+    ],
+    "pronunciations": [
+      {
+        "id": "pron-quantummeruit",
+        "term": "Quantum Meruit",
+        "transliteration": "Latin",
+        "language": "Contract Law",
+        "ipa": "/ˈkwɒn.təm ˈmɛr.u.ɪt/",
+        "meaning": "As much as deserved — entitlement to compensation for work actually performed (*Sec 70 Contract Act*).",
+        "audioFile": "../assets/audio/pronounce-quantummeruit.wav"
+      },
+      {
+        "id": "pron-bonafide",
+        "term": "Bona Fide",
+        "transliteration": "Latin",
+        "language": "Employment Jurisprudence",
+        "ipa": "/ˌboʊ.nə ˈfaɪ.di/",
+        "meaning": "In good faith — genuine without intent to deceive.",
+        "audioFile": "../assets/audio/pronounce-bonafide.wav"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Canonical Runtime Player Script -->
+  <script src="../assets/player.js"></script>
+</body>
+</html>

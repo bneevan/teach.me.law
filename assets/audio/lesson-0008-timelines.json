@@ -1,0 +1,65 @@
+[
+  {
+    "id": "seg-1",
+    "type": "motivation",
+    "title": "1. The Hostile Workplace Dilemma",
+    "visualCardId": "card-seg-1",
+    "durationSeconds": 70.55,
+    "startTime": 0.0,
+    "endTime": 70.55
+  },
+  {
+    "id": "seg-2",
+    "type": "concept",
+    "title": "2. The Vishaka Shield to POSH Act 2013",
+    "visualCardId": "card-seg-2",
+    "durationSeconds": 76.5,
+    "startTime": 70.55,
+    "endTime": 147.05
+  },
+  {
+    "id": "seg-3",
+    "type": "concept",
+    "title": "3. The Internal Committee & The External Member Rule",
+    "visualCardId": "card-seg-3",
+    "durationSeconds": 62.67,
+    "startTime": 147.05,
+    "endTime": 209.72
+  },
+  {
+    "id": "chk-seg-1",
+    "type": "checkpoint",
+    "title": "\u23f8 Quiz 1: ICC Composition",
+    "visualCardId": "card-chk-1",
+    "durationSeconds": 1.0,
+    "startTime": 209.72,
+    "endTime": 210.72
+  },
+  {
+    "id": "seg-4",
+    "type": "example",
+    "title": "4. Statutory Timelines, Interim Relief & Section 16",
+    "visualCardId": "card-seg-4",
+    "durationSeconds": 64.52,
+    "startTime": 210.72,
+    "endTime": 275.24
+  },
+  {
+    "id": "chk-seg-2",
+    "type": "checkpoint",
+    "title": "\u23f8 Quiz 2: Confidentiality & Relief",
+    "visualCardId": "card-chk-2",
+    "durationSeconds": 1.0,
+    "startTime": 275.24,
+    "endTime": 276.24
+  },
+  {
+    "id": "seg-5",
+    "type": "action",
+    "title": "5. The 4-Step POSH Filing & Evidence Playbook",
+    "visualCardId": "card-seg-5",
+    "durationSeconds": 77.93,
+    "startTime": 276.24,
+    "endTime": 354.17
+  }
+]

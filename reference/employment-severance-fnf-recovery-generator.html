@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Employment Severance, F&F Settlement & Gratuity Demand Notice Generator</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .global-course-nav, .page-hero, .btn-row, .form-group, #builder-controls {
+        display: none !important;
+      }
+      .notice-builder-container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+      }
+      .preview-paper {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        border-top: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-container">
+
+    <!-- Global Course Navigation -->
+    <nav class="global-course-nav" aria-label="Course Global Navigation">
+      <a href="../index.html" class="brand">⚖ Teach Me Law: India</a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">⌂ Dashboard</a>
+        <a href="../mission.html" class="nav-link">Course Mission</a>
+        <a href="../glossary.html" class="nav-link">Glossary & Audio</a>
+        <a href="../resources.html" class="nav-link">Official Portals</a>
+        <a href="../notes.html" class="nav-link">Pedagogy Notes</a>
+      </div>
+    </nav>
+
+    <!-- Page Hero Banner -->
+    <header class="page-hero" style="background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%); border-color: #065f46;">
+      <span class="hero-tag" style="background: rgba(16, 185, 129, 0.25); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.45);">Track 2 Self-Advocacy Tool</span>
+      <h1>Employment Severance, F&F & Gratuity Legal Notice Generator</h1>
+      <p>
+        Generate a legally binding statutory demand notice to your former employer for recovery of withheld Full & Final (F&F) dues, unpaid salary, accrued leave encashment, and statutory gratuity with mandatory 10% interest under the Payment of Gratuity Act 1972 and State Shops & Establishments Act.
+      </p>
+    </header>
+
+    <div class="notice-builder-container">
+      <div id="builder-controls">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+          <div class="form-group">
+            <label for="companyName">Employer / Company Name</label>
+            <input type="text" id="companyName" class="form-control" value="Acme Technologies Pvt Ltd" oninput="renderNotice()">
+          </div>
+          <div class="form-group">
+            <label for="companyAddress">Company Registered Address</label>
+            <input type="text" id="companyAddress" class="form-control" value="Tower B, Tech Park, Outer Ring Road, Bengaluru 560103" oninput="renderNotice()">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+          <div class="form-group">
+            <label for="employeeName">Your Full Name (Employee)</label>
+            <input type="text" id="employeeName" class="form-control" value="Aditya Verma" oninput="renderNotice()">
+          </div>
+          <div class="form-group">
+            <label for="employeeContact">Your Contact & Address</label>
+            <input type="text" id="employeeContact" class="form-control" value="Flat 301, Palm Meadows, Whitefield, Bengaluru | +91 98451 XXXXX" oninput="renderNotice()">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+          <div class="form-group">
+            <label for="designation">Designation & Emp ID</label>
+            <input type="text" id="designation" class="form-control" value="Senior Software Engineer (Emp ID: 4892)" oninput="renderNotice()">
+          </div>
+          <div class="form-group">
+            <label for="joinDate">Date of Joining</label>
+            <input type="text" id="joinDate" class="form-control" value="15 July 2021" oninput="renderNotice()">
+          </div>
+          <div class="form-group">
+            <label for="exitDate">Last Working Day (LWD)</label>
+            <input type="text" id="exitDate" class="form-control" value="31 October 2026" oninput="renderNotice()">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+          <div class="form-group">
+            <label for="salaryDues">Withheld Salary Dues (₹)</label>
+            <input type="text" id="salaryDues" class="form-control" value="1,45,000" oninput="renderNotice()">
+          </div>
+          <div class="form-group">
+            <label for="gratuityDues">Gratuity Claim Amount (₹)</label>
+            <input type="text" id="gratuityDues" class="form-control" value="2,15,000" oninput="renderNotice()">
+          </div>
+          <div class="form-group">
+            <label for="leaveDues">Leave Encashment (₹)</label>
+            <input type="text" id="leaveDues" class="form-control" value="48,000" oninput="renderNotice()">
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="action-btn-primary" style="background: #059669;" onclick="copyNoticeText()">📋 Copy Formal Legal Notice</button>
+          <button class="action-btn-secondary" onclick="window.print()">🖨 Print or Export PDF</button>
+        </div>
+      </div>
+
+      <div class="preview-paper" id="noticePreview" style="border-top-color: #059669;"></div>
+    </div>
+
+  </div>
+
+  <script>
+    function getNoticeContent() {
+      const company = document.getElementById("companyName").value;
+      const cAddr = document.getElementById("companyAddress").value;
+      const emp = document.getElementById("employeeName").value;
+      const contact = document.getElementById("employeeContact").value;
+      const desig = document.getElementById("designation").value;
+      const jDate = document.getElementById("joinDate").value;
+      const eDate = document.getElementById("exitDate").value;
+      const sal = document.getElementById("salaryDues").value;
+      const grat = document.getElementById("gratuityDues").value;
+      const leave = document.getElementById("leaveDues").value;
+      const today = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+
+      return `REGISTERED SPEED POST WITH ACKNOWLEDGEMENT DUE / LEGAL DEMAND
+
+Date: ${today}
+
+To,
+The Board of Directors & Head of Human Resources,
+${company}
+${cAddr}
+
+FROM:
+${emp}
+${desig}
+${contact}
+
+SUBJECT: STATUTORY DEMAND NOTICE FOR IMMEDIATE RELEASE OF WITHHELD TERMINAL SALARY, ACCRUED LEAVE ENCASHMENT, AND STATUTORY GRATUITY WITH MANDATORY 10% INTEREST UNDER PAYMENT OF GRATUITY ACT, 1972
+
+Sir/Madam,
+
+Under instructions and on my own behalf, I hereby serve upon you this formal Statutory Legal Notice as follows:
+
+1. That I was employed with ${company} as ${desig}, having joined your services on ${jDate} and served continuously with unblemished professional conduct until my Last Working Day on ${eDate}.
+
+2. That upon conclusion of my employment on ${eDate}, I successfully executed complete knowledge transfer, returned all assigned corporate physical and digital assets, and obtained valid handover clearance from my department manager.
+
+3. That despite the expiration of more than 30 days since my separation, your management has wrongfully, illegally, and arbitrarily withheld my lawful terminal entitlements, consisting of:
+   a) Unpaid Earned Salary Dues: ₹${sal}/-
+   b) Accrued Earned Leave Encashment: ₹${leave}/-
+   c) Statutory Gratuity under Section 4: ₹${grat}/-
+   AGGREGATE TOTAL WITHHELD TERMINAL SUM: ₹${sal} + ₹${leave} + ₹${grat}/-
+
+4. That under the relevant State Shops and Commercial Establishments Act and the Payment of Wages Act, an employer is legally obligated to settle all earned wages and terminal benefits within 7 to 30 days of an employee's exit. Arbitrary withholding of earned wages constitutes an unfair labor practice and an illegal penalty under Section 23 of the Indian Contract Act (Central Inland Water Transport Corp v. Brojo Nath Ganguly).
+
+5. That under Section 7(3) of the Payment of Gratuity Act 1972, the employer is under an absolute statutory mandate to disburse the gratuity amount within thirty days of termination. Section 7(3A) categorically prescribes:
+   "If the amount of gratuity payable under sub-section (3) is not paid by the employer within the period specified, the employer shall pay simple interest at such rate not exceeding the rate notified by the Central Government (10% per annum)."
+
+I HEREBY CALL UPON YOU to disburse the total outstanding terminal sum of ₹${sal} (Salary) + ₹${leave} (Leaves) + ₹${grat} (Gratuity) together with statutory interest @ 10% per annum directly into my registered bank salary account within fifteen (15) days of the receipt of this notice.
+
+PLEASE TAKE NOTE that in the event of your failure to settle the aforesaid dues within 15 days, I shall be constrained to initiate immediate legal proceedings against the company and its Directors by:
+i) Filing Form I before the Controlling Authority under the Payment of Gratuity Act for recovery certificates as land revenue arrears;
+ii) Filing a formal dispute on the Ministry of Labour SAMADHAN portal and approaching the competent Labour Court;
+iii) Approaching the High Court for company liquidation / winding up proceedings for admitted commercial debt, at your sole cost and consequence.
+
+Yours faithfully,
+
+_________________________
+${emp}
+(${desig})`;
+    }
+
+    function renderNotice() {
+      document.getElementById("noticePreview").textContent = getNoticeContent();
+    }
+
+    function copyNoticeText() {
+      navigator.clipboard.writeText(getNoticeContent()).then(() => {
+        alert("Formal Employment Terminal Dues Legal Notice copied to clipboard!");
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", renderNotice);
+  </script>
+</body>
+</html>

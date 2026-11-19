@@ -1,0 +1,65 @@
+[
+  {
+    "id": "seg-1",
+    "type": "motivation",
+    "title": "1. The Sudden Termination Dilemma",
+    "visualCardId": "card-seg-1",
+    "durationSeconds": 62.86,
+    "startTime": 0.0,
+    "endTime": 62.86
+  },
+  {
+    "id": "seg-2",
+    "type": "concept",
+    "title": "2. Gratuity Shield & 5-Year Continuous Service",
+    "visualCardId": "card-seg-2",
+    "durationSeconds": 80.86,
+    "startTime": 62.86,
+    "endTime": 143.72
+  },
+  {
+    "id": "seg-3",
+    "type": "concept",
+    "title": "3. Full & Final Settlement & Unlawful Deductions",
+    "visualCardId": "card-seg-3",
+    "durationSeconds": 61.45,
+    "startTime": 143.72,
+    "endTime": 205.17
+  },
+  {
+    "id": "chk-seg-1",
+    "type": "checkpoint",
+    "title": "\u23f8 Quiz 1: Gratuity Rule",
+    "visualCardId": "card-chk-1",
+    "durationSeconds": 1.0,
+    "startTime": 205.17,
+    "endTime": 206.17
+  },
+  {
+    "id": "seg-4",
+    "type": "example",
+    "title": "4. Maternity Protection Under Section 12",
+    "visualCardId": "card-seg-4",
+    "durationSeconds": 67.66,
+    "startTime": 206.17,
+    "endTime": 273.83
+  },
+  {
+    "id": "chk-seg-2",
+    "type": "checkpoint",
+    "title": "\u23f8 Quiz 2: Maternity Shield",
+    "visualCardId": "card-chk-2",
+    "durationSeconds": 1.0,
+    "startTime": 273.83,
+    "endTime": 274.83
+  },
+  {
+    "id": "seg-5",
+    "type": "action",
+    "title": "5. The 4-Step Terminal Dues Recovery Playbook",
+    "visualCardId": "card-seg-5",
+    "durationSeconds": 71.5,
+    "startTime": 274.83,
+    "endTime": 346.33
+  }
+]
