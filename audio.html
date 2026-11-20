@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Audio Revision Hub: Stream All 10 Lessons on the Go — Teach Me Law: India</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    /* Audio Hub Specific Styles */
+    .audio-hub-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #fff;
+      padding: 36px 24px;
+      border-radius: var(--radius-md);
+      margin-bottom: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+    }
+
+    .audio-hub-hero h1 {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      margin: 10px 0 12px;
+      line-height: 1.25;
+      color: #ffffff;
+    }
+
+    .audio-hub-hero p {
+      font-size: 15.5px;
+      color: #cbd5e1;
+      max-width: 780px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .hub-stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hub-stat-pill {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #f1f5f9;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Master Floating Sticky Audio Player Dock */
+    .master-player-dock {
+      position: sticky;
+      top: 12px;
+      z-index: 100;
+      background: #0f172a;
+      color: #fff;
+      border: 1px solid #334155;
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(8px);
+    }
+
+    .dock-now-playing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 12px;
+    }
+
+    .dock-track-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow: hidden;
+    }
+
+    .dock-equalizer {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .dock-equalizer span {
+      width: 3px;
+      background: #fbbf24;
+      border-radius: 2px;
+      height: 6px;
+      transition: height 0.2s ease;
+    }
+
+    .dock-equalizer.playing span:nth-child(1) { animation: eqBar 0.8s infinite ease-in-out alternate; }
+    .dock-equalizer.playing span:nth-child(2) { animation: eqBar 0.6s 0.2s infinite ease-in-out alternate; }
+    .dock-equalizer.playing span:nth-child(3) { animation: eqBar 1.0s 0.4s infinite ease-in-out alternate; }
+    .dock-equalizer.playing span:nth-child(4) { animation: eqBar 0.7s 0.1s infinite ease-in-out alternate; }
+
+    @keyframes eqBar {
+      0% { height: 4px; }
+      100% { height: 18px; }
+    }
+
+    .dock-title-text {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      color: #f8fafc;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .dock-meta-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #1e293b;
+      color: #94a3b8;
+      border: 1px solid #475569;
+      flex-shrink: 0;
+    }
+
+    .dock-controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .dock-btn-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dock-btn {
+      background: #1e293b;
+      color: #f1f5f9;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+      min-height: 38px;
+    }
+
+    .dock-btn:hover {
+      background: #334155;
+      border-color: #64748b;
+    }
+
+    .dock-btn-play {
+      background: #2563eb;
+      color: #fff;
+      border-color: #3b82f6;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 18px;
+      padding: 0;
+    }
+
+    .dock-btn-play:hover {
+      background: #1d4ed8;
+      transform: scale(1.04);
+    }
+
+    .dock-speed-group {
+      display: flex;
+      gap: 4px;
+    }
+
+    .dock-speed-btn {
+      background: #1e293b;
+      color: #94a3b8;
+      border: 1px solid #334155;
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      cursor: pointer;
+    }
+
+    .dock-speed-btn.active {
+      background: #2563eb;
+      color: #fff;
+      border-color: #2563eb;
+    }
+
+    .dock-toggle-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      color: #94a3b8;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .dock-scrub-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .dock-time-text {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #94a3b8;
+      min-width: 80px;
+      text-align: right;
+    }
+
+    .dock-slider {
+      flex: 1;
+      height: 6px;
+      -webkit-appearance: none;
+      background: #334155;
+      border-radius: 3px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .dock-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #38bdf8;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+
+    .dock-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.3);
+    }
+
+    /* Track Sections & Playlist Cards */
+    .track-section {
+      margin-bottom: 36px;
+    }
+
+    .track-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--border-light);
+    }
+
+    .track-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    .track-runtime-badge {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .playlist-cards-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .audio-lesson-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .audio-lesson-card:hover {
+      border-color: var(--border-medium);
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .audio-lesson-card.active-card {
+      border-color: var(--accent-blue);
+      border-left: 5px solid var(--accent-blue);
+      background: #f8fafc;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+    }
+
+    .card-top-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      gap: 12px;
+    }
+
+    .card-left-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .card-lesson-tag {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-blue);
+    }
+
+    .card-lesson-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    .card-play-action-btn {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      color: var(--accent-blue);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+
+    .card-play-action-btn:hover {
+      background: var(--accent-blue);
+      color: #fff;
+      border-color: var(--accent-blue);
+    }
+
+    .audio-lesson-card.active-card .card-play-action-btn {
+      background: var(--accent-blue);
+      color: #fff;
+      border-color: var(--accent-blue);
+    }
+
+    .card-duration-badge {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .quick-revision-box {
+      background: var(--bg-subtle);
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin: 10px 0 14px;
+      border: 1px solid var(--border-fine);
+    }
+
+    .quick-revision-title {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .revision-bullets {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13.5px;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .revision-bullets li {
+      margin-bottom: 4px;
+    }
+
+    .card-links-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border-fine);
+    }
+
+    .interactive-lesson-link {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .interactive-lesson-link:hover {
+      color: var(--accent-gold);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-container">
+
+    <!-- Global Course Navigation -->
+    <nav class="global-course-nav" aria-label="Course Global Navigation">
+      <a href="index.html" class="brand">⚖ Teach Me Law: India</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">⌂ Dashboard</a>
+        <a href="audio.html" class="nav-link active">🎧 Audio Hub</a>
+        <a href="mission.html" class="nav-link">Course Mission</a>
+        <a href="glossary.html" class="nav-link">Glossary & Audio</a>
+        <a href="resources.html" class="nav-link">Official Portals</a>
+        <a href="notes.html" class="nav-link">Pedagogy Notes</a>
+      </div>
+    </nav>
+
+    <!-- Page Hero Banner -->
+    <header class="audio-hub-hero">
+      <span class="hub-stat-pill" style="background: rgba(251, 191, 36, 0.15); color: #fbbf24; border-color: rgba(251, 191, 36, 0.3);">
+        🎧 Mobile Audio Companion
+      </span>
+      <h1>Audio Revision Hub: Continuous Legal Education On the Go</h1>
+      <p>
+        Listen to the full spoken curriculum eyes-free while commuting, walking, or reviewing. High-fidelity neural voice narration generated via Kokoro TTS, featuring landmark Supreme Court precedents, statutory timelines, Latin doctrines, and actionable citizen playbooks.
+      </p>
+
+      <div class="hub-stats-row">
+        <span class="hub-stat-pill">📚 10 Audio Lessons</span>
+        <span class="hub-stat-pill">⏱ 62m 15s Total Narration</span>
+        <span class="hub-stat-pill">⚡ Auto-Advance Continuous Play</span>
+        <span class="hub-stat-pill">📱 Lockscreen Controls Enabled</span>
+      </div>
+    </header>
+
+    <!-- Sticky Master Floating Player Dock -->
+    <div id="master-dock" class="master-player-dock" aria-label="Master audio revision player">
+      <!-- Hidden Audio Element -->
+      <audio id="hub-audio" preload="metadata"></audio>
+
+      <!-- Now Playing Info Row -->
+      <div class="dock-now-playing-row">
+        <div class="dock-track-info">
+          <div id="dock-eq" class="dock-equalizer">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <span id="dock-lesson-num" class="dock-meta-tag">LESSON 0001</span>
+          <span id="dock-title" class="dock-title-text">The Indian Citizen's Legal Map: Civil vs. Criminal Law</span>
+        </div>
+        <span id="dock-track-badge" class="dock-meta-tag" style="background: #1e3a8a; color: #93c5fd; border-color: #3b82f6;">Core Foundation</span>
+      </div>
+
+      <!-- Main Controls Row -->
+      <div class="dock-controls-row">
+        <!-- Play / Skip Buttons -->
+        <div class="dock-btn-group">
+          <button id="dock-prev-btn" class="dock-btn" title="Previous Lesson (P)" aria-label="Previous Lesson">⏮</button>
+          <button id="dock-rewind-btn" class="dock-btn" title="Rewind 15 seconds (Left Arrow or J)" aria-label="Rewind 15 seconds">↺ 15s</button>
+          <button id="dock-play-btn" class="dock-btn dock-btn-play" title="Play / Pause (Spacebar)" aria-label="Play or Pause">
+            <span id="dock-play-icon">▶</span>
+          </button>
+          <button id="dock-forward-btn" class="dock-btn" title="Forward 15 seconds (Right Arrow or L)" aria-label="Forward 15 seconds">15s ↻</button>
+          <button id="dock-next-btn" class="dock-btn" title="Next Lesson (N)" aria-label="Next Lesson">⏭</button>
+        </div>
+
+        <!-- Speed Selector -->
+        <div class="dock-speed-group" role="group" aria-label="Playback speed">
+          <button class="dock-speed-btn" data-speed="0.8">0.8×</button>
+          <button class="dock-speed-btn active" data-speed="1.0">1.0×</button>
+          <button class="dock-speed-btn" data-speed="1.25">1.25×</button>
+          <button class="dock-speed-btn" data-speed="1.5">1.5×</button>
+          <button class="dock-speed-btn" data-speed="2.0">2.0×</button>
+        </div>
+
+        <!-- Continuous Playback Switch -->
+        <label class="dock-toggle-label">
+          <input type="checkbox" id="continuous-toggle" checked>
+          <span>Continuous Play (Auto-Advance)</span>
+        </label>
+      </div>
+
+      <!-- Scrubber & Time -->
+      <div class="dock-scrub-row">
+        <input type="range" id="dock-scrubber" class="dock-slider" min="0" max="100" value="0" step="0.1" aria-label="Seek track">
+        <div id="dock-time" class="dock-time-text">0:00 / 6:58</div>
+      </div>
+    </div>
+
+    <!-- TRACK 0: Core Foundation -->
+    <section class="track-section">
+      <div class="track-header-row">
+        <h2 class="track-title" style="color: var(--accent-blue);">Core Foundation: Everyday Civil, Contracts, Consumer & Police Rights</h2>
+        <span class="track-runtime-badge">4 Lessons • 25m 18s Runtime</span>
+      </div>
+
+      <div class="playlist-cards-grid">
+
+        <!-- Lesson 0001 -->
+        <div class="audio-lesson-card" id="card-0" data-index="0">
+          <div class="card-top-info">
+            <div class="card-left-heading">
+              <span class="card-lesson-tag">Lesson 0001 • Core Foundation</span>
+              <h3 class="card-lesson-title">The Indian Citizen's Legal Map: Civil vs. Criminal Law</h3>
+            </div>
+            <button class="card-play-action-btn" onclick="playLessonIndex(0)" aria-label="Play Lesson 0001">
+              <span>▶ Play Narration</span>
+            </button>
+          </div>
+          <span class="card-duration-badge">⏱ Duration: 6m 58s • Spoken Narration</span>
+
+          <div class="quick-revision-box">
+            <span class="quick-revision-title">⚡ Quick Revision Takeaways</span>
+            <ul class="revision-bullets">
+              <li><strong>Civil vs. Criminal:</strong> Civil law compensates private wrongs (*Jacob Mathew*); criminal law punishes public societal offences requiring *Mens Rea* proven beyond reasonable doubt.</li>
+              <li><strong>Mandatory FIR:</strong> Under *Lalita Kumari v. Govt. of U.P.*, police officers are legally mandated to register an FIR upon receiving information disclosing a cognizable offence.</li>
+              <li><strong>Hierarchical Map:</strong> Understand the progression from Judicial Magistrate & District Courts to High Courts and the Supreme Court under Article 32 & 226.</li>
+            </ul>
+          </div>
+
+          <div class="card-links-row">
+            <a href="lessons/0001-the-legal-landscape-civil-vs-criminal.html" class="interactive-lesson-link">Open Full Interactive Lesson & Checkpoints →</a>
+          </div>
+        </div>
+
+        <!-- Lesson 0002 -->
+        <div class="audio-lesson-card" id="card-1" data-index="1">
+          <div class="card-top-info">
+            <div class="card-left-heading">
+              <span class="card-lesson-tag">Lesson 0002 • Core Foundation</span>
+              <h3 class="card-lesson-title">Everyday Contracts & Tenancy in India: What You Sign, Click, and Promise</h3>
+            </div>
+            <button class="card-play-action-btn" onclick="playLessonIndex(1)" aria-label="Play Lesson 0002">
+              <span>▶ Play Narration</span>
+            </button>
+          </div>
+          <span class="card-duration-badge">⏱ Duration: 6m 10s • Spoken Narration</span>
+
+          <div class="quick-revision-box">
+            <span class="quick-revision-title">⚡ Quick Revision Takeaways</span>
+            <ul class="revision-bullets">
+              <li><strong>Contract Enforceability:</strong> Section 10 Indian Contract Act requires free consent, lawful consideration, and lawful object; unconscionable clauses are void (*Brojo Nath Ganguly*).</li>
+              <li><strong>Leave & License vs. Lease:</strong> 11-month Leave & License agreements grant permissive occupancy without tenancy rights; security deposits cannot be unlawfully forfeited (*Fateh Chand*).</li>
+              <li><strong>Section 138 NI Act:</strong> Cheque bounce procedure requires statutory demand notice within 30 days and gives 15 days to pay before criminal complaint filing.</li>
+            </ul>
+          </div>
+
+          <div class="card-links-row">
+            <a href="lessons/0002-everyday-contracts-and-tenancy.html" class="interactive-lesson-link">Open Full Interactive Lesson & Checkpoints →</a>
+          </div>
+        </div>
+
+        <!-- Lesson 0003 -->
+        <div class="audio-lesson-card" id="card-2" data-index="2">
+          <div class="card-top-info">
+            <div class="card-left-heading">
+              <span class="card-lesson-tag">Lesson 0003 • Core Foundation</span>
+              <h3 class="card-lesson-title">Consumer Protection Act 2019: Fighting Corporate Deficiency & Filing on e-Daakhil</h3>
+            </div>
+            <button class="card-play-action-btn" onclick="playLessonIndex(2)" aria-label="Play Lesson 0003">
+              <span>▶ Play Narration</span>
+            </button>
+          </div>
+          <span class="card-duration-badge">⏱ Duration: 6m 08s • Spoken Narration</span>
+
+          <div class="quick-revision-box">
+            <span class="quick-revision-title">⚡ Quick Revision Takeaways</span>
+            <ul class="revision-bullets">
+              <li><strong>Deficiency & Unfair Trade:</strong> CPA 2019 covers e-commerce, dark patterns, misleading ads, and service deficiency; public utilities are held accountable (*LDA v. M.K. Gupta*).</li>
+              <li><strong>Pecuniary Jurisdictions:</strong> District Commission (up to ₹50 Lakhs), State Commission (up to ₹2 Crores), and National Commission (above ₹2 Crores).</li>
+              <li><strong>e-Daakhil Filing:</strong> Citizens can file formal consumer complaints online via edaakhil.nic.in without hiring an advocate.</li>
+            </ul>
+          </div>
+
+          <div class="card-links-row">
+            <a href="lessons/0003-consumer-protection-act-and-edaakhil.html" class="interactive-lesson-link">Open Full Interactive Lesson & Checkpoints →</a>
+          </div>
+        </div>
+
+        <!-- Lesson 0004 -->
+        <div class="audio-lesson-card" id="card-3" data-index="3">
+          <div class="card-top-info">
+            <div class="card-left-heading">
+              <span class="card-lesson-tag">Lesson 0004 • Core Foundation</span>
+              <h3 class="card-lesson-title">Encounters with Authority: The D.K. Basu Shield, Traffic Stops & Due Process</h3>
+            </div>
+            <button class="card-play-action-btn" onclick="playLessonIndex(3)" aria-label="Play Lesson 0004">
+              <span>▶ Play Narration</span>
+            </button>
+          </div>
+          <span class="card-duration-badge">⏱ Duration: 6m 02s • Spoken Narration</span>
+
+          <div class="quick-revision-box">
+            <span class="quick-revision-title">⚡ Quick Revision Takeaways</span>
+            <ul class="revision-bullets">
+              <li><strong>D.K. Basu Guidelines:</strong> Clear identification tags, mandatory Arrest Memo with witness signature, relative notification within 8–12 hours, and medical checkups every 48 hours.</li>
+              <li><strong>Arnesh Kumar Safeguards:</strong> Section 41A notice is mandatory for offences punishable with up to 7 years imprisonment; automatic arrest is illegal.</li>
+              <li><strong>Article 20(3) Right to Silence:</strong> Accused citizens cannot be compelled to answer self-incriminating questions (*Nandini Satpathy*); sunset arrest protections apply to women.</li>
+            </ul>
+          </div>
+
+          <div class="card-links-row">
+            <a href="lessons/0004-police-encounters-traffic-stops-dk-basu.html" class="interactive-lesson-link">Open Full Interactive Lesson & Checkpoints →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRACK 1: Cyber Frauds & Data Privacy -->
+    <section class="track-section">
+      <div class="track-header-row">
+        <h2 class="track-title" style="color: var(--accent-red);">Track 1: Cyber Frauds, Digital Scams & Data Privacy</h2>
+        <span class="track-runtime-badge">2 Lessons • 13m 28s Runtime</span>
+      </div>
+
+      <div class="playlist-cards-grid">
+
+        <!-- Lesson 0005 -->
+        <div class="audio-lesson-card" id="card-4" data-index="4">
+          <div class="card-top-info">
+            <div class="card-left-heading">
+              <span class="card-lesson-tag" style="color: var(--accent-red);">Lesson 0005 • Track 1</span>
+              <h3 class="card-lesson-title">Cyber Frauds, Digital Arrest Scams & The 1930 Emergency Protocol</h3>
+            </div>
+            <button class="card-play-action-btn" onclick="playLessonIndex(4)" aria-label="Play Lesson 0005">
+              <span>▶ Play Narration</span>
+            </button>
+          </div>
+          <span class="card-duration-badge">⏱ Duration: 6m 01s • Spoken Narration</span>
+
+          <div class="quick-revision-box">
+            <span class="quick-revision-title">⚡ Quick Revision Takeaways</span>
+            <ul class="revision-bullets">
+              <li><strong>Digital Arrest Nullity:</strong> Real law enforcement NEVER arrests, interrogates, or demands funds via Skype or WhatsApp video calls under Section 66D IT Act.</li>
+              <li><strong>1930 Golden Hour Freeze:</strong> Dial 1930 immediately to trigger the National Cybercrime Reporting Portal CFCFRMS mechanism to freeze funds across banking layers.</li>
+              <li><strong>RBI Zero Liability Circular:</strong> Report unauthorized electronic transactions within 3 days to secure a mandatory shadow credit reversal within 10 working days.</li>
+            </ul>
+          </div>
+
+          <div class="card-links-row">
+            <a href="lessons/0005-cyber-frauds-digital-arrest-and-1930.html" class="interactive-lesson-link">Open Full Interactive Lesson & Checkpoints →</a>
+          </div>
+        </div>
+
+        <!-- Lesson 0006 -->
+        <div class="audio-lesson-card" id="card-5" data-index="5">
+          <div class="card-top-info">
+            <div class="card-left-heading">
+              <span class="card-lesson-tag" style="color: var(--accent-red);">Lesson 0006 • Track 1 Capstone</span>
+              <h3 class="card-lesson-title">Data Privacy, Spam & The DPDP Act: Reclaiming Your Digital Autonomy</h3>
+            </div>
+            <button class="card-play-action-btn" onclick="playLessonIndex(5)" aria-label="Play Lesson 0006">
+              <span>▶ Play Narration</span>
+            </button>
+          </div>
+          <span class="card-duration-badge">⏱ Duration: 7m 27s • Spoken Narration</span>
+
+          <div class="quick-revision-box">
+            <span class="quick-revision-title">⚡ Quick Revision Takeaways</span>
+            <ul class="revision-bullets">
+              <li><strong>Justice K.S. Puttaswamy (2017):</strong> 9-judge Constitution Bench declared privacy a fundamental right under Article 21 governed by the 4-prong proportionality test.</li>
+              <li><strong>DPDP Act 2023:</strong> Citizens as 'Data Principals' have statutory rights to withdraw consent and mandate permanent erasure of personal data from corporate fiduciaries.</li>
+              <li><strong>Section 79 IT Safe-Harbor:</strong> Intermediary liability takedowns (*Shreya Singhal*) and TRAI DND 3.0 registry enforcement against telemarketing spam.</li>
+            </ul>
+          </div>
+
+          <div class="card-links-row">
+            <a href="lessons/0006-data-privacy-spam-and-dpdp-act.html" class="interactive-lesson-link">Open Full Interactive Lesson & Checkpoints →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRACK 2: Employment, Workplace Rights & Labor Protections -->
+    <section class="track-section">
+      <div class="track-header-row">
+        <h2 class="track-title" style="color: #047857;">Track 2: Employment, Workplace Rights & Labor Protections</h2>
+        <span class="track-runtime-badge">2 Lessons • 11m 40s Runtime</span>
+      </div>
+
+      <div class="playlist-cards-grid">
+
+        <!-- Lesson 0007 -->
+        <div class="audio-lesson-card" id="card-6" data-index="6">
+          <div class="card-top-info">
+            <div class="card-left-heading">
+              <span class="card-lesson-tag" style="color: #047857;">Lesson 0007 • Track 2</span>
+              <h3 class="card-lesson-title">Employment Contracts, Severance & The Gratuity Shield</h3>
+            </div>
+            <button class="card-play-action-btn" onclick="playLessonIndex(6)" aria-label="Play Lesson 0007">
+              <span>▶ Play Narration</span>
+            </button>
+          </div>
+          <span class="card-duration-badge">⏱ Duration: 5m 46s • Spoken Narration</span>
+
+          <div class="quick-revision-box">
+            <span class="quick-revision-title">⚡ Quick Revision Takeaways</span>
+            <ul class="revision-bullets">
+              <li><strong>Gratuity 240/190-Day Rule:</strong> Section 2A Payment of Gratuity Act 1972 qualifies continuous service with 190 days (5-day corporate office) or 240 days (6-day week) in the 5th year.</li>
+              <li><strong>Section 7(3) Payout & 10% Interest:</strong> Gratuity must be paid within 30 days of termination; delay attracts mandatory 10% simple interest per annum under Section 7(3A).</li>
+              <li><strong>Maternity Shield:</strong> Section 12 Maternity Benefit Act creates an absolute criminal bar on discharging or dismissing a woman during pregnancy; unconscionable F&F waivers are void.</li>
+            </ul>
+          </div>
+
+          <div class="card-links-row">
+            <a href="lessons/0007-employment-contracts-severance-and-gratuity.html" class="interactive-lesson-link">Open Full Interactive Lesson & Checkpoints →</a>
+          </div>
+        </div>
+
+        <!-- Lesson 0008 -->
+        <div class="audio-lesson-card" id="card-7" data-index="7">
+          <div class="card-top-info">
+            <div class="card-left-heading">
+              <span class="card-lesson-tag" style="color: #047857;">Lesson 0008 • Track 2 Capstone</span>
+              <h3 class="card-lesson-title">Workplace Safety & The POSH Act 2013: The Vishaka Shield & ICC Due Process</h3>
+            </div>
+            <button class="card-play-action-btn" onclick="playLessonIndex(7)" aria-label="Play Lesson 0008">
+              <span>▶ Play Narration</span>
+            </button>
+          </div>
+          <span class="card-duration-badge">⏱ Duration: 5m 54s • Spoken Narration</span>
+
+          <div class="quick-revision-box">
+            <span class="quick-revision-title">⚡ Quick Revision Takeaways</span>
+            <ul class="revision-bullets">
+              <li><strong>Extended Workplace:</strong> Section 2(o) POSH Act covers digital channels (Slack, WhatsApp, Zoom), company transportation, offsites, and business dinners.</li>
+              <li><strong>Internal Committee Composition:</strong> Section 4 mandates a senior woman Presiding Officer, ≥50% women members, and an independent external member from an NGO/legal background.</li>
+              <li><strong>Interim Relief & Privacy:</strong> Section 12 allows 3-month paid leave or transfer during inquiry; Section 16 strictly prohibits publicizing the identities of parties.</li>
+            </ul>
+          </div>
+
+          <div class="card-links-row">
+            <a href="lessons/0008-posh-act-workplace-harassment-and-icc.html" class="interactive-lesson-link">Open Full Interactive Lesson & Checkpoints →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRACK 3: Public Remedies, Right to Information & Free Legal Aid -->
+    <section class="track-section">
+      <div class="track-header-row">
+        <h2 class="track-title" style="color: #2563eb;">Track 3: Public Remedies, Right to Information (RTI) & Free Legal Aid (NALSA)</h2>
+        <span class="track-runtime-badge">2 Lessons • 11m 45s Runtime</span>
+      </div>
+
+      <div class="playlist-cards-grid">
+
+        <!-- Lesson 0009 -->
+        <div class="audio-lesson-card" id="card-8" data-index="8">
+          <div class="card-top-info">
+            <div class="card-left-heading">
+              <span class="card-lesson-tag" style="color: #2563eb;">Lesson 0009 • Track 3</span>
+              <h3 class="card-lesson-title">The Right to Information Act 2005: Demanding Public Accountability & Enforcing PIO Penalties</h3>
+            </div>
+            <button class="card-play-action-btn" onclick="playLessonIndex(8)" aria-label="Play Lesson 0009">
+              <span>▶ Play Narration</span>
+            </button>
+          </div>
+          <span class="card-duration-badge">⏱ Duration: 5m 50s • Spoken Narration</span>
+
+          <div class="quick-revision-box">
+            <span class="quick-revision-title">⚡ Quick Revision Takeaways</span>
+            <ul class="revision-bullets">
+              <li><strong>Right to Know:</strong> Under *State of U.P. v. Raj Narain*, access to public acts of public officials is an inalienable fundamental right under Article 19(1)(a).</li>
+              <li><strong>48-Hour Emergency Mandate:</strong> Under Section 7(1) proviso, information concerning life or liberty MUST be furnished within 48 hours; delayed records are free under Section 7(6).</li>
+              <li><strong>Section 20 Personal Fines:</strong> Information Commissions can penalize defaulting PIOs ₹250/day up to ₹25,000 deducted directly from the officer's personal salary.</li>
+            </ul>
+          </div>
+
+          <div class="card-links-row">
+            <a href="lessons/0009-right-to-information-act-and-public-accountability.html" class="interactive-lesson-link">Open Full Interactive Lesson & Checkpoints →</a>
+          </div>
+        </div>
+
+        <!-- Lesson 0010 -->
+        <div class="audio-lesson-card" id="card-9" data-index="9">
+          <div class="card-top-info">
+            <div class="card-left-heading">
+              <span class="card-lesson-tag" style="color: #2563eb;">Lesson 0010 • Track 3 Capstone</span>
+              <h3 class="card-lesson-title">Access to Justice & Free Legal Aid: The NALSA Shield & Dispute Resolution via Lok Adalats</h3>
+            </div>
+            <button class="card-play-action-btn" onclick="playLessonIndex(9)" aria-label="Play Lesson 0010">
+              <span>▶ Play Narration</span>
+            </button>
+          </div>
+          <span class="card-duration-badge">⏱ Duration: 5m 55s • Spoken Narration</span>
+
+          <div class="quick-revision-box">
+            <span class="quick-revision-title">⚡ Quick Revision Takeaways</span>
+            <ul class="revision-bullets">
+              <li><strong>Article 39A Free Aid:</strong> In *Hussainara Khatoon*, the Supreme Court established that free legal representation is an indispensable element of Article 21 due process.</li>
+              <li><strong>Section 12 Entitlement:</strong> All women, children, SC/ST citizens, custody detainees, and citizens earning below state income caps receive 100% free legal defense from DLSA.</li>
+              <li><strong>Section 21 Lok Adalat Finality:</strong> Lok Adalat consent decrees are final and non-appealable (*Interest Reipublicae Ut Sit Finis Litium*); all court fees are 100% refunded.</li>
+            </ul>
+          </div>
+
+          <div class="card-links-row">
+            <a href="lessons/0010-nalsa-free-legal-aid-and-lok-adalats.html" class="interactive-lesson-link">Open Full Interactive Lesson & Checkpoints →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Audio Hub Runtime Engine -->
+  <script>
+    const playlist = [
+      {
+        index: 0,
+        num: "0001",
+        title: "The Indian Citizen's Legal Map: Civil vs. Criminal Law",
+        track: "Core Foundation",
+        audioSrc: "assets/audio/lesson-0001.mp3",
+        durationSec: 418.45,
+        durationStr: "6:58"
+      },
+      {
+        index: 1,
+        num: "0002",
+        title: "Everyday Contracts & Tenancy in India: What You Sign, Click, and Promise",
+        track: "Core Foundation",
+        audioSrc: "assets/audio/lesson-0002.mp3",
+        durationSec: 370.85,
+        durationStr: "6:10"
+      },
+      {
+        index: 2,
+        num: "0003",
+        title: "Consumer Protection Act 2019: Fighting Corporate Deficiency & Filing on e-Daakhil",
+        track: "Core Foundation",
+        audioSrc: "assets/audio/lesson-0003.mp3",
+        durationSec: 368.62,
+        durationStr: "6:08"
+      },
+      {
+        index: 3,
+        num: "0004",
+        title: "Encounters with Authority: The D.K. Basu Shield, Traffic Stops & Due Process",
+        track: "Core Foundation",
+        audioSrc: "assets/audio/lesson-0004.mp3",
+        durationSec: 362.49,
+        durationStr: "6:02"
+      },
+      {
+        index: 4,
+        num: "0005",
+        title: "Cyber Frauds, Digital Arrest Scams & The 1930 Emergency Protocol",
+        track: "Track 1: Cyber & Data Rights",
+        audioSrc: "assets/audio/lesson-0005.mp3",
+        durationSec: 361.38,
+        durationStr: "6:01"
+      },
+      {
+        index: 5,
+        num: "0006",
+        title: "Data Privacy, Spam & The DPDP Act: Reclaiming Your Digital Autonomy",
+        track: "Track 1: Cyber & Data Rights",
+        audioSrc: "assets/audio/lesson-0006.mp3",
+        durationSec: 447.88,
+        durationStr: "7:27"
+      },
+      {
+        index: 6,
+        num: "0007",
+        title: "Employment Contracts, Severance & The Gratuity Shield",
+        track: "Track 2: Employment & Labor Rights",
+        audioSrc: "assets/audio/lesson-0007.mp3",
+        durationSec: 346.33,
+        durationStr: "5:46"
+      },
+      {
+        index: 7,
+        num: "0008",
+        title: "Workplace Safety & The POSH Act 2013: The Vishaka Shield & ICC Due Process",
+        track: "Track 2: Employment & Labor Rights",
+        audioSrc: "assets/audio/lesson-0008.mp3",
+        durationSec: 354.17,
+        durationStr: "5:54"
+      },
+      {
+        index: 8,
+        num: "0009",
+        title: "The Right to Information Act 2005: Demanding Public Accountability & Enforcing PIO Penalties",
+        track: "Track 3: Public Remedies & RTI",
+        audioSrc: "assets/audio/lesson-0009.mp3",
+        durationSec: 350.30,
+        durationStr: "5:50"
+      },
+      {
+        index: 9,
+        num: "0010",
+        title: "Access to Justice & Free Legal Aid: The NALSA Shield & Dispute Resolution via Lok Adalats",
+        track: "Track 3: Public Remedies & Legal Aid",
+        audioSrc: "assets/audio/lesson-0010.mp3",
+        durationSec: 355.18,
+        durationStr: "5:55"
+      }
+    ];
+
+    let currentTrackIndex = 0;
+    let isPlaying = false;
+    let playbackSpeed = 1.0;
+    const audioEl = document.getElementById("hub-audio");
+    const playBtn = document.getElementById("dock-play-btn");
+    const playIcon = document.getElementById("dock-play-icon");
+    const prevBtn = document.getElementById("dock-prev-btn");
+    const nextBtn = document.getElementById("dock-next-btn");
+    const rewindBtn = document.getElementById("dock-rewind-btn");
+    const forwardBtn = document.getElementById("dock-forward-btn");
+    const scrubber = document.getElementById("dock-scrubber");
+    const timeDisplay = document.getElementById("dock-time");
+    const titleDisplay = document.getElementById("dock-title");
+    const lessonNumDisplay = document.getElementById("dock-lesson-num");
+    const trackBadgeDisplay = document.getElementById("dock-track-badge");
+    const equalizer = document.getElementById("dock-eq");
+    const continuousToggle = document.getElementById("continuous-toggle");
+    const speedButtons = document.querySelectorAll(".dock-speed-btn");
+
+    function formatTime(seconds) {
+      if (isNaN(seconds) || seconds < 0) return "0:00";
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, "0")}`;
+    }
+
+    function updateMediaSession(track) {
+      if ("mediaSession" in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: `Lesson ${track.num}: ${track.title}`,
+          artist: "Teach Me Law: India",
+          album: track.track
+        });
+      }
+    }
+
+    function highlightActiveCard(idx) {
+      document.querySelectorAll(".audio-lesson-card").forEach((card, i) => {
+        const btn = card.querySelector(".card-play-action-btn span");
+        if (i === idx) {
+          card.classList.add("active-card");
+          if (btn) btn.textContent = isPlaying ? "⏸ Pause Narration" : "▶ Resume Narration";
+        } else {
+          card.classList.remove("active-card");
+          if (btn) btn.textContent = "▶ Play Narration";
+        }
+      });
+    }
+
+    function loadTrack(idx, shouldPlay = true) {
+      if (idx < 0 || idx >= playlist.length) return;
+      currentTrackIndex = idx;
+      const track = playlist[idx];
+
+      audioEl.src = track.audioSrc;
+      audioEl.playbackRate = playbackSpeed;
+      titleDisplay.textContent = track.title;
+      lessonNumDisplay.textContent = `LESSON ${track.num}`;
+      trackBadgeDisplay.textContent = track.track;
+      scrubber.value = 0;
+      timeDisplay.textContent = `0:00 / ${track.durationStr}`;
+
+      updateMediaSession(track);
+      highlightActiveCard(idx);
+
+      if (shouldPlay) {
+        audioEl.play().then(() => {
+          isPlaying = true;
+          playIcon.textContent = "⏸";
+          equalizer.classList.add("playing");
+          highlightActiveCard(idx);
+        }).catch(err => {
+          console.log("Playback error or user gesture required:", err);
+        });
+      }
+    }
+
+    function togglePlay() {
+      if (!audioEl.src || audioEl.src === window.location.href) {
+        loadTrack(currentTrackIndex, true);
+        return;
+      }
+      if (audioEl.paused) {
+        audioEl.play().then(() => {
+          isPlaying = true;
+          playIcon.textContent = "⏸";
+          equalizer.classList.add("playing");
+          highlightActiveCard(currentTrackIndex);
+        });
+      } else {
+        audioEl.pause();
+        isPlaying = false;
+        playIcon.textContent = "▶";
+        equalizer.classList.remove("playing");
+        highlightActiveCard(currentTrackIndex);
+      }
+    }
+
+    function playLessonIndex(idx) {
+      if (currentTrackIndex === idx && !audioEl.paused) {
+        audioEl.pause();
+        isPlaying = false;
+        playIcon.textContent = "▶";
+        equalizer.classList.remove("playing");
+        highlightActiveCard(idx);
+      } else if (currentTrackIndex === idx && audioEl.paused && audioEl.src) {
+        audioEl.play().then(() => {
+          isPlaying = true;
+          playIcon.textContent = "⏸";
+          equalizer.classList.add("playing");
+          highlightActiveCard(idx);
+        });
+      } else {
+        loadTrack(idx, true);
+      }
+    }
+
+    // Playback Events
+    playBtn.addEventListener("click", togglePlay);
+
+    prevBtn.addEventListener("click", () => {
+      let target = currentTrackIndex - 1;
+      if (target < 0) target = playlist.length - 1;
+      loadTrack(target, true);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      let target = currentTrackIndex + 1;
+      if (target >= playlist.length) target = 0;
+      loadTrack(target, true);
+    });
+
+    rewindBtn.addEventListener("click", () => {
+      audioEl.currentTime = Math.max(0, audioEl.currentTime - 15);
+    });
+
+    forwardBtn.addEventListener("click", () => {
+      audioEl.currentTime = Math.min(audioEl.duration || 9999, audioEl.currentTime + 15);
+    });
+
+    audioEl.addEventListener("timeupdate", () => {
+      const cur = audioEl.currentTime;
+      const dur = audioEl.duration || playlist[currentTrackIndex].durationSec;
+      if (dur > 0) {
+        scrubber.value = (cur / dur) * 100;
+        timeDisplay.textContent = `${formatTime(cur)} / ${formatTime(dur)}`;
+      }
+    });
+
+    scrubber.addEventListener("input", (e) => {
+      const dur = audioEl.duration || playlist[currentTrackIndex].durationSec;
+      if (dur > 0) {
+        audioEl.currentTime = (e.target.value / 100) * dur;
+      }
+    });
+
+    audioEl.addEventListener("ended", () => {
+      isPlaying = false;
+      playIcon.textContent = "▶";
+      equalizer.classList.remove("playing");
+      highlightActiveCard(currentTrackIndex);
+
+      if (continuousToggle.checked) {
+        const nextIndex = currentTrackIndex + 1;
+        if (nextIndex < playlist.length) {
+          loadTrack(nextIndex, true);
+        }
+      }
+    });
+
+    // Speed Controls
+    speedButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        speedButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        playbackSpeed = parseFloat(btn.getAttribute("data-speed"));
+        audioEl.playbackRate = playbackSpeed;
+      });
+    });
+
+    // Keyboard Shortcuts for hands-free / desktop accessibility
+    window.addEventListener("keydown", (e) => {
+      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+      if (e.code === "Space") {
+        e.preventDefault();
+        togglePlay();
+      } else if (e.code === "ArrowLeft" || e.key === "j" || e.key === "J") {
+        e.preventDefault();
+        audioEl.currentTime = Math.max(0, audioEl.currentTime - 15);
+      } else if (e.code === "ArrowRight" || e.key === "l" || e.key === "L") {
+        e.preventDefault();
+        audioEl.currentTime = Math.min(audioEl.duration || 9999, audioEl.currentTime + 15);
+      } else if (e.key === "n" || e.key === "N") {
+        e.preventDefault();
+        let target = currentTrackIndex + 1;
+        if (target < playlist.length) loadTrack(target, true);
+      } else if (e.key === "p" || e.key === "P") {
+        e.preventDefault();
+        let target = currentTrackIndex - 1;
+        if (target >= 0) loadTrack(target, true);
+      }
+    });
+
+    // Lockscreen & Hardware Media Session Integration
+    if ("mediaSession" in navigator) {
+      navigator.mediaSession.setActionHandler("play", () => {
+        audioEl.play();
+        isPlaying = true;
+        playIcon.textContent = "⏸";
+        equalizer.classList.add("playing");
+        highlightActiveCard(currentTrackIndex);
+      });
+      navigator.mediaSession.setActionHandler("pause", () => {
+        audioEl.pause();
+        isPlaying = false;
+        playIcon.textContent = "▶";
+        equalizer.classList.remove("playing");
+        highlightActiveCard(currentTrackIndex);
+      });
+      navigator.mediaSession.setActionHandler("previoustrack", () => {
+        let target = currentTrackIndex - 1;
+        if (target < 0) target = playlist.length - 1;
+        loadTrack(target, true);
+      });
+      navigator.mediaSession.setActionHandler("nexttrack", () => {
+        let target = currentTrackIndex + 1;
+        if (target >= playlist.length) target = 0;
+        loadTrack(target, true);
+      });
+      navigator.mediaSession.setActionHandler("seekbackward", () => {
+        audioEl.currentTime = Math.max(0, audioEl.currentTime - 15);
+      });
+      navigator.mediaSession.setActionHandler("seekforward", () => {
+        audioEl.currentTime = Math.min(audioEl.duration || 9999, audioEl.currentTime + 15);
+      });
+    }
+
+    // Initialize initial track metadata without auto-start
+    window.addEventListener("DOMContentLoaded", () => {
+      loadTrack(0, false);
+    });
+  </script>
+
+</body>
+</html>
